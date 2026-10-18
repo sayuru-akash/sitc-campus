@@ -1,0 +1,621 @@
+{
+  "css": [
+    "@import url(\"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap\");",
+    ":root { --wine: #641c2e; --dark: #2c1820; --cream: #f6f3ec; --gold: #b99661; --muted: #73696a; }",
+    "* { box-sizing: border-box; }",
+    "html { scroll-behavior: smooth; scroll-padding-top: 100px; }",
+    "body { margin: 0px; background: var(--cream); color: var(--dark); font: 15px / 1.65 \"DM Sans\", Arial, sans-serif; }",
+    "a { color: inherit; text-decoration: none; }",
+    "button, input, select, textarea { font: inherit; }",
+    "button, a, input, select, textarea { outline-offset: 5px; }",
+    "button { cursor: pointer; }",
+    "h1, h2, h3, p { margin-top: 0px; }",
+    "h1, h2 { font-family: \"Playfair Display\", Georgia, serif; font-weight: 500; letter-spacing: -1.8px; line-height: 1.12; }",
+    "h1 { font-size: clamp(44px, 4.7vw, 76px); margin-bottom: 26px; }",
+    "h2 { font-size: clamp(36px, 3.5vw, 54px); margin-bottom: 25px; }",
+    "h3 { font-size: 20px; line-height: 1.35; }",
+    "em { font-weight: 500; color: var(--wine); }",
+    ".top { background: var(--wine); color: rgb(255, 255, 255); padding: 9px 5%; display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.5px; }",
+    "header { height: 100px; display: flex; align-items: center; justify-content: space-between; padding: 0px 5%; background: var(--cream); border-bottom: 1px solid rgb(222, 215, 206); }",
+    ".brand img { width: 175px; display: block; }",
+    "nav { display: flex; gap: 30px; align-items: center; font-size: 13px; }",
+    "nav a:hover, .text-link:hover { color: var(--gold); }",
+    ".button { background: var(--wine); color: white; display: inline-flex; align-items: center; justify-content: space-between; gap: 35px; padding: 16px 24px; border: 1px solid var(--wine); font-size: 13px; font-weight: 600; }",
+    ".button:hover { background: rgb(69, 19, 34); color: white; }",
+    ".button.small { padding: 12px 19px; }",
+    ".menu { display: none; }",
+    ".hero { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 650px; }",
+    ".hero-copy { padding: 76px 8% 55px 9.5%; }",
+    ".eyebrow { font-size: 10px; letter-spacing: 2px; font-weight: 700; margin-bottom: 24px; }",
+    ".intro { max-width: 460px; color: var(--muted); font-size: 16px; }",
+    ".actions { display: flex; align-items: center; gap: 24px; margin-top: 32px; }",
+    ".text-link { font-size: 13px; border-bottom: 1px solid; padding-bottom: 4px; }",
+    ".sinhala { margin: 34px 0px 0px; color: var(--muted); font-size: 14px; }",
+    ".hero-image { position: relative; overflow: hidden; min-height: 600px; background: rgb(111, 100, 87); }",
+    ".hero-image > img { height: 100%; width: 100%; position: absolute; object-fit: cover; object-position: center center; }",
+    ".hero-image::after { content: \"\"; position: absolute; inset: 0px; background: linear-gradient(transparent 35%, rgba(39, 27, 26, 0.8)); }",
+    ".photo-note { position: absolute; bottom: 40px; left: 40px; z-index: 1; color: white; }",
+    ".photo-note span { font-size: 9px; letter-spacing: 1.8px; }",
+    ".photo-note strong { font: 38px / 1.15 \"Playfair Display\", Georgia, serif; display: block; margin-top: 15px; }",
+    ".seal { position: absolute; right: 25px; top: 25px; border: 1px solid rgb(234, 215, 172); border-radius: 50%; height: 90px; width: 90px; display: flex; align-items: center; justify-content: center; flex-direction: column; background: rgba(100, 28, 46, 0.88); color: rgb(241, 221, 185); font-family: Georgia; font-size: 25px; }",
+    ".seal small { font: 8px Arial; letter-spacing: 2px; }",
+    ".ribbon { background: rgb(238, 233, 223); display: grid; grid-template-columns: repeat(3, 1fr); padding: 30px 5%; border-bottom: 1px solid rgb(221, 213, 200); }",
+    ".ribbon div { padding: 0px 30px; border-right: 1px solid rgb(206, 195, 179); }",
+    ".ribbon div:first-child { padding-left: 0px; }",
+    ".ribbon div:last-child { border: 0px; }",
+    ".ribbon b, .ribbon span { display: block; }",
+    ".ribbon b { font-size: 16px; font-weight: 500; }",
+    ".ribbon span { font-size: 11px; color: var(--muted); margin-top: 4px; }",
+    ".section { padding: 95px 6%; }",
+    ".section-head { display: flex; justify-content: space-between; gap: 50px; align-items: flex-end; margin-bottom: 35px; }",
+    ".section-head > p { max-width: 350px; color: var(--muted); font-size: 13px; }",
+    ".filterbar { display: flex; justify-content: space-between; border-bottom: 1px solid rgb(217, 207, 193); margin: 20px 0px 30px; gap: 20px; }",
+    ".filters { display: flex; gap: 25px; }",
+    ".filters button { background: none; border-width: 0px 0px 2px; border-style: none none solid; border-color: currentcolor currentcolor transparent; border-image: none; padding: 15px 0px; color: var(--muted); font-size: 13px; }",
+    ".filters button.active { color: var(--wine); border-color: var(--wine); }",
+    "#search { background: none; border: 0px; width: 230px; font-size: 13px; }",
+    ".cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }",
+    ".card { background: rgb(255, 252, 246); border: 1px solid rgb(226, 219, 208); padding: 28px; position: relative; min-height: 260px; transition: transform 0.2s, box-shadow 0.2s; }",
+    ".card:hover { transform: translateY(-4px); box-shadow: rgba(48, 26, 23, 0.063) 0px 12px 25px; }",
+    ".card .card-top { display: flex; justify-content: space-between; color: var(--wine); font-size: 10px; letter-spacing: 1.3px; margin-bottom: 30px; }",
+    ".card h3 { font: 25px / 1.25 \"Playfair Display\", Georgia, serif; max-width: 260px; }",
+    ".card p { color: var(--muted); font-size: 12px; margin-bottom: 25px; }",
+    ".card a { font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }",
+    ".programme-note { font-size: 11px; color: var(--muted); margin: 24px 0px 0px; }",
+    ".experience { background: var(--wine); color: rgb(255, 246, 232); padding: 90px 7%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }",
+    ".experience em { color: rgb(214, 187, 145); }",
+    ".experience-title > p:not(.eyebrow) { color: rgb(218, 200, 202); max-width: 370px; font-size: 14px; }",
+    ".experience-title .text-link { display: inline-block; margin-top: 15px; }",
+    ".reasons article { display: flex; gap: 25px; border-bottom: 1px solid rgb(150, 97, 109); padding: 23px 0px; }",
+    ".reasons article:first-child { padding-top: 0px; }",
+    ".reasons article:last-child { border: 0px; }",
+    ".reasons article > span { color: rgb(201, 167, 123); font-family: Georgia; font-size: 23px; }",
+    ".reasons h3 { font-size: 18px; margin-bottom: 10px; }",
+    ".reasons p { font-size: 13px; color: rgb(218, 200, 202); margin-bottom: 0px; }",
+    ".pathway { text-align: center; }",
+    ".steps { text-align: left; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }",
+    ".steps article { border-top: 1px solid rgb(186, 167, 143); padding-top: 25px; }",
+    ".steps span { color: var(--wine); font-size: 10px; letter-spacing: 1.5px; }",
+    ".steps h3 { margin: 18px 0px 12px; }",
+    ".steps p { color: var(--muted); font-size: 13px; max-width: 280px; }",
+    ".student { background: rgb(234, 228, 216); padding: 65px 7%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }",
+    ".student-links { align-self: center; }",
+    ".student-links a { display: flex; justify-content: space-between; padding: 20px 0px; border-bottom: 1px solid rgb(207, 193, 175); font-size: 15px; }",
+    ".student h2 { margin-bottom: 0px; }",
+    ".faq { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }",
+    "details { border-bottom: 1px solid rgb(217, 207, 193); padding: 20px 0px; }",
+    "summary { cursor: pointer; font-size: 14px; font-weight: 600; }",
+    "details p { font-size: 13px; color: var(--muted); padding-top: 15px; margin-bottom: 0px; }",
+    ".enquire { margin: 0px 5% 80px; padding: 65px 6%; background: rgb(238, 229, 216); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }",
+    ".enquire > div > p:not(.eyebrow) { color: var(--muted); font-size: 13px; max-width: 320px; }",
+    ".enquire > div > a { font-size: 14px; }",
+    "form label { display: block; font-size: 12px; margin-bottom: 20px; font-weight: 600; }",
+    "form label span { font-weight: 400; color: var(--muted); }",
+    "form input, form select, textarea { display: block; width: 100%; border-width: 0px 0px 1px; border-style: none none solid; border-color: currentcolor currentcolor rgb(185, 170, 153); border-image: none; border-radius: 0px; padding: 12px 0px; background: transparent; color: var(--dark); font-size: 13px; }",
+    "form .button { width: 100%; }",
+    ".form-note { font-size: 10px; color: var(--muted); margin: 12px 0px 0px; }",
+    ".locations { padding: 0px 7% 80px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }",
+    ".locations h2 { font-size: 36px; }",
+    ".locations h3 { margin-top: 30px; }",
+    ".locations p { font-size: 13px; color: var(--muted); }",
+    ".locations a { font-size: 12px; border-bottom: 1px solid rgb(173, 149, 128); }",
+    "footer { background: rgb(41, 27, 32); color: rgb(230, 218, 215); padding: 50px 6% 25px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }",
+    ".footer-brand { font-family: Georgia; font-size: 43px; letter-spacing: 2px; }",
+    ".footer-brand span { display: block; font: 10px Arial; letter-spacing: 7px; }",
+    "footer p, footer a { font-size: 12px; color: rgb(191, 176, 179); }",
+    "footer a { display: block; margin-bottom: 10px; }",
+    "footer small { grid-column: 1 / -1; border-top: 1px solid rgb(82, 62, 69); padding-top: 20px; font-size: 10px; color: rgb(191, 176, 179); }",
+    "@media (min-width: 1500px) {\n  main, header, .top, footer { padding-left: max(5%, -720px + 50vw); padding-right: max(5%, -720px + 50vw); }\n  .hero-copy { padding-left: 0px; }\n}",
+    "@media (max-width: 900px) {\n  nav { gap: 17px; }\n  .hero-copy { padding: 50px 7%; }\n  .hero { min-height: auto; }\n  h1 { font-size: 48px; }\n  .actions { flex-direction: column; align-items: flex-start; }\n  .cards { grid-template-columns: repeat(2, 1fr); }\n  .experience { gap: 40px; }\n  .hero-image { min-height: 570px; }\n  .enquire { gap: 35px; }\n}",
+    "@media (max-width: 640px) {\n  .top { font-size: 9px; }\n  .top span { max-width: 210px; }\n  header { height: 80px; }\n  .brand img { width: 145px; }\n  .menu { display: block; background: none; border: 0px; font-size: 24px; color: var(--wine); }\n  nav { display: none; position: absolute; top: 117px; left: 0px; right: 0px; background: var(--cream); z-index: 5; padding: 25px; box-shadow: rgba(0, 0, 0, 0.067) 0px 8px 15px; }\n  nav.open { display: flex; flex-direction: column; }\n  .hero { grid-template-columns: 1fr; }\n  .hero-copy { padding: 48px 7%; }\n  h1 { font-size: 48px; }\n  .intro { font-size: 14px; }\n  .actions { flex-direction: row; gap: 17px; align-items: center; }\n  .button { padding: 14px 17px; gap: 18px; font-size: 12px; }\n  .text-link { font-size: 11px; }\n  .hero-image { min-height: 370px; }\n  .photo-note { bottom: 25px; left: 25px; }\n  .photo-note strong { font-size: 30px; }\n  .seal { height: 70px; width: 70px; font-size: 20px; }\n  .ribbon { padding: 22px 7%; grid-template-columns: 1fr; gap: 15px; }\n  .ribbon div { padding: 0px; border: 0px; }\n  .ribbon b { font-size: 14px; }\n  .ribbon span { display: none; }\n  .section { padding: 60px 7%; }\n  .section-head { display: block; }\n  .section-head > p { max-width: 100%; }\n  .filterbar { flex-direction: column; gap: 5px; padding-bottom: 15px; }\n  .filters { gap: 22px; }\n  .filters button { font-size: 12px; }\n  #search { width: 100%; padding: 10px 0px; }\n  .cards { grid-template-columns: 1fr; }\n  .card { min-height: 230px; }\n  .experience, .student, .faq, .enquire { grid-template-columns: 1fr; gap: 35px; padding: 50px 7%; }\n  .steps { grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }\n  .steps p { max-width: 100%; }\n  .pathway { text-align: left; }\n  .student h2 { margin: 0px; }\n  .enquire { margin: 0px 4% 55px; }\n  .locations { grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 50px; }\n  .locations > div { grid-column: 1 / -1; }\n  .locations h3 { margin-top: 0px; }\n  .locations p { font-size: 12px; }\n  footer { grid-template-columns: 1fr 1fr; }\n  footer > div:last-of-type { grid-column: 1 / -1; }\n  .sinhala { margin-top: 25px; }\n}",
+    "@media (prefers-reduced-motion: reduce) {\n  html { scroll-behavior: auto; }\n  * { transition: none !important; }\n}"
+  ],
+  "footer": "<footer><div class=\"footer-brand\">SITC <span>CAMPUS</span></div><p>Knowledge that opens doors.<br>Education that moves you forward.</p><div><a href=\"https://sitc.lk/\">SITC main website ↗</a><a href=\"mailto:info@sitc.lk\">info@sitc.lk</a></div><small>© 2026 SITC Campus. All rights reserved.</small></footer>",
+  "html": "<main><section class=\"hero\"><div class=\"hero-copy\"><p class=\"eyebrow\">SITC CAMPUS · SRI LANKA</p><h1>Your ambition.<br>Our commitment.<br><em>A world of possibility.</em></h1><p class=\"intro\">Take your next step with purpose. Discover education that connects your interests, your potential, and the future you want to create.</p><div class=\"actions\"><a class=\"button\" href=\"#programmes\">Find your programme <span>↗</span></a><a class=\"text-link\" href=\"#enquire\">Talk to an advisor →</a></div><p class=\"sinhala\">ඔබේ අනාගතයට නව ඇරඹුමක්.</p></div><div class=\"hero-image\"><img src=\"assets/campus.jpg\" alt=\"SITC Campus academic community\"><div class=\"photo-note\"><span>KNOWLEDGE. OPPORTUNITY. PROGRESS.</span><strong>Your next chapter<br>starts here.</strong></div><div class=\"seal\">SITC<br><small>EST. 2005</small></div></div></section>\n<section class=\"ribbon\"><div><b>Since 2005</b><span>A commitment to education</span></div><div><b>From diploma to degree</b><span>Explore your next academic step</span></div><div><b>Local roots. Global outlook.</b><span>Learning beyond boundaries</span></div></section>\n<section id=\"programmes\" class=\"section\"><div class=\"section-head\"><div><p class=\"eyebrow\">FIND YOUR DIRECTION</p><h2>Big ambitions.<br><em>The right starting point.</em></h2></div><p>Explore a field that inspires you. Our admissions team will help you confirm entry requirements, available intakes, fees, and awarding arrangements.</p></div><div class=\"filterbar\"><div class=\"filters\" aria-label=\"Programme level\"><button class=\"active\" data-filter=\"All\">All programmes</button><button data-filter=\"Diploma\">Diplomas</button><button data-filter=\"Degree\">Degrees</button></div><input id=\"search\" aria-label=\"Search programmes\" placeholder=\"Search your interest ↗\"></div><div id=\"cards\" class=\"cards\"><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Psychology &amp; Counselling</h3><p>Explore human behaviour, wellbeing and the foundations of counselling.</p><a href=\"#enquire\" data-title=\"Psychology &amp; Counselling — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Information Technology</h3><p>Build a foundation in computing and the digital world.</p><a href=\"#enquire\" data-title=\"Information Technology — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Business Management</h3><p>Discover the principles that shape organisations and enterprise.</p><a href=\"#enquire\" data-title=\"Business Management — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>HRM &amp; Administration</h3><p>Develop your understanding of people, work and organisational practice.</p><a href=\"#enquire\" data-title=\"HRM &amp; Administration — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>English</h3><p>Strengthen your language skills for study, work and everyday communication.</p><a href=\"#enquire\" data-title=\"English — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Tamil as a Second Language</h3><p>Connect with more people through language and cultural understanding.</p><a href=\"#enquire\" data-title=\"Tamil as a Second Language — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in Psychology &amp; Counselling</h3><p>Take the next academic step in psychology and counselling.</p><a href=\"#enquire\" data-title=\"BSc in Psychology &amp; Counselling — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in HRM &amp; Business Strategy</h3><p>Explore people management alongside strategic business thinking.</p><a href=\"#enquire\" data-title=\"BSc in HRM &amp; Business Strategy — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in Business Management</h3><p>Develop your knowledge of management and business practice.</p><a href=\"#enquire\" data-title=\"BSc in Business Management — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BA in English</h3><p>Explore undergraduate study in English.</p><a href=\"#enquire\" data-title=\"BA in English — Degree\">Explore this pathway <span>→</span></a></article></div><p id=\"empty\" hidden=\"\">No programmes match your search. Try another subject.</p><p class=\"programme-note\">Programme availability and progression depend on entry qualifications and awarding-university requirements. Ask admissions for the current programme specification.</p></section>\n<section id=\"experience\" class=\"experience\"><div class=\"experience-title\"><p class=\"eyebrow\">THE SITC EXPERIENCE</p><h2>Education with<br><em>you at the centre.</em></h2><p>For the school leaver finding a direction. For the professional taking the next step. For everyone ready to keep growing.</p><a class=\"text-link\" href=\"https://sitc.lk/about-us/\">Get to know SITC ↗</a></div><div class=\"reasons\"><article><span>01</span><div><h3>Learn with purpose</h3><p>Explore psychology, technology, business, languages and more, with a focus on knowledge you can carry forward.</p></div></article><article><span>02</span><div><h3>A pathway that fits your goals</h3><p>Discuss diploma, undergraduate and postgraduate options with an advisor who can help you plan your next step.</p></div></article><article><span>03</span><div><h3>Stay connected to your learning</h3><p>Access the SITC student portal and connect with the campus team for academic and administrative support.</p></div></article></div></section>\n<section id=\"pathway\" class=\"section pathway\"><p class=\"eyebrow\">YOUR JOURNEY, ONE STEP AT A TIME</p><h2>A clear path <em>forward.</em></h2><div class=\"steps\"><article><span>01 / EXPLORE</span><h3>Find your field</h3><p>Choose the subject and qualification level that match your interests.</p></article><article><span>02 / CONNECT</span><h3>Make a plan</h3><p>Confirm your eligibility, teaching medium, schedule and full fee structure.</p></article><article><span>03 / BEGIN</span><h3>Start your next chapter</h3><p>Follow the admissions team's guidance to complete your registration.</p></article></div></section>\n<section class=\"student\"><div><p class=\"eyebrow\">ALREADY PART OF SITC?</p><h2>Your campus,<br><em>one click away.</em></h2></div><div class=\"student-links\"><a href=\"https://portal.sitc.lk/\">Student portal <span>↗</span></a><a href=\"https://portal.sitc.lk/verify-certificate\">Certificate verification <span>↗</span></a><a href=\"https://sitc.lk/academic-direction-partner-institutes/\">Academic direction partners <span>↗</span></a></div></section>\n<section class=\"section faq\"><div><p class=\"eyebrow\">A LITTLE CLARITY</p><h2>Before you<br><em>take the next step.</em></h2></div><div><details><summary>How do I choose the right programme?</summary><p>Tell our admissions team your highest qualification, subject interests and career goals. They can explain the available routes and entry requirements.</p></details><details><summary>Can I study while working?</summary><p>Study modes and class schedules vary by programme. Ask for the current timetable and attendance requirements before registering.</p></details><details><summary>How do I check recognition and awarding details?</summary><p>Request the exact qualification title, awarding institution, applicable recognition documentation and progression conditions for your selected programme.</p></details><details><summary>Where can I get the latest fees and intake dates?</summary><p>Contact admissions using the enquiry form below. The team can provide current fees, payment options and the next available intake.</p></details></div></section>\n<section id=\"enquire\" class=\"enquire\"><div><p class=\"eyebrow\">LET'S TALK ABOUT YOUR FUTURE</p><h2>Your next step<br>starts with<br><em>a conversation.</em></h2><p>Tell us what you would like to study. Continue on WhatsApp to speak with the SITC admissions team.</p><a href=\"tel:+94114532139\">+94 11 453 2139</a><br><a href=\"mailto:info@sitc.lk\">info@sitc.lk</a></div><form id=\"enquiry\"><label>Your name<input id=\"name\" required=\"\" autocomplete=\"name\" placeholder=\"Enter your full name\"></label><label>I'm interested in<select id=\"interest\"><option>Help me choose a programme</option><option>Psychology &amp; Counselling — Diploma</option><option>Information Technology — Diploma</option><option>Business Management — Diploma</option><option>HRM &amp; Administration — Diploma</option><option>English — Diploma</option><option>Tamil as a Second Language — Diploma</option><option>BSc in Psychology &amp; Counselling — Degree</option><option>BSc in HRM &amp; Business Strategy — Degree</option><option>BSc in Business Management — Degree</option><option>BA in English — Degree</option></select></label><label>Highest qualification<select id=\"qualification\"><option>G.C.E. O/L</option><option>G.C.E. A/L</option><option>Diploma / Higher Diploma</option><option>Bachelor's degree</option><option>Other qualification</option></select></label><label>Anything you would like to ask? <span>(optional)</span><textarea id=\"message\" rows=\"2\" placeholder=\"Study mode, fees, entry requirements...\"></textarea></label><button class=\"button\" type=\"submit\">Continue on WhatsApp ↗</button><p class=\"form-note\">This opens WhatsApp with your enquiry ready to send. Your details are not stored on this website.</p></form></section>\n<section id=\"contact\" class=\"locations\"><div><p class=\"eyebrow\">COME FIND US</p><h2>Connected.<br><em>Wherever you are.</em></h2></div><article><h3>Colombo</h3><p>World Trade Center<br>Level 26, East Tower<br>Colombo 01, Sri Lanka</p><a href=\"https://www.google.com/maps/search/?api=1&amp;query=World+Trade+Center+Colombo\">View on map ↗</a></article><article><h3>Gampola</h3><p>No. 285, Hospital Road<br>Gampola<br>Sri Lanka</p><a href=\"https://www.google.com/maps/search/?api=1&amp;query=285+Hospital+Road+Gampola\">View on map ↗</a></article></section></main>",
+  "images": [
+    {
+      "alt": "SITC Campus",
+      "height": 318,
+      "src": "https://sitc-campus-discover.candiddrum32.chatgpt.site/assets/logo.png",
+      "width": 1040
+    },
+    {
+      "alt": "SITC Campus academic community",
+      "height": 695,
+      "src": "https://sitc-campus-discover.candiddrum32.chatgpt.site/assets/campus.jpg",
+      "width": 1950
+    }
+  ],
+  "sections": [
+    {
+      "classes": "hero",
+      "html": "<section class=\"hero\"><div class=\"hero-copy\"><p class=\"eyebrow\">SITC CAMPUS · SRI LANKA</p><h1>Your ambition.<br>Our commitment.<br><em>A world of possibility.</em></h1><p class=\"intro\">Take your next step with purpose. Discover education that connects your interests, your potential, and the future you want to create.</p><div class=\"actions\"><a class=\"button\" href=\"#programmes\">Find your programme <span>↗</span></a><a class=\"text-link\" href=\"#enquire\">Talk to an advisor →</a></div><p class=\"sinhala\">ඔබේ අනාගතයට නව ඇරඹුමක්.</p></div><div class=\"hero-image\"><img src=\"assets/campus.jpg\" alt=\"SITC Campus academic community\"><div class=\"photo-note\"><span>KNOWLEDGE. OPPORTUNITY. PROGRESS.</span><strong>Your next chapter<br>starts here.</strong></div><div class=\"seal\">SITC<br><small>EST. 2005</small></div></div></section>",
+      "id": "",
+      "tag": "SECTION",
+      "text": "SITC CAMPUS · SRI LANKAYour ambition.Our commitment.A world of possibility.Take your next step with purpose. Discover education that connects your interests, your potential, and the future you want to create.Find your programme ↗Talk to an advisor →ඔබේ අනාගතයට නව ඇරඹුමක්.KNOWLEDGE. OPPORTUNITY. PROGRESS.Your next chapterstarts here.SITCEST. 2005"
+    },
+    {
+      "classes": "ribbon",
+      "html": "<section class=\"ribbon\"><div><b>Since 2005</b><span>A commitment to education</span></div><div><b>From diploma to degree</b><span>Explore your next academic step</span></div><div><b>Local roots. Global outlook.</b><span>Learning beyond boundaries</span></div></section>",
+      "id": "",
+      "tag": "SECTION",
+      "text": "Since 2005A commitment to educationFrom diploma to degreeExplore your next academic stepLocal roots. Global outlook.Learning beyond boundaries"
+    },
+    {
+      "classes": "section",
+      "html": "<section id=\"programmes\" class=\"section\"><div class=\"section-head\"><div><p class=\"eyebrow\">FIND YOUR DIRECTION</p><h2>Big ambitions.<br><em>The right starting point.</em></h2></div><p>Explore a field that inspires you. Our admissions team will help you confirm entry requirements, available intakes, fees, and awarding arrangements.</p></div><div class=\"filterbar\"><div class=\"filters\" aria-label=\"Programme level\"><button class=\"active\" data-filter=\"All\">All programmes</button><button data-filter=\"Diploma\">Diplomas</button><button data-filter=\"Degree\">Degrees</button></div><input id=\"search\" aria-label=\"Search programmes\" placeholder=\"Search your interest ↗\"></div><div id=\"cards\" class=\"cards\"><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Psychology &amp; Counselling</h3><p>Explore human behaviour, wellbeing and the foundations of counselling.</p><a href=\"#enquire\" data-title=\"Psychology &amp; Counselling — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Information Technology</h3><p>Build a foundation in computing and the digital world.</p><a href=\"#enquire\" data-title=\"Information Technology — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Business Management</h3><p>Discover the principles that shape organisations and enterprise.</p><a href=\"#enquire\" data-title=\"Business Management — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>HRM &amp; Administration</h3><p>Develop your understanding of people, work and organisational practice.</p><a href=\"#enquire\" data-title=\"HRM &amp; Administration — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>English</h3><p>Strengthen your language skills for study, work and everyday communication.</p><a href=\"#enquire\" data-title=\"English — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DIPLOMA</span><span>↗</span></div><h3>Tamil as a Second Language</h3><p>Connect with more people through language and cultural understanding.</p><a href=\"#enquire\" data-title=\"Tamil as a Second Language — Diploma\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in Psychology &amp; Counselling</h3><p>Take the next academic step in psychology and counselling.</p><a href=\"#enquire\" data-title=\"BSc in Psychology &amp; Counselling — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in HRM &amp; Business Strategy</h3><p>Explore people management alongside strategic business thinking.</p><a href=\"#enquire\" data-title=\"BSc in HRM &amp; Business Strategy — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BSc in Business Management</h3><p>Develop your knowledge of management and business practice.</p><a href=\"#enquire\" data-title=\"BSc in Business Management — Degree\">Explore this pathway <span>→</span></a></article><article class=\"card\"><div class=\"card-top\"><span>DEGREE</span><span>↗</span></div><h3>BA in English</h3><p>Explore undergraduate study in English.</p><a href=\"#enquire\" data-title=\"BA in English — Degree\">Explore this pathway <span>→</span></a></article></div><p id=\"empty\" hidden=\"\">No programmes match your search. Try another subject.</p><p class=\"programme-note\">Programme availability and progression depend on entry qualifications and awarding-university requirements. Ask admissions for the current programme specification.</p></section>",
+      "id": "programmes",
+      "tag": "SECTION",
+      "text": "FIND YOUR DIRECTIONBig ambitions.The right starting point.Explore a field that inspires you. Our admissions team will help you confirm entry requirements, available intakes, fees, and awarding arrangements.All programmesDiplomasDegreesDIPLOMA↗Psychology & CounsellingExplore human behaviour, wellbeing and the foundations of counselling.Explore this pathway →DIPLOMA↗Information TechnologyBuild a foundation in computing and the digital world.Explore this pathway →DIPLOMA↗Business ManagementDiscover the principles that shape organisations and enterprise.Explore this pathway →DIPLOMA↗HRM & AdministrationDevelop your understanding of people, work and organisational practice.Explore this pathway →DIPLOMA↗EnglishStrengthen your language skills for study, work and everyday communication.Explore this pathway →DIPLOMA↗Tamil as a Second LanguageConnect with more people through language and cultural understanding.Explore this pathway →DEGREE↗BSc in Psychology & CounsellingTake the next academic step in psychology and counselling.Explore this pathway →DEGREE↗BSc in HRM & Business StrategyExplore people management alongside strategic business thinking.Explore this pathway →DEGREE↗BSc in Business ManagementDevelop your knowledge of management and business practice.Explore this pathway →DEGREE↗BA in EnglishExplore undergraduate study in English.Explore this pathway →No programmes match your search. Try another subject.Programme availability and progression depend on entry qualifications and awarding-university requirements. Ask admissions for the current programme specification."
+    },
+    {
+      "classes": "experience",
+      "html": "<section id=\"experience\" class=\"experience\"><div class=\"experience-title\"><p class=\"eyebrow\">THE SITC EXPERIENCE</p><h2>Education with<br><em>you at the centre.</em></h2><p>For the school leaver finding a direction. For the professional taking the next step. For everyone ready to keep growing.</p><a class=\"text-link\" href=\"https://sitc.lk/about-us/\">Get to know SITC ↗</a></div><div class=\"reasons\"><article><span>01</span><div><h3>Learn with purpose</h3><p>Explore psychology, technology, business, languages and more, with a focus on knowledge you can carry forward.</p></div></article><article><span>02</span><div><h3>A pathway that fits your goals</h3><p>Discuss diploma, undergraduate and postgraduate options with an advisor who can help you plan your next step.</p></div></article><article><span>03</span><div><h3>Stay connected to your learning</h3><p>Access the SITC student portal and connect with the campus team for academic and administrative support.</p></div></article></div></section>",
+      "id": "experience",
+      "tag": "SECTION",
+      "text": "THE SITC EXPERIENCEEducation withyou at the centre.For the school leaver finding a direction. For the professional taking the next step. For everyone ready to keep growing.Get to know SITC ↗01Learn with purposeExplore psychology, technology, business, languages and more, with a focus on knowledge you can carry forward.02A pathway that fits your goalsDiscuss diploma, undergraduate and postgraduate options with an advisor who can help you plan your next step.03Stay connected to your learningAccess the SITC student portal and connect with the campus team for academic and administrative support."
+    },
+    {
+      "classes": "section pathway",
+      "html": "<section id=\"pathway\" class=\"section pathway\"><p class=\"eyebrow\">YOUR JOURNEY, ONE STEP AT A TIME</p><h2>A clear path <em>forward.</em></h2><div class=\"steps\"><article><span>01 / EXPLORE</span><h3>Find your field</h3><p>Choose the subject and qualification level that match your interests.</p></article><article><span>02 / CONNECT</span><h3>Make a plan</h3><p>Confirm your eligibility, teaching medium, schedule and full fee structure.</p></article><article><span>03 / BEGIN</span><h3>Start your next chapter</h3><p>Follow the admissions team's guidance to complete your registration.</p></article></div></section>",
+      "id": "pathway",
+      "tag": "SECTION",
+      "text": "YOUR JOURNEY, ONE STEP AT A TIMEA clear path forward.01 / EXPLOREFind your fieldChoose the subject and qualification level that match your interests.02 / CONNECTMake a planConfirm your eligibility, teaching medium, schedule and full fee structure.03 / BEGINStart your next chapterFollow the admissions team's guidance to complete your registration."
+    },
+    {
+      "classes": "student",
+      "html": "<section class=\"student\"><div><p class=\"eyebrow\">ALREADY PART OF SITC?</p><h2>Your campus,<br><em>one click away.</em></h2></div><div class=\"student-links\"><a href=\"https://portal.sitc.lk/\">Student portal <span>↗</span></a><a href=\"https://portal.sitc.lk/verify-certificate\">Certificate verification <span>↗</span></a><a href=\"https://sitc.lk/academic-direction-partner-institutes/\">Academic direction partners <span>↗</span></a></div></section>",
+      "id": "",
+      "tag": "SECTION",
+      "text": "ALREADY PART OF SITC?Your campus,one click away.Student portal ↗Certificate verification ↗Academic direction partners ↗"
+    },
+    {
+      "classes": "section faq",
+      "html": "<section class=\"section faq\"><div><p class=\"eyebrow\">A LITTLE CLARITY</p><h2>Before you<br><em>take the next step.</em></h2></div><div><details><summary>How do I choose the right programme?</summary><p>Tell our admissions team your highest qualification, subject interests and career goals. They can explain the available routes and entry requirements.</p></details><details><summary>Can I study while working?</summary><p>Study modes and class schedules vary by programme. Ask for the current timetable and attendance requirements before registering.</p></details><details><summary>How do I check recognition and awarding details?</summary><p>Request the exact qualification title, awarding institution, applicable recognition documentation and progression conditions for your selected programme.</p></details><details><summary>Where can I get the latest fees and intake dates?</summary><p>Contact admissions using the enquiry form below. The team can provide current fees, payment options and the next available intake.</p></details></div></section>",
+      "id": "",
+      "tag": "SECTION",
+      "text": "A LITTLE CLARITYBefore youtake the next step.How do I choose the right programme?Tell our admissions team your highest qualification, subject interests and career goals. They can explain the available routes and entry requirements.Can I study while working?Study modes and class schedules vary by programme. Ask for the current timetable and attendance requirements before registering.How do I check recognition and awarding details?Request the exact qualification title, awarding institution, applicable recognition documentation and progression conditions for your selected programme.Where can I get the latest fees and intake dates?Contact admissions using the enquiry form below. The team can provide current fees, payment options and the next available intake."
+    },
+    {
+      "classes": "enquire",
+      "html": "<section id=\"enquire\" class=\"enquire\"><div><p class=\"eyebrow\">LET'S TALK ABOUT YOUR FUTURE</p><h2>Your next step<br>starts with<br><em>a conversation.</em></h2><p>Tell us what you would like to study. Continue on WhatsApp to speak with the SITC admissions team.</p><a href=\"tel:+94114532139\">+94 11 453 2139</a><br><a href=\"mailto:info@sitc.lk\">info@sitc.lk</a></div><form id=\"enquiry\"><label>Your name<input id=\"name\" required=\"\" autocomplete=\"name\" placeholder=\"Enter your full name\"></label><label>I'm interested in<select id=\"interest\"><option>Help me choose a programme</option><option>Psychology &amp; Counselling — Diploma</option><option>Information Technology — Diploma</option><option>Business Management — Diploma</option><option>HRM &amp; Administration — Diploma</option><option>English — Diploma</option><option>Tamil as a Second Language — Diploma</option><option>BSc in Psychology &amp; Counselling — Degree</option><option>BSc in HRM &amp; Business Strategy — Degree</option><option>BSc in Business Management — Degree</option><option>BA in English — Degree</option></select></label><label>Highest qualification<select id=\"qualification\"><option>G.C.E. O/L</option><option>G.C.E. A/L</option><option>Diploma / Higher Diploma</option><option>Bachelor's degree</option><option>Other qualification</option></select></label><label>Anything you would like to ask? <span>(optional)</span><textarea id=\"message\" rows=\"2\" placeholder=\"Study mode, fees, entry requirements...\"></textarea></label><button class=\"button\" type=\"submit\">Continue on WhatsApp ↗</button><p class=\"form-note\">This opens WhatsApp with your enquiry ready to send. Your details are not stored on this website.</p></form></section>",
+      "id": "enquire",
+      "tag": "SECTION",
+      "text": "LET'S TALK ABOUT YOUR FUTUREYour next stepstarts witha conversation.Tell us what you would like to study. Continue on WhatsApp to speak with the SITC admissions team.+94 11 453 2139info@sitc.lkYour nameI'm interested inHelp me choose a programmePsychology & Counselling — DiplomaInformation Technology — DiplomaBusiness Management — DiplomaHRM & Administration — DiplomaEnglish — DiplomaTamil as a Second Language — DiplomaBSc in Psychology & Counselling — DegreeBSc in HRM & Business Strategy — DegreeBSc in Business Management — DegreeBA in English — DegreeHighest qualificationG.C.E. O/LG.C.E. A/LDiploma / Higher DiplomaBachelor's degreeOther qualificationAnything you would like to ask? (optional)Continue on WhatsApp ↗This opens WhatsApp with your enquiry ready to send. Your details are not stored on this website."
+    },
+    {
+      "classes": "locations",
+      "html": "<section id=\"contact\" class=\"locations\"><div><p class=\"eyebrow\">COME FIND US</p><h2>Connected.<br><em>Wherever you are.</em></h2></div><article><h3>Colombo</h3><p>World Trade Center<br>Level 26, East Tower<br>Colombo 01, Sri Lanka</p><a href=\"https://www.google.com/maps/search/?api=1&amp;query=World+Trade+Center+Colombo\">View on map ↗</a></article><article><h3>Gampola</h3><p>No. 285, Hospital Road<br>Gampola<br>Sri Lanka</p><a href=\"https://www.google.com/maps/search/?api=1&amp;query=285+Hospital+Road+Gampola\">View on map ↗</a></article></section>",
+      "id": "contact",
+      "tag": "SECTION",
+      "text": "COME FIND USConnected.Wherever you are.ColomboWorld Trade CenterLevel 26, East TowerColombo 01, Sri LankaView on map ↗GampolaNo. 285, Hospital RoadGampolaSri LankaView on map ↗"
+    }
+  ],
+  "styleEvidence": [
+    {
+      "css": {
+        "backgroundColor": "rgb(246, 243, 236)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "0px 69.3984px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 136.1484375,
+        "height": 100,
+        "left": 0,
+        "right": 1388,
+        "top": 36.1484375,
+        "width": 1388,
+        "x": 0,
+        "y": 36.1484375
+      },
+      "selector": "HEADER"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "normal",
+        "gridTemplateColumns": "710.922px 677.078px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 786.1484375,
+        "height": 650,
+        "left": 0,
+        "right": 1388,
+        "top": 136.1484375,
+        "width": 1388,
+        "x": 0,
+        "y": 136.1484375
+      },
+      "selector": "hero"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "65.236px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "73.0643px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 471.8359375,
+        "height": 219.1875,
+        "left": 67.53125,
+        "right": 654.0546875,
+        "top": 252.6484375,
+        "width": 586.5234375,
+        "x": 67.53125,
+        "y": 252.6484375
+      },
+      "selector": "H1"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "95px 83.2734px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 2570.7734375,
+        "height": 1675.078125,
+        "left": 0,
+        "right": 1388,
+        "top": 895.6953125,
+        "width": 1388,
+        "x": 0,
+        "y": 895.6953125
+      },
+      "selector": "section"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 1140.0078125,
+        "height": 108.8125,
+        "left": 83.2734375,
+        "right": 547.3984375,
+        "top": 1031.1953125,
+        "width": 464.125,
+        "x": 83.2734375,
+        "y": 1031.1953125
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgb(100, 28, 46)",
+        "color": "rgb(255, 246, 232)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "100px",
+        "gridTemplateColumns": "546.844px 546.844px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "90px 97.1562px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 3099.3359375,
+        "height": 528.5625,
+        "left": 0,
+        "right": 1388,
+        "top": 2570.7734375,
+        "width": 1388,
+        "x": 0,
+        "y": 2570.7734375
+      },
+      "selector": "experience"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 246, 232)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 2810.0859375,
+        "height": 108.8125,
+        "left": 97.15625,
+        "right": 644,
+        "top": 2701.2734375,
+        "width": 546.84375,
+        "x": 97.15625,
+        "y": 2701.2734375
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "95px 83.2734px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 3597.8828125,
+        "height": 498.546875,
+        "left": 0,
+        "right": 1388,
+        "top": 3099.3359375,
+        "width": 1388,
+        "x": 0,
+        "y": 3099.3359375
+      },
+      "selector": "section pathway"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 3289.2421875,
+        "height": 54.40625,
+        "left": 83.2734375,
+        "right": 1304.7265625,
+        "top": 3234.8359375,
+        "width": 1221.453125,
+        "x": 83.2734375,
+        "y": 3234.8359375
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 3812.1953125,
+        "height": 108.8125,
+        "left": 97.15625,
+        "right": 664,
+        "top": 3703.3828125,
+        "width": 566.84375,
+        "x": 97.15625,
+        "y": 3703.3828125
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "60px",
+        "gridTemplateColumns": "580.727px 580.727px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "95px 83.2734px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 4371.5078125,
+        "height": 446.375,
+        "left": 0,
+        "right": 1388,
+        "top": 3925.1328125,
+        "width": 1388,
+        "x": 0,
+        "y": 3925.1328125
+      },
+      "selector": "section faq"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 4169.4453125,
+        "height": 108.8125,
+        "left": 83.2734375,
+        "right": 664,
+        "top": 4060.6328125,
+        "width": 580.7265625,
+        "x": 83.2734375,
+        "y": 4060.6328125
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgb(238, 229, 216)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "80px",
+        "gridTemplateColumns": "501.328px 501.328px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "65px 83.2734px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 4946.9765625,
+        "height": 575.46875,
+        "left": 69.3984375,
+        "right": 1318.6015625,
+        "top": 4371.5078125,
+        "width": 1249.203125,
+        "x": 69.3984375,
+        "y": 4371.5078125
+      },
+      "selector": "enquire"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "48.58px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "54.4096px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 4640.2265625,
+        "height": 163.21875,
+        "left": 152.671875,
+        "right": 654,
+        "top": 4477.0078125,
+        "width": 501.328125,
+        "x": 152.671875,
+        "y": 4477.0078125
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "40px",
+        "gridTemplateColumns": "417.633px 348.023px 348.031px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "0px 97.1562px 80px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 5286.0625,
+        "height": 259.0859375,
+        "left": 0,
+        "right": 1388,
+        "top": 5026.9765625,
+        "width": 1388,
+        "x": 0,
+        "y": 5026.9765625
+      },
+      "selector": "locations"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(44, 24, 32)",
+        "fontFamily": "\"Playfair Display\", Georgia, serif",
+        "fontSize": "36px",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "letterSpacing": "-1.8px",
+        "lineHeight": "40.32px",
+        "padding": "0px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 5153.046875,
+        "height": 80.625,
+        "left": 97.15625,
+        "right": 514.7890625,
+        "top": 5072.421875,
+        "width": 417.6328125,
+        "x": 97.15625,
+        "y": 5072.421875
+      },
+      "selector": "H2"
+    },
+    {
+      "css": {
+        "backgroundColor": "rgb(41, 27, 32)",
+        "color": "rgb(230, 218, 215)",
+        "fontFamily": "\"DM Sans\", Arial, sans-serif",
+        "fontSize": "15px",
+        "gap": "30px",
+        "gridTemplateColumns": "387.148px 387.148px 387.148px",
+        "letterSpacing": "normal",
+        "lineHeight": "24.75px",
+        "padding": "50px 83.2734px 25px",
+        "position": "static"
+      },
+      "rect": {
+        "bottom": 5511.0078125,
+        "height": 224.9453125,
+        "left": 0,
+        "right": 1388,
+        "top": 5286.0625,
+        "width": 1388,
+        "x": 0,
+        "y": 5286.0625
+      },
+      "selector": "FOOTER"
+    }
+  ]
+}
