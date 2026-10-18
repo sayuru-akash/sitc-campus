@@ -4,6 +4,7 @@ import { StructuredData } from '@/components/structured-data';
 import { SiteFooter } from '@/components/site-footer';
 import { Hero, Highlights } from '@/components/sections/hero';
 import { ProgrammeExplorer } from '@/components/sections/programme-explorer';
+import { Leadership } from '@/components/sections/leadership';
 import { Experience } from '@/components/sections/experience';
 import { Pathway } from '@/components/sections/pathway';
 import { StudentResources } from '@/components/sections/student-resources';
@@ -19,6 +20,7 @@ export default function Home() {
         <Highlights />
         <ProgrammeExplorer />
         <Experience />
+        <Leadership />
         <Pathway />
         <StudentResources />
         <FAQ />

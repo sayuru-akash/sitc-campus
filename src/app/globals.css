@@ -1213,3 +1213,459 @@
     }
   }
 }
+
+@layer components {
+  .leadership {
+    padding: 90px 6% 0;
+  }
+  .leadership-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid #c6ad8d;
+    margin-bottom: 42px;
+  }
+  .leadership-toolbar > p {
+    color: #856132;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin-bottom: 0;
+    padding: 17px 0;
+  }
+  .leadership-tabs {
+    display: flex;
+    align-self: stretch;
+    gap: 24px;
+  }
+  .leadership-tabs button {
+    background: transparent;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    color: var(--dark);
+    padding: 15px 9px;
+    font-size: 13px;
+  }
+  .leadership-tabs button[aria-selected='true'] {
+    color: var(--wine);
+    border-bottom-color: var(--wine);
+    font-weight: 600;
+  }
+  .leadership-tabs button:hover {
+    color: #956e3b;
+  }
+  .leadership-panel[hidden] {
+    display: none;
+  }
+  .leadership-panel {
+    outline-offset: 8px;
+  }
+  .vc-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 284px) minmax(0, 1fr);
+    gap: 60px;
+    align-items: start;
+  }
+  .vc-portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 960 / 1124;
+    overflow: hidden;
+    background: #e9dfcf;
+  }
+  .vc-portrait-source {
+    position: absolute;
+    width: 164.895833%;
+    height: auto;
+    max-width: none;
+    left: -32.5%;
+    top: -38.523132%;
+    display: block;
+  }
+  .vc-profile-copy h2 {
+    font-size: clamp(28px, 2.7vw, 38px);
+    letter-spacing: -1.1px;
+    color: #9b7644;
+    line-height: 1.3;
+    margin-bottom: 18px;
+  }
+  .vc-profile-copy .vc-name {
+    color: var(--wine);
+    font-family: var(--font-playfair), Georgia, serif;
+    font-size: clamp(34px, 3.35vw, 49px);
+    font-weight: 500;
+    line-height: 1.13;
+    letter-spacing: -1.2px;
+    margin: 0 0 17px;
+  }
+  .vc-name > span {
+    display: block;
+  }
+  .vc-role {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    color: var(--wine);
+    margin: 0 0 25px;
+  }
+  .vc-summary p {
+    font-size: 14px;
+    color: #65595d;
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+  .vc-research {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    margin-top: 25px;
+    border-top: 1px solid #c6ad8d;
+    padding-top: 20px;
+  }
+  .vc-research > div {
+    padding: 0 20px;
+    border-right: 1px solid #c6ad8d;
+  }
+  .vc-research > div:first-child {
+    padding-left: 0;
+  }
+  .vc-research > div:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .vc-research strong {
+    font-family: var(--font-playfair), Georgia, serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--wine);
+    line-height: 1.1;
+    display: block;
+  }
+  .vc-research span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .vc-research-date {
+    font-size: 10px;
+    color: var(--muted);
+    padding-top: 17px;
+    margin-bottom: 0;
+  }
+  .vc-biography {
+    margin-top: 35px;
+    border-top: 1px solid #c6ad8d;
+    border-bottom: 1px solid #c6ad8d;
+    padding: 0;
+  }
+  .vc-biography > summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    font-family: var(--font-playfair), Georgia, serif;
+    font-weight: 500;
+    color: var(--wine);
+    font-size: 22px;
+    list-style: none;
+  }
+  .vc-biography > summary::-webkit-details-marker {
+    display: none;
+  }
+  .vc-biography > summary > span {
+    font-family: var(--font-dm-sans), Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 400;
+    transition: transform 200ms ease;
+  }
+  .vc-biography[open] > summary > span {
+    transform: rotate(45deg);
+  }
+  .vc-biography > div {
+    max-width: 950px;
+    padding: 0 0 25px;
+  }
+  .vc-biography p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #65595d;
+    margin: 0 0 18px;
+    padding: 0;
+  }
+  .vc-message {
+    margin-top: 65px;
+    background: #eee9df;
+    display: grid;
+    grid-template-columns: 0.85fr 1.7fr;
+    gap: 65px;
+    padding: 55px 50px;
+  }
+  .vc-message-intro h2 {
+    font-size: clamp(32px, 3vw, 44px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    color: var(--wine);
+    margin: 0 0 30px;
+  }
+  .vc-message-intro blockquote {
+    border-top: 1px solid #b99661;
+    padding-top: 30px;
+    font-family: var(--font-playfair), Georgia, serif;
+    font-size: clamp(25px, 2.5vw, 36px);
+    line-height: 1.35;
+    font-style: italic;
+    color: var(--wine);
+    margin: 0;
+  }
+  .vc-letter p {
+    color: #514348;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+  }
+  .vc-letter .vc-salutation {
+    color: var(--dark);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .vc-signature {
+    display: flex;
+    flex-direction: column;
+    color: #514348;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-top: 30px;
+  }
+  .vc-signature::before {
+    content: '';
+    display: block;
+    width: 65px;
+    border-top: 1px solid #b99661;
+    margin-bottom: 18px;
+  }
+  .vc-signature > strong {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--wine);
+  }
+  .leadership [lang='si'] {
+    font-family: var(--font-sinhala), var(--font-dm-sans), sans-serif;
+    letter-spacing: 0;
+  }
+  .leadership [lang='ta'] {
+    font-family: var(--font-tamil), var(--font-dm-sans), sans-serif;
+    letter-spacing: 0;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta'])
+    :is(h2, h3, summary, blockquote) {
+    font-family: inherit;
+    letter-spacing: 0;
+    font-style: normal;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-profile-copy h2 {
+    font-size: 27px;
+    line-height: 1.7;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-name {
+    font-size: 29px;
+    line-height: 1.65;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-role {
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-summary p {
+    font-size: 13px;
+    line-height: 2;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-research span {
+    letter-spacing: 0;
+    font-size: 10px;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-biography summary {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-biography p {
+    font-size: 13px;
+    line-height: 2.1;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-message-intro h2 {
+    font-size: 29px;
+    line-height: 1.65;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-message-intro blockquote {
+    font-size: 22px;
+    line-height: 1.8;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-letter p {
+    font-size: 13px;
+    line-height: 2.1;
+  }
+  .leadership-panel:is([lang='si'], [lang='ta']) .vc-signature {
+    line-height: 2.1;
+  }
+
+  @media (max-width: 1000px) {
+    .leadership {
+      padding-top: 65px;
+    }
+    .vc-profile {
+      gap: 35px;
+      grid-template-columns: minmax(0, 205px) minmax(0, 1fr);
+      align-items: start;
+    }
+    .vc-profile-copy .vc-name {
+      font-size: 32px;
+    }
+    .vc-summary p {
+      font-size: 13px;
+    }
+    .vc-research > div {
+      padding-inline: 12px;
+    }
+    .vc-research strong {
+      font-size: 31px;
+    }
+    .vc-message {
+      gap: 35px;
+      padding: 40px 30px;
+      grid-template-columns: 0.85fr 1.4fr;
+    }
+    .vc-message-intro h2 {
+      font-size: 31px;
+    }
+    .vc-message-intro blockquote {
+      font-size: 25px;
+    }
+    .vc-letter p {
+      font-size: 13px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-name {
+      font-size: 24px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-profile-copy h2 {
+      font-size: 23px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-message-intro h2 {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 640px) {
+    .leadership {
+      padding: 55px 7% 0;
+    }
+    .leadership-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 30px;
+    }
+    .leadership-toolbar > p {
+      font-size: 10px;
+      padding: 0 0 14px;
+    }
+    .leadership-tabs {
+      align-self: stretch;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .leadership-tabs button {
+      padding: 10px 8px;
+      font-size: 12px;
+    }
+    .vc-profile {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .vc-portrait {
+      width: 168px;
+    }
+    .vc-profile-copy h2 {
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+    .vc-profile-copy .vc-name {
+      font-size: 35px;
+      line-height: 1.2;
+    }
+    .vc-role {
+      font-size: 11px;
+      margin-bottom: 20px;
+    }
+    .vc-summary p {
+      font-size: 13px;
+    }
+    .vc-research {
+      margin-top: 22px;
+    }
+    .vc-research strong {
+      font-size: 33px;
+    }
+    .vc-research span {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+    }
+    .vc-research-date {
+      font-size: 9px;
+    }
+    .vc-biography {
+      margin-top: 30px;
+    }
+    .vc-biography > summary {
+      font-size: 18px;
+      padding: 17px 0;
+    }
+    .vc-biography p {
+      font-size: 13px;
+    }
+    .vc-message {
+      margin: 40px -4% 0;
+      padding: 32px 7%;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .vc-message-intro h2 {
+      font-size: 31px;
+      margin-bottom: 23px;
+    }
+    .vc-message-intro blockquote {
+      font-size: 25px;
+      line-height: 1.5;
+      padding-top: 22px;
+    }
+    .vc-letter p {
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .vc-signature {
+      font-size: 11px;
+    }
+    .vc-signature > strong {
+      font-size: 13px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-profile-copy h2 {
+      font-size: 23px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-name {
+      font-size: 26px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-message-intro h2 {
+      font-size: 26px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta'])
+      .vc-message-intro
+      blockquote {
+      font-size: 19px;
+    }
+    .leadership-panel:is([lang='si'], [lang='ta']) .vc-biography summary {
+      font-size: 14px;
+    }
+  }
+}

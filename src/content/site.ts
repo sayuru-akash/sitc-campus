@@ -120,6 +120,7 @@ export const socialLinks = [
 export const footerLinks = {
   explore: [
     { label: 'About SITC', href: site.about },
+    { label: 'Vice Chancellor', href: '#leadership' },
     { label: 'Academic programmes', href: '#programmes' },
     { label: 'Academic partners', href: site.academicPartners },
     { label: 'News', href: 'https://sitc.lk/news/' },

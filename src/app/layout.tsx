@@ -23,6 +23,20 @@ const serif = localFont({
   variable: '--font-playfair',
   display: 'swap',
 });
+const sinhala = localFont({
+  src: '../../public/fonts/noto-sans-sinhala.woff2',
+  weight: '100 900',
+  variable: '--font-sinhala',
+  display: 'swap',
+  preload: false,
+});
+const tamil = localFont({
+  src: '../../public/fonts/noto-sans-tamil.woff2',
+  weight: '100 900',
+  variable: '--font-tamil',
+  display: 'swap',
+  preload: false,
+});
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3100',
@@ -49,7 +63,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${serif.variable} ${sinhala.variable} ${tamil.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
