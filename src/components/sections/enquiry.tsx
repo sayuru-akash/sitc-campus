@@ -25,7 +25,9 @@ export function Enquiry() {
     if (!form.reportValidity()) return;
 
     const data = new FormData(form);
-    const programme = programmes.find((item) => item.id === data.get('interest'));
+    const programme = programmes.find(
+      (item) => item.id === data.get('interest'),
+    );
     const url = buildWhatsAppEnquiryUrl({
       name: String(data.get('name') ?? ''),
       interest: programme ? programmeLabel(programme) : '',
@@ -41,13 +43,15 @@ export function Enquiry() {
       <div>
         <Eyebrow>LET&apos;S TALK ABOUT YOUR FUTURE</Eyebrow>
         <h2 id="enquiry-heading">
-          Your next step<br />
-          starts with<br />
+          Your next step
+          <br />
+          starts with
+          <br />
           <em>a conversation.</em>
         </h2>
         <p>
-          Tell us what you would like to study. Continue on WhatsApp to speak with
-          the SITC admissions team.
+          Tell us what you would like to study. Continue on WhatsApp to speak
+          with the SITC admissions team.
         </p>
         <a href={site.telephoneHref}>{site.telephone}</a>
         <br />
@@ -83,7 +87,11 @@ export function Enquiry() {
         </label>
         <label htmlFor="qualification">
           Highest qualification
-          <select id="qualification" name="qualification" defaultValue="G.C.E. O/L">
+          <select
+            id="qualification"
+            name="qualification"
+            defaultValue="G.C.E. O/L"
+          >
             <option>G.C.E. O/L</option>
             <option>G.C.E. A/L</option>
             <option>Diploma / Higher Diploma</option>
@@ -100,10 +108,12 @@ export function Enquiry() {
             placeholder="Study mode, fees, entry requirements..."
           />
         </label>
-        <button className="button" type="submit">Continue on WhatsApp ↗</button>
+        <button className="button" type="submit">
+          Continue on WhatsApp ↗
+        </button>
         <p className="form-note">
-          This opens WhatsApp with your enquiry ready to send. Your details are not
-          stored on this website.
+          This opens WhatsApp with your enquiry ready to send. Your details are
+          not stored on this website.
         </p>
       </form>
     </section>

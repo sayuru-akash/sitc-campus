@@ -18,6 +18,20 @@ export const navigation = [
   { label: 'Contact', href: '#contact' },
 ] as const;
 export const locations = [
-  {id:'colombo', name:'Colombo', address:['World Trade Center','Level 26, East Tower','Colombo 01, Sri Lanka'], mapQuery:'World Trade Center Colombo'},
-  {id:'gampola', name:'Gampola', address:['No. 285, Hospital Road','Gampola','Sri Lanka'], mapQuery:'285 Hospital Road Gampola'},
+  {
+    id: 'colombo',
+    name: 'Colombo',
+    address: [
+      'World Trade Center',
+      'Level 26, East Tower',
+      'Colombo 01, Sri Lanka',
+    ],
+    mapQuery: 'World Trade Center Colombo',
+  },
+  {
+    id: 'gampola',
+    name: 'Gampola',
+    address: ['No. 285, Hospital Road', 'Gampola', 'Sri Lanka'],
+    mapQuery: '285 Hospital Road Gampola',
+  },
 ] as const satisfies readonly CampusLocation[];

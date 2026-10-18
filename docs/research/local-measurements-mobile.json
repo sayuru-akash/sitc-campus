@@ -1,0 +1,1309 @@
+{
+  "elements": [
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "9px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "32.8438px",
+        "lineHeight": "14.85px",
+        "margin": "0px",
+        "padding": "9px 19.5px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 32.84375,
+        "height": 32.84375,
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "selector": "top",
+      "text": "Colombo · Gampola · Connected to the worldStudent portal ↗"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "80px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "0px 19.5px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 112.84375,
+        "height": 80,
+        "left": 0,
+        "right": 390,
+        "top": 32.84375,
+        "width": 390,
+        "x": 0,
+        "y": 32.84375
+      },
+      "selector": "HEADER",
+      "text": "☰ProgrammesWhy SITCYour pathwayContactEnquire now ↗"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "1000.46px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "0px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 1113.3046875,
+        "height": 1000.4609375,
+        "left": 0,
+        "right": 390,
+        "top": 112.84375,
+        "width": 390,
+        "x": 0,
+        "y": 112.84375
+      },
+      "selector": "hero",
+      "text": "SITC CAMPUS · SRI LANKAYour ambition.Our commitment.A world of possibi"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "630.461px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "48px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 743.3046875,
+        "height": 630.4609375,
+        "left": 0,
+        "right": 390,
+        "top": 112.84375,
+        "width": 390,
+        "x": 0,
+        "y": 112.84375
+      },
+      "selector": "hero-copy",
+      "text": "SITC CAMPUS · SRI LANKAYour ambition.Our commitment.A world of possibi"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "268.789px",
+        "lineHeight": "53.76px",
+        "margin": "0px 0px 26px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 470.1328125,
+        "height": 268.7890625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 201.34375,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 201.34375
+      },
+      "selector": "H1",
+      "text": "Your ambition.Our commitment.A world of possibility."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "69.2812px",
+        "lineHeight": "23.1px",
+        "margin": "0px 0px 14px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 565.4140625,
+        "height": 69.28125,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 496.1328125,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 496.1328125
+      },
+      "selector": "intro",
+      "text": "Take your next step with purpose. Discover education that connects you"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "370px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "0px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 1113.3046875,
+        "height": 370,
+        "left": 0,
+        "right": 390,
+        "top": 743.3046875,
+        "width": 390,
+        "x": 0,
+        "y": 743.3046875
+      },
+      "selector": "hero-image",
+      "text": "KNOWLEDGE. OPPORTUNITY. PROGRESS.Your next chapterstarts here.SITCEST."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "15px",
+        "height": "144.281px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "22px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 1257.5859375,
+        "height": 144.28125,
+        "left": 0,
+        "right": 390,
+        "top": 1113.3046875,
+        "width": 390,
+        "x": 0,
+        "y": 1113.3046875
+      },
+      "selector": "ribbon",
+      "text": "Since 2005A commitment to educationFrom diploma to degreeExplore your "
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "3423.16px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "60px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 4680.75,
+        "height": 3423.1640625,
+        "left": 0,
+        "right": 390,
+        "top": 1257.5859375,
+        "width": 390,
+        "x": 0,
+        "y": 1257.5859375
+      },
+      "selector": "section",
+      "text": "FIND YOUR DIRECTIONBig ambitions.The right starting point.Explore a fi"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "80.625px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 1438.7109375,
+        "height": 80.625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 1358.0859375,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 1358.0859375
+      },
+      "selector": "H2",
+      "text": "Big ambitions.The right starting point."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "5px",
+        "height": "114.242px",
+        "lineHeight": "24.75px",
+        "margin": "20px 0px 30px",
+        "padding": "0px 0px 15px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 1677.2890625,
+        "height": 114.2421875,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 1563.046875,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 1563.046875
+      },
+      "selector": "filterbar",
+      "text": "All programmesDiplomasDegrees"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 1983.6796875,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 1707.2890625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 1707.2890625
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗Psychology & CounsellingExplore human behaviour, wellbeing and"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 1845.2890625,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 1782.7890625,
+        "width": 260,
+        "x": 56.296875,
+        "y": 1782.7890625
+      },
+      "selector": "H3",
+      "text": "Psychology & Counselling"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 2280.0703125,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 2003.6796875,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 2003.6796875
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗Information TechnologyBuild a foundation in computing and the "
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 2141.6796875,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 2079.1796875,
+        "width": 260,
+        "x": 56.296875,
+        "y": 2079.1796875
+      },
+      "selector": "H3",
+      "text": "Information Technology"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "245.141px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 2545.2109375,
+        "height": 245.140625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 2300.0703125,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 2300.0703125
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗Business ManagementDiscover the principles that shape organisa"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "31.25px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 2406.8203125,
+        "height": 31.25,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 2375.5703125,
+        "width": 260,
+        "x": 56.296875,
+        "y": 2375.5703125
+      },
+      "selector": "H3",
+      "text": "Business Management"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 2841.6015625,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 2565.2109375,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 2565.2109375
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗HRM & AdministrationDevelop your understanding of people, work"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 2703.2109375,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 2640.7109375,
+        "width": 260,
+        "x": 56.296875,
+        "y": 2640.7109375
+      },
+      "selector": "H3",
+      "text": "HRM & Administration"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "245.141px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 3106.7421875,
+        "height": 245.140625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 2861.6015625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 2861.6015625
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗EnglishStrengthen your language skills for study, work and eve"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "31.25px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 2968.3515625,
+        "height": 31.25,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 2937.1015625,
+        "width": 260,
+        "x": 56.296875,
+        "y": 2937.1015625
+      },
+      "selector": "H3",
+      "text": "English"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 3403.1328125,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 3126.7421875,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 3126.7421875
+      },
+      "selector": "card",
+      "text": "DIPLOMA↗Tamil as a Second LanguageConnect with more people through lan"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 3264.7421875,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 3202.2421875,
+        "width": 260,
+        "x": 56.296875,
+        "y": 3202.2421875
+      },
+      "selector": "H3",
+      "text": "Tamil as a Second Language"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 3699.5234375,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 3423.1328125,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 3423.1328125
+      },
+      "selector": "card",
+      "text": "DEGREE↗BSc in Psychology & CounsellingTake the next academic step in p"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 3561.1328125,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 3498.6328125,
+        "width": 260,
+        "x": 56.296875,
+        "y": 3498.6328125
+      },
+      "selector": "H3",
+      "text": "BSc in Psychology & Counselling"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 3995.9140625,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 3719.5234375,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 3719.5234375
+      },
+      "selector": "card",
+      "text": "DEGREE↗BSc in HRM & Business StrategyExplore people management alongsi"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 3857.5234375,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 3795.0234375,
+        "width": 260,
+        "x": 56.296875,
+        "y": 3795.0234375
+      },
+      "selector": "H3",
+      "text": "BSc in HRM & Business Strategy"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "276.391px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 4292.3046875,
+        "height": 276.390625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 4015.9140625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 4015.9140625
+      },
+      "selector": "card",
+      "text": "DEGREE↗BSc in Business ManagementDevelop your knowledge of management "
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "62.5px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 4153.9140625,
+        "height": 62.5,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 4091.4140625,
+        "width": 260,
+        "x": 56.296875,
+        "y": 4091.4140625
+      },
+      "selector": "H3",
+      "text": "BSc in Business Management"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "230px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "28px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 4542.3046875,
+        "height": 230,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 4312.3046875,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 4312.3046875
+      },
+      "selector": "card",
+      "text": "DEGREE↗BA in EnglishExplore undergraduate study in English.Explore thi"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "25px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "31.25px",
+        "lineHeight": "31.25px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "260px"
+      },
+      "rect": {
+        "bottom": 4419.0546875,
+        "height": 31.25,
+        "left": 56.296875,
+        "right": 316.296875,
+        "top": 4387.8046875,
+        "width": 260,
+        "x": 56.296875,
+        "y": 4387.8046875
+      },
+      "selector": "H3",
+      "text": "BA in English"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "35px",
+        "height": "815.453px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "50px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 5496.203125,
+        "height": 815.453125,
+        "left": 0,
+        "right": 390,
+        "top": 4680.75,
+        "width": 390,
+        "x": 0,
+        "y": 4680.75
+      },
+      "selector": "experience",
+      "text": "THE SITC EXPERIENCEEducation withyou at the centre.For the school leav"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "80.625px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 4851.875,
+        "height": 80.625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 4771.25,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 4771.25
+      },
+      "selector": "H2",
+      "text": "Education withyou at the centre."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "24.2969px",
+        "lineHeight": "24.3px",
+        "margin": "0px 0px 10px",
+        "padding": "0px",
+        "width": "286.406px"
+      },
+      "rect": {
+        "bottom": 5057.6015625,
+        "height": 24.296875,
+        "left": 76.296875,
+        "right": 362.703125,
+        "top": 5033.3046875,
+        "width": 286.40625,
+        "x": 76.296875,
+        "y": 5033.3046875
+      },
+      "selector": "H3",
+      "text": "Learn with purpose"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "24.2969px",
+        "lineHeight": "24.3px",
+        "margin": "0px 0px 10px",
+        "padding": "0px",
+        "width": "283.438px"
+      },
+      "rect": {
+        "bottom": 5203.234375,
+        "height": 24.296875,
+        "left": 79.265625,
+        "right": 362.703125,
+        "top": 5178.9375,
+        "width": 283.4375,
+        "x": 79.265625,
+        "y": 5178.9375
+      },
+      "selector": "H3",
+      "text": "A pathway that fits your goals"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "24.2969px",
+        "lineHeight": "24.3px",
+        "margin": "0px 0px 10px",
+        "padding": "0px",
+        "width": "283.594px"
+      },
+      "rect": {
+        "bottom": 5348.8671875,
+        "height": 24.296875,
+        "left": 79.109375,
+        "right": 362.703125,
+        "top": 5324.5703125,
+        "width": 283.59375,
+        "x": 79.109375,
+        "y": 5324.5703125
+      },
+      "selector": "H3",
+      "text": "Stay connected to your learning"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "normal",
+        "height": "761.734px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "60px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 6257.9375,
+        "height": 761.734375,
+        "left": 0,
+        "right": 390,
+        "top": 5496.203125,
+        "width": 390,
+        "x": 0,
+        "y": 5496.203125
+      },
+      "selector": "section pathway",
+      "text": "YOUR JOURNEY, ONE STEP AT A TIMEA clear path forward.01 / EXPLOREFind "
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "40.3125px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 5637.015625,
+        "height": 40.3125,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 5596.703125,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 5596.703125
+      },
+      "selector": "H2",
+      "text": "A clear path forward."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "27px",
+        "lineHeight": "27px",
+        "margin": "18px 0px 12px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 5762.765625,
+        "height": 27,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 5735.765625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 5735.765625
+      },
+      "selector": "H3",
+      "text": "Find your field"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "27px",
+        "lineHeight": "27px",
+        "margin": "18px 0px 12px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 5946.40625,
+        "height": 27,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 5919.40625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 5919.40625
+      },
+      "selector": "H3",
+      "text": "Make a plan"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "27px",
+        "lineHeight": "27px",
+        "margin": "18px 0px 12px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 6130.046875,
+        "height": 27,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 6103.046875,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 6103.046875
+      },
+      "selector": "H3",
+      "text": "Start your next chapter"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "35px",
+        "height": "453.375px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "50px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 6711.3125,
+        "height": 453.375,
+        "left": 0,
+        "right": 390,
+        "top": 6257.9375,
+        "width": 390,
+        "x": 0,
+        "y": 6257.9375
+      },
+      "selector": "student",
+      "text": "ALREADY PART OF SITC?Your campus,one click away.Student portal ↗Certif"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "80.625px",
+        "lineHeight": "40.32px",
+        "margin": "0px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 6429.0625,
+        "height": 80.625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 6348.4375,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 6348.4375
+      },
+      "selector": "H2",
+      "text": "Your campus,one click away."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "35px",
+        "height": "583.688px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "50px 27.2969px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 7295,
+        "height": 583.6875,
+        "left": 0,
+        "right": 390,
+        "top": 6711.3125,
+        "width": 390,
+        "x": 0,
+        "y": 6711.3125
+      },
+      "selector": "section faq",
+      "text": "A LITTLE CLARITYBefore youtake the next step.How do I choose the right"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "80.625px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 6882.4375,
+        "height": 80.625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 6801.8125,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 6801.8125
+      },
+      "selector": "H2",
+      "text": "Before youtake the next step."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "35px",
+        "height": "904.594px",
+        "lineHeight": "24.75px",
+        "margin": "0px 15.5938px 55px",
+        "padding": "50px 27.2969px",
+        "width": "358.812px"
+      },
+      "rect": {
+        "bottom": 8199.59375,
+        "height": 904.59375,
+        "left": 15.59375,
+        "right": 374.40625,
+        "top": 7295,
+        "width": 358.8125,
+        "x": 15.59375,
+        "y": 7295
+      },
+      "selector": "enquire",
+      "text": "LET'S TALK ABOUT YOUR FUTUREYour next stepstarts witha conversation.Te"
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "120.938px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "304.219px"
+      },
+      "rect": {
+        "bottom": 7506.4375,
+        "height": 120.9375,
+        "left": 42.890625,
+        "right": 347.109375,
+        "top": 7385.5,
+        "width": 304.21875,
+        "x": 42.890625,
+        "y": 7385.5
+      },
+      "selector": "H2",
+      "text": "Your next stepstarts witha conversation."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "20px",
+        "height": "362.562px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "0px 27.2969px 50px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 8617.15625,
+        "height": 362.5625,
+        "left": 0,
+        "right": 390,
+        "top": 8254.59375,
+        "width": 390,
+        "x": 0,
+        "y": 8254.59375
+      },
+      "selector": "locations",
+      "text": "COME FIND USConnected.Wherever you are.ColomboWorld Trade CenterLevel "
+    },
+    {
+      "css": {
+        "fontFamily": "\"serif\", \"serif Fallback\", Georgia, serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "gap": "normal",
+        "height": "80.625px",
+        "lineHeight": "40.32px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "width": "335.406px"
+      },
+      "rect": {
+        "bottom": 8379.015625,
+        "height": 80.625,
+        "left": 27.296875,
+        "right": 362.703125,
+        "top": 8298.390625,
+        "width": 335.40625,
+        "x": 27.296875,
+        "y": 8298.390625
+      },
+      "selector": "H2",
+      "text": "Connected.Wherever you are."
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "27px",
+        "lineHeight": "27px",
+        "margin": "0px 0px 20px",
+        "padding": "0px",
+        "width": "157.703px"
+      },
+      "rect": {
+        "bottom": 8451.015625,
+        "height": 27,
+        "left": 27.296875,
+        "right": 185,
+        "top": 8424.015625,
+        "width": 157.703125,
+        "x": 27.296875,
+        "y": 8424.015625
+      },
+      "selector": "H3",
+      "text": "Colombo"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "gap": "normal",
+        "height": "27px",
+        "lineHeight": "27px",
+        "margin": "0px 0px 20px",
+        "padding": "0px",
+        "width": "157.703px"
+      },
+      "rect": {
+        "bottom": 8451.015625,
+        "height": 27,
+        "left": 205,
+        "right": 362.703125,
+        "top": 8424.015625,
+        "width": 157.703125,
+        "x": 205,
+        "y": 8424.015625
+      },
+      "selector": "H3",
+      "text": "Gampola"
+    },
+    {
+      "css": {
+        "fontFamily": "sans, \"sans Fallback\", Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "gap": "30px",
+        "height": "323.281px",
+        "lineHeight": "24.75px",
+        "margin": "0px",
+        "padding": "50px 23.3984px 25px",
+        "width": "390px"
+      },
+      "rect": {
+        "bottom": 8940.4375,
+        "height": 323.28125,
+        "left": 0,
+        "right": 390,
+        "top": 8617.15625,
+        "width": 390,
+        "x": 0,
+        "y": 8617.15625
+      },
+      "selector": "FOOTER",
+      "text": "SITC CAMPUSKnowledge that opens doors.Education that moves you forward"
+    }
+  ],
+  "scrollY": 0,
+  "viewport": {
+    "height": 844,
+    "width": 390
+  }
+}

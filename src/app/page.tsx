@@ -10,19 +10,21 @@ import { FAQ } from '@/components/sections/faq';
 import { Enquiry } from '@/components/sections/enquiry';
 import { Locations } from '@/components/sections/locations';
 export default function Home() {
-  return <ProgrammeSelectionProvider>
-    <SiteHeader />
-    <main id="main-content">
-      <Hero />
-      <Highlights />
-      <ProgrammeExplorer />
-      <Experience />
-      <Pathway />
-      <StudentResources />
-      <FAQ />
-      <Enquiry />
-      <Locations />
-    </main>
-    <SiteFooter />
-  </ProgrammeSelectionProvider>;
+  return (
+    <ProgrammeSelectionProvider>
+      <SiteHeader />
+      <main id="main-content">
+        <Hero />
+        <Highlights />
+        <ProgrammeExplorer />
+        <Experience />
+        <Pathway />
+        <StudentResources />
+        <FAQ />
+        <Enquiry />
+        <Locations />
+      </main>
+      <SiteFooter />
+    </ProgrammeSelectionProvider>
+  );
 }

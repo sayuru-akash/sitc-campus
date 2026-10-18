@@ -21,22 +21,30 @@ export function ProgrammeExplorer() {
   const visibleProgrammes = programmes.filter(
     (programme) =>
       (activeFilter === 'All' || programme.level === activeFilter) &&
-      `${programme.title} ${programme.description}`.toLocaleLowerCase().includes(query),
+      `${programme.title} ${programme.description}`
+        .toLocaleLowerCase()
+        .includes(query),
   );
 
   return (
-    <section id="programmes" className="section" aria-labelledby="programmes-heading">
+    <section
+      id="programmes"
+      className="section"
+      aria-labelledby="programmes-heading"
+    >
       <div className="section-head">
         <div>
           <Eyebrow>FIND YOUR DIRECTION</Eyebrow>
           <h2 id="programmes-heading">
-            Big ambitions.<br />
+            Big ambitions.
+            <br />
             <em>The right starting point.</em>
           </h2>
         </div>
         <p>
-          Explore a field that inspires you. Our admissions team will help you confirm entry
-          requirements, available intakes, fees, and awarding arrangements.
+          Explore a field that inspires you. Our admissions team will help you
+          confirm entry requirements, available intakes, fees, and awarding
+          arrangements.
         </p>
       </div>
       <div className="filterbar">
@@ -77,11 +85,14 @@ export function ProgrammeExplorer() {
         ))}
       </div>
       {visibleProgrammes.length === 0 && (
-        <p id="empty" role="status">No programmes match your search. Try another subject.</p>
+        <p id="empty" role="status">
+          No programmes match your search. Try another subject.
+        </p>
       )}
       <p className="programme-note">
-        Programme availability and progression depend on entry qualifications and awarding-university
-        requirements. Ask admissions for the current programme specification.
+        Programme availability and progression depend on entry qualifications
+        and awarding-university requirements. Ask admissions for the current
+        programme specification.
       </p>
     </section>
   );
