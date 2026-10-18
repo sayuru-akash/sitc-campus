@@ -25,7 +25,7 @@ const serif = localFont({
 });
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3100',
   ),
   title: 'SITC Campus | A future with possibility',
   description:

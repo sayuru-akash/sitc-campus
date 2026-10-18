@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import campus from '../../../public/images/campus.jpg';
+import { HeroVideo } from '@/components/hero-video';
 import { ButtonLink } from '@/components/ui/button-link';
 import { Eyebrow } from '@/components/ui/eyebrow';
 export function Hero() {
@@ -30,29 +29,7 @@ export function Hero() {
           ඔබේ අනාගතයට නව ඇරඹුමක්.
         </p>
       </div>
-      <div className="hero-image">
-        <Image
-          src={campus}
-          alt="SITC Campus academic community"
-          fill
-          sizes="(max-width: 640px) 1040px, (max-width: 900px) 1600px, 1824px"
-          quality={90}
-          preload
-        />
-        <div className="photo-note">
-          <span>KNOWLEDGE. OPPORTUNITY. PROGRESS.</span>
-          <strong>
-            Your next chapter
-            <br />
-            starts here.
-          </strong>
-        </div>
-        <div className="seal" aria-label="SITC, established 2005">
-          SITC
-          <br />
-          <small>EST. 2005</small>
-        </div>
-      </div>
+      <HeroVideo />
     </section>
   );
 }

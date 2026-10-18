@@ -1,6 +1,6 @@
 # SITC Campus
 
-A faithful Next.js App Router and Tailwind CSS recreation of the supplied SITC Campus reference. Uses TypeScript, local fonts, optimized images, and small interactive client components. Most of the page is statically rendered on the server.
+A Next.js App Router and Tailwind CSS recreation of the supplied SITC Campus reference, with an expanded contact footer, trilingual branding, and the official campus video. Uses TypeScript, local fonts, optimized images, and small interactive client components. Most of the page is statically rendered on the server.
 
 ## Development
 
@@ -28,6 +28,9 @@ bun run start
 - `src/content/programmes.ts`: programme titles, descriptions, and qualification levels. Add a record to update both the explorer and the enquiry dropdown.
 - `src/content/site.ts`: navigation, locations, admissions contact information, and external links.
 - `src/content/faqs.ts`: FAQ questions and answers.
+- `src/content/campus-video.ts`: verified YouTube ID, source segment, title, date, and duration.
+- `src/components/hero-video.tsx`: deferred muted autoplay, poster fallback, playback controls, and off-screen pausing.
+- `src/components/structured-data.tsx`: education, address, contact, and video JSON-LD.
 - `src/app/globals.css`: Tailwind theme, shared components, exact reference measurements, and responsive breakpoints (900px and 640px).
 - `public/images/` and `public/fonts/`: original assets served locally.
 
@@ -37,4 +40,12 @@ bun run start
 
 The visual reference was inspected in Edge, including desktop, tablet, mobile navigation, filters, search, empty results, FAQs, and programme selection. `docs/research/` contains extracted evidence and source links. `docs/design-references/` contains the original screenshots.
 
-Official branding and Sri Lankan locations were verified against https://sitc.lk/. The UAE office is documented in `docs/research/SOURCES.md` but not added to the two-card reference layout. The certificate-verification link uses the official verification service. Font files come from the reference's DM Sans and Playfair Display Google Fonts stylesheet, with licenses in `public/fonts/`.
+Official contact details and three official locations were refreshed from https://sitc.lk/ and its contact page. The footer includes Colombo, Gampola, the UAE office in Sharjah, the user-supplied Kuala Lumpur address in Malaysia, all published support numbers, social channels, maps, appointments, and legal links. The header uses the supplied trilingual wordmark. The footer renders that exact image in white using a CSS filter, preserving every glyph. The certificate-verification link uses the official verification service. Font files come from the reference's DM Sans and Playfair Display Google Fonts stylesheet, with licenses in `public/fonts/`.
+
+## Campus video
+
+The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. A failed player keeps the original poster and an external watch link.
+
+Video metadata uses the verified public upload date and duration. Google may consider a decorative homepage video ineligible for video-rich results; adding schema does not guarantee video indexing. A production public origin is still required in `NEXT_PUBLIC_SITE_URL`.
+
+The original clone measurement JSON and `scripts/verify-layout.mjs` are archived baseline evidence. They do not assert that the intentionally redesigned header and footer still match the original.

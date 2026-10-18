@@ -1,5 +1,6 @@
 import { ProgrammeSelectionProvider } from '@/components/programme-selection';
 import { SiteHeader } from '@/components/site-header';
+import { StructuredData } from '@/components/structured-data';
 import { SiteFooter } from '@/components/site-footer';
 import { Hero, Highlights } from '@/components/sections/hero';
 import { ProgrammeExplorer } from '@/components/sections/programme-explorer';
@@ -8,10 +9,10 @@ import { Pathway } from '@/components/sections/pathway';
 import { StudentResources } from '@/components/sections/student-resources';
 import { FAQ } from '@/components/sections/faq';
 import { Enquiry } from '@/components/sections/enquiry';
-import { Locations } from '@/components/sections/locations';
 export default function Home() {
   return (
     <ProgrammeSelectionProvider>
+      <StructuredData />
       <SiteHeader />
       <main id="main-content">
         <Hero />
@@ -22,7 +23,6 @@ export default function Home() {
         <StudentResources />
         <FAQ />
         <Enquiry />
-        <Locations />
       </main>
       <SiteFooter />
     </ProgrammeSelectionProvider>

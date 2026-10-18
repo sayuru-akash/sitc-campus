@@ -1,4 +1,6 @@
-# Verification
+# Baseline clone verification
+
+Historical evidence for the initial clone. The header, footer, contact locations, and hero media have since been updated at the user's request. See `CONTACT-VIDEO-UPDATE.md` for current change evidence.
 
 Verified against the supplied reference using the connected Edge browser on 2026-10-19.
 

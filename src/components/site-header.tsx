@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { navigation, site } from '@/content/site';
 import { ButtonLink } from '@/components/ui/button-link';
-import logo from '../../public/images/sitc-logo.png';
+import logo from '../../public/images/sitc-wordmark.png';
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
@@ -12,17 +12,16 @@ export function SiteHeader() {
         Skip to content
       </a>
       <div className="top">
-        <span>Colombo · Gampola · Connected to the world</span>
         <a href={site.studentPortal}>Student portal ↗</a>
       </div>
-      <header>
+      <header className="site-header">
         <a className="brand" href="#" aria-label="SITC Campus">
           <Image
             src={logo}
             alt="SITC Campus"
-            width={175}
-            height={54}
-            sizes="(max-width: 640px) 145px, 175px"
+            width={420}
+            height={67}
+            sizes="(max-width: 640px) 72vw, (max-width: 1000px) 340px, 420px"
             className="h-auto"
             preload
           />
