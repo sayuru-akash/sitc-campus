@@ -92,6 +92,20 @@ export function SiteFooter({ compact = false }: { compact?: boolean }) {
         <small>
           © {new Date().getFullYear()} SITC Campus. All rights reserved.
         </small>
+        <small className="footer-credit">
+          Developed with{' '}
+          <span role="img" aria-label="love">
+            ❤️
+          </span>{' '}
+          by{' '}
+          <a
+            href="https://codezela.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Codezela Technologies
+          </a>
+        </small>
         <nav aria-label="Legal information">
           {footerLinks.legal.map((link) => (
             <a key={link.label} href={link.href}>

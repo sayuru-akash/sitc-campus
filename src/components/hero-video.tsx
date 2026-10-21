@@ -186,7 +186,7 @@ export function HeroVideo() {
         fill
         sizes="(max-width: 640px) 1040px, (max-width: 900px) 1600px, 1824px"
         quality={75}
-        preload
+        loading="eager"
       />
       <div
         className={`hero-video${hasPlayed && !failed ? ' is-ready' : ''}`}

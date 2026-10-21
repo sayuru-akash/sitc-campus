@@ -993,6 +993,9 @@
     min-height: 43px;
   }
   .footer-location-phones a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
     font-size: 12px;
   }
   .footer-location-actions {
@@ -1038,6 +1041,7 @@
     color: #bba0a9;
   }
   .footer-bottom {
+    flex-wrap: wrap;
     border-top: 1px solid #61434d;
     display: flex;
     justify-content: space-between;
@@ -1826,5 +1830,25 @@
     .home-news-all {
       gap: 20px;
     }
+  }
+}
+
+@layer components {
+  .footer-credit {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 4px;
+  }
+  .footer-credit > span {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .footer-credit > a {
+    color: #f6e8dc;
+    text-underline-offset: 4px;
+  }
+  .footer-credit > a:hover {
+    text-decoration: underline;
   }
 }

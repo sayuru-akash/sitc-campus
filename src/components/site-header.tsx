@@ -27,7 +27,7 @@ export function SiteHeader() {
             height={67}
             sizes="(max-width: 640px) 72vw, (max-width: 1000px) 340px, 420px"
             className="h-auto"
-            preload
+            loading="eager"
           />
         </Link>
         <button

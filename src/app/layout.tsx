@@ -6,7 +6,7 @@ const sans = localFont({
   src: '../../public/fonts/dm-sans.woff2',
   weight: '400 700',
   variable: '--font-dm-sans',
-  display: 'swap',
+  display: 'optional',
 });
 const serif = localFont({
   src: [
@@ -22,7 +22,7 @@ const serif = localFont({
     },
   ],
   variable: '--font-playfair',
-  display: 'swap',
+  display: 'optional',
 });
 const sinhala = localFont({
   src: '../../public/fonts/noto-sans-sinhala.woff2',
