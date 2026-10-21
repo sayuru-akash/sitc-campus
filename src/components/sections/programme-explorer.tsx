@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useProgrammeSelection } from '@/components/programme-selection';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { programmes } from '@/content/programmes';
@@ -13,7 +13,11 @@ const filters = [
 
 type ProgrammeFilter = (typeof filters)[number]['value'];
 
-export function ProgrammeExplorer() {
+export function ProgrammeExplorer({
+  catalogue = false,
+}: {
+  catalogue?: boolean;
+}) {
   const [activeFilter, setActiveFilter] = useState<ProgrammeFilter>('All');
   const [search, setSearch] = useState('');
   const { selectProgramme } = useProgrammeSelection();
@@ -30,23 +34,25 @@ export function ProgrammeExplorer() {
     <section
       id="programmes"
       className="section"
-      aria-labelledby="programmes-heading"
+      aria-labelledby={catalogue ? 'page-heading' : 'programmes-heading'}
     >
-      <div className="section-head">
-        <div>
-          <Eyebrow>FIND YOUR DIRECTION</Eyebrow>
-          <h2 id="programmes-heading">
-            Big ambitions.
-            <br />
-            <em>The right starting point.</em>
-          </h2>
+      {!catalogue && (
+        <div className="section-head">
+          <div>
+            <Eyebrow>FIND YOUR DIRECTION</Eyebrow>
+            <h2 id="programmes-heading">
+              Big ambitions.
+              <br />
+              <em>The right starting point.</em>
+            </h2>
+          </div>
+          <p>
+            Explore a field that inspires you. Our admissions team will help you
+            confirm entry requirements, available intakes, fees, and awarding
+            arrangements.
+          </p>
         </div>
-        <p>
-          Explore a field that inspires you. Our admissions team will help you
-          confirm entry requirements, available intakes, fees, and awarding
-          arrangements.
-        </p>
-      </div>
+      )}
       <div className="filterbar">
         <div className="filters" role="group" aria-label="Programme level">
           {filters.map((filter) => (
@@ -58,6 +64,18 @@ export function ProgrammeExplorer() {
               onClick={() => setActiveFilter(filter.value)}
             >
               {filter.label}
+              {catalogue && (
+                <span className="filter-count">
+                  {' '}
+                  (
+                  {filter.value === 'All'
+                    ? programmes.length
+                    : programmes.filter(
+                        (programme) => programme.level === filter.value,
+                      ).length}
+                  )
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -70,18 +88,32 @@ export function ProgrammeExplorer() {
         />
       </div>
       <div id="cards" className="cards">
-        {visibleProgrammes.map((programme) => (
-          <article key={programme.id} className="card">
-            <div className="card-top">
-              <span>{programme.level.toUpperCase()}</span>
-              <span aria-hidden="true">↗</span>
-            </div>
-            <h3>{programme.title}</h3>
-            <p>{programme.description}</p>
-            <a href="#enquire" onClick={() => selectProgramme(programme.id)}>
-              Explore this pathway <span aria-hidden="true">→</span>
-            </a>
-          </article>
+        {visibleProgrammes.map((programme, index) => (
+          <Fragment key={programme.id}>
+            {catalogue &&
+              (index === 0 ||
+                visibleProgrammes[index - 1].level !== programme.level) && (
+                <h2 className="catalogue-group">
+                  {programme.level === 'Diploma'
+                    ? 'Diploma programmes'
+                    : 'Degree programmes'}
+                </h2>
+              )}
+            <article id={`programme-${programme.id}`} className="card">
+              <div className="card-top">
+                <span>{programme.level.toUpperCase()}</span>
+                <span aria-hidden="true">↗</span>
+              </div>
+              <h3>{programme.title}</h3>
+              <p>{programme.description}</p>
+              <a href="#enquire" onClick={() => selectProgramme(programme.id)}>
+                {catalogue
+                  ? 'Enquire about this programme'
+                  : 'Explore this pathway'}{' '}
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          </Fragment>
         ))}
       </div>
       {visibleProgrammes.length === 0 && (

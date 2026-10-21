@@ -10,15 +10,16 @@ export const site = {
   mainWebsite: 'https://sitc.lk/',
   studentPortal: 'https://portal.sitc.lk/',
   certificateVerification: 'https://verify.sitc.lk/',
-  academicPartners: 'https://sitc.lk/academic-direction-partner-institutes/',
-  about: 'https://sitc.lk/about-us/',
+  academicPartners: '/academic-direction-partner-institutes/',
+  about: '/about-us/',
 } as const;
 
 export const navigation = [
-  { label: 'Programmes', href: '#programmes' },
-  { label: 'Why SITC', href: '#experience' },
-  { label: 'Your pathway', href: '#pathway' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Programmes', href: '/academic-programmes/' },
+  { label: 'About', href: '/about-us/' },
+  { label: 'Partners', href: '/academic-direction-partner-institutes/' },
+  { label: 'News', href: '/news/' },
+  { label: 'Contact', href: '/contact-us/' },
 ] as const;
 
 export const locations = [
@@ -120,25 +121,23 @@ export const socialLinks = [
 export const footerLinks = {
   explore: [
     { label: 'About SITC', href: site.about },
-    { label: 'Vice Chancellor', href: '#leadership' },
-    { label: 'Academic programmes', href: '#programmes' },
+    { label: 'Vice Chancellor', href: '/#leadership' },
+    { label: 'Academic programmes', href: '/academic-programmes/' },
     { label: 'Academic partners', href: site.academicPartners },
-    { label: 'News', href: 'https://sitc.lk/news/' },
-    { label: 'Events', href: 'https://sitc.lk/events/' },
-    { label: 'Academic staff', href: 'https://sitc.lk/academic-staff/' },
+    { label: 'News', href: '/news/' },
   ],
   students: [
     { label: 'Student portal', href: site.studentPortal },
     { label: 'Verify a certificate', href: site.certificateVerification },
-    { label: 'Enquire about a programme', href: '#enquire' },
-    { label: 'Contact SITC', href: 'https://sitc.lk/contact-us/' },
+    { label: 'Enquire about a programme', href: '/contact-us/#enquire' },
+    { label: 'Contact SITC', href: '/contact-us/' },
   ],
   legal: [
-    { label: 'Privacy policy', href: 'https://sitc.lk/privacy-policy/' },
-    { label: 'Refund policy', href: 'https://sitc.lk/refund-policy/' },
+    { label: 'Privacy policy', href: '/privacy-policy/' },
+    { label: 'Refund policy', href: '/refund-policy/' },
     {
       label: 'Terms & conditions',
-      href: 'https://sitc.lk/terms-and-conditions/',
+      href: '/terms-and-conditions/',
     },
   ],
 } as const;

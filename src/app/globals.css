@@ -587,7 +587,7 @@
       font-size: 24px;
       color: var(--wine);
     }
-    nav {
+    .site-header nav {
       display: none;
       position: absolute;
       top: 117px;
@@ -598,7 +598,7 @@
       padding: 25px;
       box-shadow: rgba(0, 0, 0, 0.067) 0px 8px 15px;
     }
-    nav.open {
+    .site-header nav.open {
       display: flex;
       flex-direction: column;
     }
@@ -751,6 +751,11 @@
     position: relative;
     z-index: 10;
     gap: 28px;
+  }
+  .site-header nav a[aria-current='page'] {
+    color: var(--wine);
+    text-decoration: underline;
+    text-underline-offset: 8px;
   }
   .site-header .brand {
     display: block;

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import wordmark from '../../public/images/sitc-wordmark.png';
 import {
   footerLinks,
@@ -8,16 +9,12 @@ import {
 } from '@/content/site';
 import { Locations } from '@/components/sections/locations';
 
-export function SiteFooter() {
+export function SiteFooter({ compact = false }: { compact?: boolean }) {
   return (
     <footer id="contact" className="site-footer">
       <div className="footer-main">
         <div className="footer-identity">
-          <a
-            href="#"
-            className="footer-logo"
-            aria-label="SITC Campus, back to top"
-          >
+          <Link href="/" className="footer-logo" aria-label="SITC Campus home">
             <Image
               src={wordmark}
               alt="Science and Information Technology City Campus, Sri Lanka, in Sinhala, Tamil and English"
@@ -26,7 +23,7 @@ export function SiteFooter() {
               sizes="(max-width: 640px) 86vw, 520px"
               className="footer-wordmark"
             />
-          </a>
+          </Link>
           <p className="footer-tagline">
             Knowledge that opens doors.
             <br />
@@ -71,24 +68,26 @@ export function SiteFooter() {
           ))}
         </nav>
       </div>
-      <Locations />
-      <section className="footer-support" aria-labelledby="support-heading">
-        <h2 id="support-heading" className="footer-kicker">
-          Speak to the right team
-        </h2>
-        <div className="footer-support-grid">
-          {supportChannels.map((channel) => (
-            <div key={channel.href}>
-              <span className="footer-support-label">{channel.label}</span>
-              <a href={channel.href}>
-                {channel.number}
-                <span aria-hidden="true">↗</span>
-              </a>
-              <span className="footer-contact-type">{channel.type}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      {!compact && <Locations />}
+      {!compact && (
+        <section className="footer-support" aria-labelledby="support-heading">
+          <h2 id="support-heading" className="footer-kicker">
+            Speak to the right team
+          </h2>
+          <div className="footer-support-grid">
+            {supportChannels.map((channel) => (
+              <div key={channel.href}>
+                <span className="footer-support-label">{channel.label}</span>
+                <a href={channel.href}>
+                  {channel.number}
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <span className="footer-contact-type">{channel.type}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       <div className="footer-bottom">
         <small>
           © {new Date().getFullYear()} SITC Campus. All rights reserved.

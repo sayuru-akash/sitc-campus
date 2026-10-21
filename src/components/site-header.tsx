@@ -1,11 +1,15 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useRef, useState } from 'react';
 import { navigation, site } from '@/content/site';
 import { ButtonLink } from '@/components/ui/button-link';
 import logo from '../../public/images/sitc-wordmark.png';
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const menuTrigger = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -15,7 +19,7 @@ export function SiteHeader() {
         <a href={site.studentPortal}>Student portal ↗</a>
       </div>
       <header className="site-header">
-        <a className="brand" href="#" aria-label="SITC Campus">
+        <Link className="brand" href="/" aria-label="SITC Campus home">
           <Image
             src={logo}
             alt="SITC Campus"
@@ -25,8 +29,9 @@ export function SiteHeader() {
             className="h-auto"
             preload
           />
-        </a>
+        </Link>
         <button
+          ref={menuTrigger}
           type="button"
           className="menu"
           aria-label="Toggle navigation"
@@ -41,15 +46,31 @@ export function SiteHeader() {
           aria-label="Main navigation"
           className={open ? 'open' : ''}
           onKeyDown={(event) => {
-            if (event.key === 'Escape') setOpen(false);
+            if (event.key === 'Escape') {
+              setOpen(false);
+              menuTrigger.current?.focus();
+            }
           }}
         >
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={
+                pathname.replace(/\/$/, '') === item.href.replace(/\/$/, '')
+                  ? 'page'
+                  : undefined
+              }
+              onClick={() => setOpen(false)}
+            >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <ButtonLink small href="#enquire" onClick={() => setOpen(false)}>
+          <ButtonLink
+            small
+            href={pathname === '/' ? '#enquire' : '/contact-us/#enquire'}
+            onClick={() => setOpen(false)}
+          >
             Enquire now ↗
           </ButtonLink>
         </nav>
