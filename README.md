@@ -11,7 +11,9 @@ bun install
 bun run dev
 ```
 
-Open http://localhost:3000. Before deployment, copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to the real public origin.
+Open http://localhost:3000. No environment variables are currently required. Canonical and sharing URLs intentionally use `https://sitc.lk/`, including in local previews; edit `src/content/seo.ts` only if the real canonical domain changes.
+
+For public staging, set `PREVENT_INDEXING=true` before building. Vercel preview deployments receive `noindex, nofollow` automatically. Production must use `PREVENT_INDEXING=false` (or leave it unset).
 
 ```sh
 bun run lint
@@ -29,6 +31,7 @@ bun run start
 - `src/content/site.ts`: navigation, locations, admissions contact information, and external links.
 - `src/content/faqs.ts`: FAQ questions and answers.
 - `src/content/campus-video.ts`: verified YouTube ID, source segment, title, date, and duration.
+- `src/content/seo.ts`: live homepage title, description, public URL, social preview, and site identity.
 - `src/content/leadership.ts`: English, Sinhala, and Tamil profile, biography, welcome message, and dated research figures.
 - `src/components/sections/leadership.tsx`: server-rendered Vice Chancellor profile and message, with a small accessible language switcher.
 - `src/components/hero-video.tsx`: deferred muted autoplay, poster fallback, playback controls, and off-screen pausing.
@@ -48,7 +51,13 @@ Official contact details and three official locations were refreshed from https:
 
 The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. A failed player keeps the original poster and an external watch link.
 
-Video metadata uses the verified public upload date and duration. Google may consider a decorative homepage video ineligible for video-rich results; adding schema does not guarantee video indexing. A production public origin is still required in `NEXT_PUBLIC_SITE_URL`.
+Video metadata uses the verified public upload date and duration. Google may consider a decorative homepage video ineligible for video-rich results; adding schema does not guarantee video indexing.
+
+## Homepage SEO and migration scope
+
+Homepage metadata preserves the live site's title, description, Open Graph identity, Twitter card, and sharing image as captured on 21 October 2026. The homepage has an explicit self-referencing canonical and indexable robots metadata. Homepage-specific fields live in `src/app/page.tsx`, so future pages and 404s do not inherit the homepage canonical. Structured data combines the existing education/contact/video information with linked WebSite, WebPage, and breadcrumb entities using stable public IDs.
+
+The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. The existing sitewide robots.txt, sitemap, other pages, feeds, tracking, WordPress forms, and media routes have not been migrated. This project is not yet a replacement for the whole live site. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
 
 The original clone measurement JSON and `scripts/verify-layout.mjs` are archived baseline evidence. They do not assert that the intentionally redesigned header and footer still match the original.
 

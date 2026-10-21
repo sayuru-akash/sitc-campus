@@ -1,5 +1,6 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
+import { homepageSeo } from '@/content/seo';
 import './globals.css';
 const sans = localFont({
   src: '../../public/fonts/dm-sans.woff2',
@@ -38,26 +39,15 @@ const tamil = localFont({
   preload: false,
 });
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3100',
-  ),
-  title: 'SITC Campus | A future with possibility',
-  description:
-    'Discover diploma, degree and postgraduate study pathways at SITC Campus, Sri Lanka. Explore programmes and connect with admissions.',
-  openGraph: {
-    title: 'SITC Campus | A future with possibility',
-    description: 'Explore programmes and connect with SITC Campus admissions.',
-    type: 'website',
-    locale: 'en_LK',
-    images: [
-      {
-        url: '/images/campus.jpg',
-        width: 1950,
-        height: 695,
-        alt: 'SITC Campus academic community',
-      },
-    ],
+  metadataBase: new URL(homepageSeo.url),
+  title: {
+    default: homepageSeo.siteName,
+    template: `%s - ${homepageSeo.siteName}`,
   },
+  icons: { apple: homepageSeo.appleIcon },
+};
+export const viewport: Viewport = {
+  themeColor: '#072C49',
 };
 export default function RootLayout({
   children,

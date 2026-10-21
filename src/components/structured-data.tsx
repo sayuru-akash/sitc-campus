@@ -1,10 +1,9 @@
 import { campusVideo } from '@/content/campus-video';
+import { homepageSeo } from '@/content/seo';
 import { locations, site, socialLinks, supportChannels } from '@/content/site';
 
 export function StructuredData() {
-  const origin = new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3100',
-  ).origin;
+  const origin = new URL(homepageSeo.url).origin;
   const data = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -12,8 +11,19 @@ export function StructuredData() {
         '@type': 'EducationalOrganization',
         '@id': `${origin}/#organization`,
         name: site.name,
+        alternateName: [
+          'SITC Campus - Sri Lanka',
+          homepageSeo.alternateSiteName,
+        ],
         url: `${origin}/`,
-        logo: `${origin}/images/sitc-wordmark.png`,
+        logo: {
+          '@type': 'ImageObject',
+          '@id': `${origin}/#organizationLogo`,
+          url: `${origin}/images/sitc-wordmark.png`,
+          width: 1697,
+          height: 271,
+          caption: 'SITC Campus',
+        },
         email: site.email,
         telephone: site.telephone,
         sameAs: socialLinks.map((link) => link.href),
@@ -33,6 +43,40 @@ export function StructuredData() {
         })),
       },
       {
+        '@type': 'WebSite',
+        '@id': `${origin}/#website`,
+        url: homepageSeo.url,
+        name: homepageSeo.siteName,
+        alternateName: homepageSeo.alternateSiteName,
+        description: 'Leading Higher Education Institute',
+        inLanguage: 'en',
+        publisher: { '@id': `${origin}/#organization` },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${origin}/#webpage`,
+        url: homepageSeo.url,
+        name: homepageSeo.title,
+        description: homepageSeo.description,
+        inLanguage: 'en',
+        datePublished: homepageSeo.datePublished,
+        isPartOf: { '@id': `${origin}/#website` },
+        about: { '@id': `${origin}/#organization` },
+        breadcrumb: { '@id': `${origin}/#breadcrumblist` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${origin}/#breadcrumblist`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: homepageSeo.url,
+          },
+        ],
+      },
+      {
         '@type': 'VideoObject',
         '@id': `${origin}/#campus-film`,
         name: campusVideo.title,
@@ -42,6 +86,7 @@ export function StructuredData() {
         duration: campusVideo.duration,
         embedUrl: campusVideo.embedUrl,
         publisher: { '@id': `${origin}/#organization` },
+        isPartOf: { '@id': `${origin}/#webpage` },
       },
     ],
   };
