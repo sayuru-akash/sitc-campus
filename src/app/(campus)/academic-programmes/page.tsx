@@ -27,7 +27,11 @@ export default function ProgrammesPage() {
               url: new URL(programmePath(programme.id), homepageSeo.url).href,
               item: {
                 '@type': 'Course',
-                name: programme.title,
+                '@id': `${new URL(programmePath(programme.id), homepageSeo.url).href}#course`,
+                name:
+                  programme.level === 'Diploma'
+                    ? `Diploma in ${programme.title}`
+                    : programme.title,
                 description: programme.description,
                 educationalLevel: programme.level,
                 url: new URL(programmePath(programme.id), homepageSeo.url).href,

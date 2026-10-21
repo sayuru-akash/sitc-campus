@@ -7,6 +7,7 @@ const stories = [
     date: '2026-10-19',
     href: 'https://sitc.lk/tamil-diploma-november-2026-intake/',
     image: '/images/inner/news-tamil-2026.jpg',
+    imageRatio: 1,
     summary:
       'SITC has announced its November Tamil diploma intake, with six months of online learning for Sinhala-speaking beginners.',
     lang: 'en',
@@ -17,6 +18,7 @@ const stories = [
     date: '2023-11-02',
     href: 'https://sitc.lk/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/',
     image: '/images/inner/news-769.jpg',
+    imageRatio: 1,
     summary:
       'An announcement about international qualification pathways for SITC diploma graduates and opportunities for further study.',
     lang: 'si',
@@ -48,6 +50,7 @@ const stories = [
     date: '2023-08-22',
     href: 'https://sitc.lk/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/',
     image: '/images/inner/news-763.png',
+    imageRatio: 833 / 819,
     summary:
       'Technology educator and content creator Malinda Alahakoon shares his recommendation of the SITC Information Technology diploma.',
     lang: 'en',
@@ -68,6 +71,7 @@ const stories = [
     date: '2022-10-14',
     href: 'https://sitc.lk/%e0%b6%9a%e0%b6%ad%e0%b7%92%e0%b6%9a%e0%b7%8f%e0%b6%a0%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b6%ba-%e0%b6%89%e0%b7%83%e0%b7%94%e0%b6%bb%e0%b7%94-%e0%b6%b4%e0%b7%99%e0%b6%bb%e0%b7%9a%e0%b6%bb%e0%b7%8f/',
     image: '/images/inner/news-772.jpg',
+    imageRatio: 1145 / 1536,
     summary:
       'The campus welcomed lecturer Isuru Perera to the role of Director of Education in October 2022.',
     lang: 'si',

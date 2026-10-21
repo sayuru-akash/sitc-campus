@@ -84,7 +84,7 @@ export default async function LevelPage({
       {records.length ? (
         <>
           <p className="level-count">{records.length} programmes to explore</p>
-          <ProgrammeCards ids={records.map((p) => p.id)} />
+          <ProgrammeCards ids={records.map((p) => p.id)} headingLevel={2} />
         </>
       ) : (
         <section className="level-empty">

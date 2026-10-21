@@ -1,15 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { recentNews } from '@/content/news';
+import {
+  newsImageScale,
+  isNewsPoster,
+  formatNewsDate as dateLabel,
+} from '@/lib/news-presentation';
 import { Eyebrow } from '@/components/ui/eyebrow';
-
-const dateLabel = (date: string) =>
-  new Intl.DateTimeFormat('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(new Date(date));
 
 // Server-rendered, with the same date-sorted source as the news archive and RSS.
 export function RecentNews() {
@@ -43,7 +40,7 @@ export function RecentNews() {
             }
           >
             <Link
-              className={`home-news-photo${story.id === 20261019 || story.id === 769 ? ' is-poster' : ''}`}
+              className={`home-news-photo${isNewsPoster(story) ? ' is-poster' : ''}`}
               href={new URL(story.href).pathname}
               aria-label={`Read: ${story.title}`}
             >
@@ -53,7 +50,7 @@ export function RecentNews() {
                 fill
                 sizes={
                   index === 0
-                    ? '(max-width: 760px) 88vw, 42vw'
+                    ? `(max-width: 760px) ${88 * newsImageScale(story, 1.65)}vw, ${42 * newsImageScale(story, 1.65)}vw`
                     : '(max-width: 760px) 120px, 12vw'
                 }
               />

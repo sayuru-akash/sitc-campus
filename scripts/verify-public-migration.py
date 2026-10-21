@@ -20,6 +20,8 @@ class Page(HTMLParser):
     def __init__(self):
         super().__init__()
         self.h1 = 0
+        self.title = ''
+        self.in_title = False
         self.ids = set()
         self.links = []
         self.meta = {}
@@ -30,6 +32,7 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'h1': self.h1 += 1
+        if tag == 'title': self.in_title = True
         if attrs.get('id'): self.ids.add(attrs['id'])
         if tag == 'a' and attrs.get('href'): self.links.append(attrs['href'])
         if tag == 'meta': self.meta[attrs.get('name', attrs.get('property'))] = attrs.get('content', '')
@@ -37,9 +40,11 @@ class Page(HTMLParser):
         if tag == 'script' and attrs.get('type') == 'application/ld+json': self.script = ''
 
     def handle_data(self, data):
+        if self.in_title: self.title += data
         if self.script is not None: self.script += data
 
     def handle_endtag(self, tag):
+        if tag == 'title': self.in_title = False
         if tag == 'script' and self.script is not None:
             self.schemas.append(json.loads(self.script))
             self.script = None
@@ -75,15 +80,31 @@ def main():
         assert status == 200, (path, status)
         page = Page()
         page.feed(html.decode())
+        assert page.title.strip(), (path, 'missing title')
         assert page.h1 == 1, (path, 'H1 count', page.h1)
         assert page.canonical == url, (path, 'canonical', page.canonical)
         assert page.meta.get('description'), (path, 'missing description')
         assert page.meta.get('og:url') == url, (path, 'Open Graph URL')
         assert page.meta.get('twitter:title'), (path, 'Twitter title')
         assert page.schemas, (path, 'missing JSON-LD')
+        nodes = [node for schema in page.schemas for node in schema.get('@graph', [schema])]
+        assert any(node.get('@id') == 'https://sitc.lk/#organization' and node.get('name') for node in nodes), (path, 'missing organization identity')
+        if path.startswith('/program/'):
+            course = next(node for node in nodes if node.get('@type') == 'Course')
+            assert course['url'] == url and course['provider']['name'] == 'SITC Campus', (path, 'course identity')
+            assert course['mainEntityOfPage']['@id'] == url + '#webpage', (path, 'course page relationship')
+        for key in ['og:image', 'twitter:image']:
+            image = urlsplit(page.meta.get(key, ''))
+            assert image.scheme == 'https' and image.netloc == 'sitc.lk', (path, key, 'public image URL')
+            image_status, image_headers, _ = fetch(image.path, 'HEAD')
+            assert image_status == 200 and image_headers.get('Content-Type', '').startswith('image/'), (path, key, 'missing sharing image')
         assert ('noindex' in page.meta.get('robots', '')) == (path in empty_levels), (path, 'robots')
         pages[unquote(path)] = page
-        results.append({'path': path, 'status': status, 'h1': page.h1, 'canonical': page.canonical})
+        results.append({'path': path, 'status': status, 'title': page.title, 'h1': page.h1, 'canonical': page.canonical})
+
+    indexed_pages = [p for path, p in pages.items() if path not in empty_levels]
+    assert len({p.title for p in indexed_pages}) == len(urls), 'duplicate page titles'
+    assert len({p.meta['description'] for p in indexed_pages}) == len(urls), 'duplicate descriptions'
 
     for path, page in pages.items():
         for href in page.links:
@@ -119,7 +140,7 @@ def main():
         status, headers, _ = fetch('/' + path)
         assert status == 308 and headers.get('Location') == '/sitemap.xml', (path, status, headers)
         redirect_checks += 1
-    for path, destination in [('/news/feed/', '/feed/'), ('/program/', '/academic-programmes/'), ('/program-level/', '/academic-programmes/')]:
+    for path, destination in [('/favicon.ico', '/icon.png'), ('/wp-content/uploads/2023/10/sitc-fav-300x300.png', '/icon.png'), ('/news/feed/', '/feed/'), ('/program/', '/academic-programmes/'), ('/program-level/', '/academic-programmes/')]:
         status, headers, _ = fetch(path)
         assert status == 308 and headers.get('Location') == destination, (path, status)
         redirect_checks += 1

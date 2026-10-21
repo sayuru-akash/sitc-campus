@@ -8,6 +8,11 @@ import { contentPageSeo } from '@/lib/content-seo';
 import { homepageSeo } from '@/content/seo';
 import { programmePath, type ProgrammeId } from '@/content/programme-routes';
 import { findNewsArticle } from '@/lib/news';
+import {
+  newsImageScale,
+  isNewsPoster,
+  formatNewsDate as dateLabel,
+} from '@/lib/news-presentation';
 
 export function generateStaticParams() {
   return newsArticles.map((article) => ({
@@ -35,13 +40,7 @@ export async function generateMetadata({
     },
   });
 }
-const dateLabel = (date: string) =>
-  new Intl.DateTimeFormat('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(new Date(date));
+
 export default async function NewsArticlePage({
   params,
 }: {
@@ -69,14 +68,15 @@ export default async function NewsArticlePage({
           <p>{story.summary}</p>
         </header>
         <figure
-          className={`article-photo${story.id === 769 || story.id === 763 || story.id === 772 || story.id === 20261019 ? ' contain-photo' : ''}`}
+          className={`article-photo${isNewsPoster(story) ? ' contain-photo' : ''}`}
         >
           <Image
             src={story.image}
             alt={story.title}
             fill
             loading="eager"
-            sizes="(max-width: 1500px) 88vw, 1320px"
+            fetchPriority="high"
+            sizes={`(max-width: 1500px) ${88 * newsImageScale(story, 1.8)}vw, ${1320 * newsImageScale(story, 1.8)}px`}
           />
         </figure>
         <article className="article-reading">
@@ -143,6 +143,7 @@ export default async function NewsArticlePage({
               <article key={s.id}>
                 <Link
                   className="related-news-photo"
+                  aria-label={`Read: ${s.title}`}
                   href={new URL(s.href).pathname}
                 >
                   <Image

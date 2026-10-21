@@ -53,12 +53,17 @@ Official contact details and three official locations were refreshed from https:
 
 Eight main pages are implemented under `src/app/(campus)/`: About, Contact, Programmes, Partners, News, Privacy, Refund and Terms. Shared inner-page styles live in `inner-pages.css`; page copy and metadata live in `src/content/{about,partners,news,policies,page-metadata}.ts`. Keep the ten approved programme records as the single source for both homepage and catalogue.
 
-Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. All 66 discovered legacy media/PDF URLs are preserved under `public/wp-content/`.
+Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. A verified October 2026 Tamil intake announcement is also included. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. All 66 discovered legacy media/PDF URLs are preserved under `public/wp-content/`.
 
 - `src/content/programme-routes.ts`: stable programme slugs and reusable level definitions.
 - `src/content/programme-details.ts`: study guides, source-labelled diploma fees, learning themes and progression.
 - `public/guides/`: six newer published SITC diploma guides, discovered through its Facebook posts.
-- `src/content/news-articles.ts`: original article text, slugs and publication metadata.
+- `src/content/news-articles.ts`: article text, source links, slugs and publication metadata.
+- `src/components/sections/recent-news.tsx`: homepage feature and two supporting stories after the campus experience section.
+- `src/content/news.ts`: date-sorted summaries shared by homepage, news archive and RSS; new stories automatically appear in the three most recent homepage slots. For an intact poster, set `imageRatio` to its source width divided by height. Photo covers omit that field.
+- `src/lib/news-presentation.ts`: shared date labels and responsive poster sizing.
+- `src/lib/programme-seo.ts`: individual Sri Lanka programme search titles and descriptions, without changing approved programme names.
+- `src/lib/site-schema.ts`: consistent organization and website identity embedded on every content page.
 - `src/app/sitemap.ts` and `src/app/robots.ts`: canonical indexable routes and crawler guidance.
 
 To add an offering, add the approved record to `programmes.ts`, its stable slug to `programme-routes.ts` and its detail in `programme-details.ts`. Catalogue, enquiry options and sitemap follow those records. Update the approved catalogue-count expectations in the migration checks when changing the list. Extend the qualification type and level classification if introducing a new level. Empty future levels should become indexable only when approved offerings are present.
@@ -84,3 +89,17 @@ The original clone measurement JSON and `scripts/verify-layout.mjs` are archived
 The leadership feature includes a portrait, a short introduction, an expandable full biography, dated research figures, and the complete welcome message. English, Sinhala, and Tamil content renders on the server. The shared language tabs support arrow keys, Home, and End. Sinhala and Tamil use locally hosted Noto Sans fonts with their licenses included.
 
 The portrait is an exact visual crop of the user-supplied poster, using its original photograph without changing facial features or academic attire. The source and crop coordinates are documented in the component. The English welcome message is preserved as supplied, with Sinhala and Tamil translations. The biography and research figures were supplied by the user; the figures are explicitly dated 15 October 2026 and have not been independently verified. See `docs/research/LEADERSHIP-UPDATE.md` for source and implementation notes.
+
+## SEO and performance verification
+
+All 28 indexable pages have production-domain canonical URLs, unique titles and descriptions, sharing metadata and JSON-LD. The original homepage search identity is preserved. Course pages link the current catalogue to their source guides, admissions contacts, refund terms and related pathways. New article dates are source dates, not build dates. No unverified reviews, ratings, accreditation, rankings or expert-review claims are added.
+
+The homepage uses AVIF/WebP image negotiation, deferred video loading once at least half the video is visible, server-rendered recent news and native lazy images. Long off-screen news and translated leadership sections use CSS automatic content visibility, retaining their complete HTML and accessible navigation. The introductory Sinhala line uses a 15 KB glyph subset of the licensed local font; the full font remains available for all other content and fallback glyphs. Regenerate the intro subset after changing that line:
+
+```sh
+pyftsubset public/fonts/noto-sans-sinhala.woff2 --text='ඔබේ අනාගතයට නව ඇරඹුමක්.' --layout-features='*' --flavor=woff2 --output-file=public/fonts/noto-sans-sinhala-intro.woff2
+```
+
+FontTools is only needed when regenerating this checked-in asset, not to build or run the site. Existing font licenses are retained. The original Playfair and DM Sans assets are unchanged. No experimental Next.js CSS flags are enabled.
+
+See `docs/research/SEO-PERFORMANCE-2026-10-22.md` for local Lighthouse results, source evidence and the remaining public-launch checks. A localhost audit cannot verify public search rankings or real-user Core Web Vitals.

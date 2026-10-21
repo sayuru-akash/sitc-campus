@@ -3,6 +3,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { newsStories } from '@/content/news';
+import {
+  newsImageScale,
+  isNewsPoster,
+  formatNewsDate,
+} from '@/lib/news-presentation';
 
 const years = [...new Set(newsStories.map((story) => story.date.slice(0, 4)))];
 export function NewsArchive() {
@@ -39,7 +44,7 @@ export function NewsArchive() {
             key={story.id}
           >
             <Link
-              className={`news-photo${story.id === 769 || story.id === 763 || story.id === 20261019 ? ' poster-photo' : ''}`}
+              className={`news-photo${isNewsPoster(story) ? ' poster-photo' : ''}`}
               href={new URL(story.href).pathname}
               aria-label={`Read story: ${story.title}`}
             >
@@ -48,22 +53,16 @@ export function NewsArchive() {
                 alt=""
                 fill
                 loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
                 sizes={
                   year === 'all' && index === 0
-                    ? '(max-width: 760px) 88vw, 52vw'
-                    : '(max-width: 640px) 88vw, (max-width: 1000px) 43vw, 28vw'
+                    ? `(max-width: 760px) ${88 * newsImageScale(story, 1.5)}vw, ${52 * newsImageScale(story, 1.5)}vw`
+                    : `(max-width: 640px) ${88 * newsImageScale(story, 1.5)}vw, (max-width: 1000px) ${43 * newsImageScale(story, 1.5)}vw, ${28 * newsImageScale(story, 1.5)}vw`
                 }
               />
             </Link>
             <div className="news-story-copy">
-              <time dateTime={story.date}>
-                {new Intl.DateTimeFormat('en-GB', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                  timeZone: 'UTC',
-                }).format(new Date(story.date))}
-              </time>
+              <time dateTime={story.date}>{formatNewsDate(story.date)}</time>
               <h2 lang={story.lang}>
                 <Link href={new URL(story.href).pathname}>{story.title}</Link>
               </h2>

@@ -3,6 +3,7 @@ import { mainPageMetadata } from '@/content/page-metadata';
 import { programmes } from '@/content/programmes';
 import { programmePath, programmeLevels } from '@/content/programme-routes';
 import { newsStories } from '@/content/news';
+import { newsArticles } from '@/content/news-articles';
 import { homepageSeo } from '@/content/seo';
 import { preventIndexing } from '@/lib/content-seo';
 
@@ -23,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
     ...newsStories.map((s) => ({
       url: s.href,
+      lastModified: newsArticles.find((article) => article.id === s.id)!
+        .modified,
       images: [new URL(s.image, homepageSeo.url).href],
     })),
   ];

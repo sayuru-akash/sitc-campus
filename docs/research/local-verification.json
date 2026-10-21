@@ -6,7 +6,7 @@
   "retiredRoutes": 3,
   "legacyAssetsChecked": 66,
   "currentGuidesChecked": 6,
-  "redirectsChecked": 39,
+  "redirectsChecked": 41,
   "rssItems": 7,
   "internalLinksAndFragments": "passed",
   "metadataAndStructuredData": "passed",
@@ -15,180 +15,210 @@
     {
       "path": "/",
       "status": 200,
+      "title": "SITC Campus | Leading Higher Education Institute in Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/"
     },
     {
       "path": "/about-us/",
       "status": 200,
+      "title": "About Us - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/about-us/"
     },
     {
       "path": "/academic-direction-partner-institutes/",
       "status": 200,
+      "title": "Academic Direction Partner Institutes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/academic-direction-partner-institutes/"
     },
     {
       "path": "/privacy-policy/",
       "status": 200,
+      "title": "Privacy Policy - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/privacy-policy/"
     },
     {
       "path": "/refund-policy/",
       "status": 200,
+      "title": "Refund Policy - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/refund-policy/"
     },
     {
       "path": "/terms-and-conditions/",
       "status": 200,
+      "title": "Terms and Conditions - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/terms-and-conditions/"
     },
     {
       "path": "/news/",
       "status": 200,
+      "title": "News - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/news/"
     },
     {
       "path": "/academic-programmes/",
       "status": 200,
+      "title": "Academic Programmes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/academic-programmes/"
     },
     {
       "path": "/contact-us/",
       "status": 200,
+      "title": "Contact Us - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/contact-us/"
     },
     {
       "path": "/program/diploma-in-psychology-and-counseling/",
       "status": 200,
+      "title": "Diploma in Psychology & Counselling in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-psychology-and-counseling/"
     },
     {
       "path": "/program/diploma-in-information-technology/",
       "status": 200,
+      "title": "Diploma in Information Technology in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-information-technology/"
     },
     {
       "path": "/program/diploma-in-business-management/",
       "status": 200,
+      "title": "Diploma in Business Management in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-business-management/"
     },
     {
       "path": "/program/diploma-in-human-resource-management/",
       "status": 200,
+      "title": "Diploma in Human Resource Management & Administration in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-human-resource-management/"
     },
     {
       "path": "/program/diploma-in-english-2026-ugc-recognized-university-diploma/",
       "status": 200,
+      "title": "Diploma in English in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-english-2026-ugc-recognized-university-diploma/"
     },
     {
       "path": "/program/diploma-in-tamil-as-a-second-language/",
       "status": 200,
+      "title": "Diploma in Tamil as a Second Language in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/diploma-in-tamil-as-a-second-language/"
     },
     {
       "path": "/program/bsc-in-psychology-and-counselling/",
       "status": 200,
+      "title": "BSc in Psychology & Counselling in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/bsc-in-psychology-and-counselling/"
     },
     {
       "path": "/program/bsc-in-hrm-and-business-strategy/",
       "status": 200,
+      "title": "BSc in HRM & Business Strategy in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/bsc-in-hrm-and-business-strategy/"
     },
     {
       "path": "/program/bsc-in-business-management/",
       "status": 200,
+      "title": "BSc in Business Management in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/bsc-in-business-management/"
     },
     {
       "path": "/program/ba-in-english/",
       "status": 200,
+      "title": "BA in English in Sri Lanka | SITC",
       "h1": 1,
       "canonical": "https://sitc.lk/program/ba-in-english/"
     },
     {
       "path": "/program-level/diploma/",
       "status": 200,
+      "title": "Diploma programmes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/program-level/diploma/"
     },
     {
       "path": "/program-level/undergraduate/",
       "status": 200,
+      "title": "Undergraduate programmes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/program-level/undergraduate/"
     },
     {
       "path": "/tamil-diploma-november-2026-intake/",
       "status": 200,
+      "title": "Tamil diploma: November 2026 intake announced - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/tamil-diploma-november-2026-intake/"
     },
     {
       "path": "/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/",
       "status": 200,
+      "title": "රට යන්න ඉන්න අයට ඉහළම සුදුසුකමක් SITC සරසවියෙන් - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/"
     },
     {
       "path": "/%e0%b6%b8%e0%b6%b1%e0%b7%9d%e0%b7%80%e0%b7%92%e0%b6%af%e0%b7%8a%e0%b6%ba%e0%b7%8f-%e0%b6%85%e0%b6%b0%e0%b7%8a%e0%b6%ba%e0%b6%b1-%e0%b6%85%e0%b6%82%e0%b7%81%e0%b6%ba%e0%b7%9a/",
       "status": 200,
+      "title": "මනෝවිද්‍යා අධ්‍යන අංශයේ විද්‍යාර්ථයින්ට ප්‍රායෝගික මනෝවිද්‍යා වැඩසටහනක් - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/%e0%b6%b8%e0%b6%b1%e0%b7%9d%e0%b7%80%e0%b7%92%e0%b6%af%e0%b7%8a%e0%b6%ba%e0%b7%8f-%e0%b6%85%e0%b6%b0%e0%b7%8a%e0%b6%ba%e0%b6%b1-%e0%b6%85%e0%b6%82%e0%b7%81%e0%b6%ba%e0%b7%9a/"
     },
     {
       "path": "/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b7%83%e0%b7%92%e0%b7%80%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/",
       "status": 200,
+      "title": "වාර්ෂික සිව්වන ඩිප්ලෝමා ප්‍රධානෝත්සවය සාර්ථකව අවසන් - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b7%83%e0%b7%92%e0%b7%80%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/"
     },
     {
       "path": "/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/",
       "status": 200,
+      "title": "Malinda Alahakoon Recommends SITC Campus IT Diploma Program - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/"
     },
     {
       "path": "/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b6%ad%e0%b7%94%e0%b6%b1%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/",
       "status": 200,
+      "title": "වාර්ෂික තුන්වන ඩිප්ලෝමා ප්‍රධානෝත්සවය සාර්ථකව අවසන් - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b6%ad%e0%b7%94%e0%b6%b1%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/"
     },
     {
       "path": "/%e0%b6%9a%e0%b6%ad%e0%b7%92%e0%b6%9a%e0%b7%8f%e0%b6%a0%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b6%ba-%e0%b6%89%e0%b7%83%e0%b7%94%e0%b6%bb%e0%b7%94-%e0%b6%b4%e0%b7%99%e0%b6%bb%e0%b7%9a%e0%b6%bb%e0%b7%8f/",
       "status": 200,
+      "title": "කතිකාචාර්‍ය ඉසුරු පෙරේරා මහතා අධ්‍යාපන අධ්‍යක්ශක දූර‍යේ වැඩ භාරගනී - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/%e0%b6%9a%e0%b6%ad%e0%b7%92%e0%b6%9a%e0%b7%8f%e0%b6%a0%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b6%ba-%e0%b6%89%e0%b7%83%e0%b7%94%e0%b6%bb%e0%b7%94-%e0%b6%b4%e0%b7%99%e0%b6%bb%e0%b7%9a%e0%b6%bb%e0%b7%8f/"
     },
     {
       "path": "/program-level/specialized-masters/",
       "status": 200,
+      "title": "Specialized master’s programmes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/program-level/specialized-masters/"
     },
     {
       "path": "/program-level/ph-d/",
       "status": 200,
+      "title": "Doctoral programmes - SITC Campus Sri Lanka",
       "h1": 1,
       "canonical": "https://sitc.lk/program-level/ph-d/"
     }
