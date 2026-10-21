@@ -39,7 +39,7 @@ export function NewsArchive() {
             key={story.id}
           >
             <Link
-              className={`news-photo${story.id === 769 || story.id === 763 ? ' poster-photo' : ''}`}
+              className={`news-photo${story.id === 769 || story.id === 763 || story.id === 20261019 ? ' poster-photo' : ''}`}
               href={new URL(story.href).pathname}
               aria-label={`Read story: ${story.title}`}
             >
@@ -76,8 +76,8 @@ export function NewsArchive() {
         ))}
       </div>
       <p className="archive-note">
-        Stories from the SITC archive, shown with their original publication
-        dates.
+        Campus announcements and archive stories, newest first, with their
+        original publication dates.
       </p>
     </>
   );

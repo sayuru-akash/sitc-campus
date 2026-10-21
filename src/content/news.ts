@@ -1,5 +1,16 @@
-// Original publication dates, headlines and images from the public SITC archive.
-export const newsStories = [
+// Source publication dates are preserved. New stories must include a matching article.
+// Export once in date order so the homepage, archive and RSS agree on recency.
+const stories = [
+  {
+    id: 20261019,
+    title: 'Tamil diploma: November 2026 intake announced',
+    date: '2026-10-19',
+    href: 'https://sitc.lk/tamil-diploma-november-2026-intake/',
+    image: '/images/inner/news-tamil-2026.jpg',
+    summary:
+      'SITC has announced its November Tamil diploma intake, with six months of online learning for Sinhala-speaking beginners.',
+    lang: 'en',
+  },
   {
     id: 769,
     title: 'රට යන්න ඉන්න අයට ඉහළම සුදුසුකමක් SITC සරසවියෙන්',
@@ -62,3 +73,9 @@ export const newsStories = [
     lang: 'si',
   },
 ] as const;
+
+export const newsStories = [...stories].sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
+
+export const recentNews = newsStories.slice(0, 3);

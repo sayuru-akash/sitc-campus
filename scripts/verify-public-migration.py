@@ -65,7 +65,7 @@ def main():
     assert status == 200, ('sitemap', status)
     root = ElementTree.fromstring(body)
     urls = [element.text for element in root.findall('{*}url/{*}loc')]
-    assert len(urls) == len(set(urls)) == 27, ('sitemap count', len(urls))
+    assert len(urls) == len(set(urls)) == 28, ('sitemap count', len(urls))
     pages = {}
     results = []
     empty_levels = ['/program-level/specialized-masters/', '/program-level/ph-d/']
@@ -134,14 +134,14 @@ def main():
 
     status, _, body = fetch('/feed/')
     feed = ElementTree.fromstring(body)
-    assert status == 200 and len(feed.findall('./channel/item')) == 6, 'RSS feed'
+    assert status == 200 and len(feed.findall('./channel/item')) == 7, 'RSS feed'
     status, _, body = fetch('/robots.txt')
     assert status == 200 and b'Sitemap: https://sitc.lk/sitemap.xml' in body, 'robots.txt'
     assert all(path.encode() not in body for path in retired), 'retired paths must remain crawlable'
     for unknown in ['/not-a-real-page/', '/program/not-a-programme/', '/program-level/not-a-level/', '/%25/']:
         assert fetch(unknown)[0] == 404, (unknown, 'must return 404')
 
-    report = {'passed': True, 'indexablePages': len(urls), 'htmlPagesChecked': len(pages), 'legacyHtmlDecisionsChecked': len(legacy), 'retiredRoutes': len(retired), 'legacyAssetsChecked': len(asset_rows), 'currentGuidesChecked': 6, 'redirectsChecked': redirect_checks, 'rssItems': 6, 'internalLinksAndFragments': 'passed', 'metadataAndStructuredData': 'passed', 'unknownRoutes': '404', 'pages': results}
+    report = {'passed': True, 'indexablePages': len(urls), 'htmlPagesChecked': len(pages), 'legacyHtmlDecisionsChecked': len(legacy), 'retiredRoutes': len(retired), 'legacyAssetsChecked': len(asset_rows), 'currentGuidesChecked': 6, 'redirectsChecked': redirect_checks, 'rssItems': 7, 'internalLinksAndFragments': 'passed', 'metadataAndStructuredData': 'passed', 'unknownRoutes': '404', 'pages': results}
     if args.report: args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({key:value for key,value in report.items() if key != 'pages'}, indent=2))
 

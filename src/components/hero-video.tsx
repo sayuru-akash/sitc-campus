@@ -61,11 +61,12 @@ export function HeroVideo() {
     };
     const observer = new IntersectionObserver(
       ([entry]) => {
-        visible.current = entry.isIntersecting;
-        setInView(entry.isIntersecting);
+        visible.current =
+          entry.isIntersecting && entry.intersectionRatio >= 0.5;
+        setInView(visible.current);
         syncPlayback();
       },
-      { threshold: 0.15 },
+      { threshold: 0.5 },
     );
     observer.observe(element);
     document.addEventListener('visibilitychange', syncPlayback);
@@ -184,7 +185,7 @@ export function HeroVideo() {
         alt="SITC Campus academic community at convocation"
         fill
         sizes="(max-width: 640px) 1040px, (max-width: 900px) 1600px, 1824px"
-        quality={90}
+        quality={75}
         preload
       />
       <div
@@ -210,7 +211,9 @@ export function HeroVideo() {
           <button
             type="button"
             onClick={togglePlayback}
-            aria-label={playing ? 'Pause campus video' : 'Play campus video'}
+            aria-label={
+              playing ? 'Pause video, campus film' : 'Play video, campus film'
+            }
           >
             {playing ? 'Pause video' : 'Play video'}
             <span aria-hidden="true">{playing ? 'Ⅱ' : '▷'}</span>
@@ -220,7 +223,11 @@ export function HeroVideo() {
           <button
             type="button"
             onClick={toggleMute}
-            aria-label={muted ? 'Unmute campus video' : 'Mute campus video'}
+            aria-label={
+              muted
+                ? 'Sound off, unmute campus video'
+                : 'Sound on, mute campus video'
+            }
             aria-pressed={!muted}
           >
             {muted ? 'Sound off' : 'Sound on'}

@@ -1486,19 +1486,6 @@
     font-size: 13px;
     line-height: 1.8;
   }
-  .card h3 a {
-    border: 0;
-    font: inherit;
-    margin: 0;
-  }
-  .card .programme-details-link {
-    margin-right: 25px;
-  }
-  .card .programme-quick-enquiry {
-    font-size: 11px;
-    color: var(--muted);
-    border-bottom: 0;
-  }
   .missing-page {
     padding-block: 90px 110px;
   }
@@ -1649,5 +1636,20 @@
     .level-empty h2 {
       font-size: 32px;
     }
+  }
+}
+
+@layer components {
+  .course-fees .fee-standard {
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .fee-standard s {
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: var(--wine);
+  }
+  .course-fees .fee-scholarship {
+    font-size: 25px;
+    font-weight: 600;
   }
 }

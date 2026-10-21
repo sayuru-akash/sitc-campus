@@ -11,7 +11,7 @@ import { ProgrammeSelectionProvider } from '@/components/programme-selection';
 import { Enquiry } from '@/components/sections/enquiry';
 import { ProgrammeCards } from '@/components/programme-cards';
 import { ContentStructuredData } from '@/components/content-structured-data';
-import { contentPageSeo } from '@/lib/content-seo';
+import { programmeSeo } from '@/lib/programme-seo';
 import { site } from '@/content/site';
 import { homepageSeo } from '@/content/seo';
 
@@ -33,11 +33,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = findProgramme(slug);
   if (!p) notFound();
-  return contentPageSeo({
-    title: programmeTitle(p),
-    description: `${p.description} Explore study areas, programme guidance and admissions at SITC Campus.`,
-    path: programmePath(p.id),
-  });
+  return programmeSeo(p.id);
 }
 const money = (n: number) => `LKR ${new Intl.NumberFormat('en-LK').format(n)}`;
 
@@ -74,10 +70,18 @@ export default async function ProgrammePage({
             description: p.description,
             url: new URL(path, homepageSeo.url).href,
             educationalLevel: p.level,
+            mainEntityOfPage: {
+              '@id': `${new URL(path, homepageSeo.url).href}#webpage`,
+            },
+            ...(detail.verifiedCurriculum
+              ? { teaches: detail.areas.map((area) => area.title) }
+              : {}),
             provider: {
+              '@id': `${homepageSeo.url}#organization`,
               '@type': 'EducationalOrganization',
               name: 'SITC Campus',
               url: homepageSeo.url,
+              sameAs: homepageSeo.url,
             },
             ...(detail.duration ? { timeRequired: 'P6M' } : {}),
           },
@@ -275,11 +279,15 @@ export default async function ProgrammePage({
                 <dl>
                   <div>
                     <dt>Standard course fee</dt>
-                    <dd>{money(detail.fees.standard)}</dd>
+                    <dd className="fee-standard">
+                      <s>{money(detail.fees.standard)}</s>
+                    </dd>
                   </div>
                   <div>
                     <dt>After the published 50% scholarship</dt>
-                    <dd>{money(detail.fees.total)}</dd>
+                    <dd className="fee-scholarship">
+                      {money(detail.fees.total)}
+                    </dd>
                   </div>
                   <div>
                     <dt>One-time payment option</dt>
@@ -344,8 +352,59 @@ export default async function ProgrammePage({
             and the requirements of employers or receiving institutions.
           </p>
         </section>
+        <section
+          className="course-section course-provenance"
+          aria-labelledby="programme-information-heading"
+        >
+          <h2 id="programme-information-heading">Programme information</h2>
+          <p>
+            {detail.verifiedCurriculum
+              ? 'Study areas, delivery and fees on this page are drawn from SITC’s published intake guide. The overview and progression notes help you interpret that information. The guide and a written admissions offer should be used to confirm the arrangements for your intake.'
+              : 'This page introduces the subject and possible progression routes. An official degree specification has not yet been published here. Contact SITC for the approved syllabus, entry requirements, awarding arrangements, duration and fees before applying.'}
+          </p>
+          <p>
+            <Link className="text-link" href="/contact-us/">
+              SITC admissions and contact details ↗
+            </Link>
+          </p>
+          {detail.guide && (
+            <p>
+              <a
+                className="text-link"
+                href={detail.guide}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source: {detail.guideLabel} (PDF) ↗
+              </a>
+            </p>
+          )}
+        </section>
         <section id="questions" className="course-section course-questions">
           <h2>Before you apply</h2>
+          {detail.duration && (
+            <details>
+              <summary>How long is the {title}?</summary>
+              <p>
+                The published programme guide describes{' '}
+                {detail.duration.toLowerCase()} of study, delivered{' '}
+                {detail.delivery?.toLowerCase()}. Confirm the current intake and
+                timetable with SITC admissions.
+              </p>
+            </details>
+          )}
+          {detail.fees && (
+            <details>
+              <summary>What are the published course fees?</summary>
+              <p>
+                The {detail.guideLabel} lists a standard fee of{' '}
+                {money(detail.fees.standard)}, with a published 50% scholarship
+                total of {money(detail.fees.total)}. A one-time payment option
+                of {money(detail.fees.oneTime)} is also listed. Confirm the
+                offer and any additional charges for your intake before paying.
+              </p>
+            </details>
+          )}
           <details>
             <summary>How do I start my application?</summary>
             <p>

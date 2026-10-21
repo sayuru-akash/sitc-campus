@@ -46,8 +46,8 @@ describe('Public migration contracts', () => {
   });
   test('sitemap contains live canonical content and excludes retired or empty categories', () => {
     const urls = sitemap().map((p) => p.url);
-    expect(urls).toHaveLength(27);
-    expect(new Set(urls).size).toBe(27);
+    expect(urls).toHaveLength(28);
+    expect(new Set(urls).size).toBe(28);
     for (const path of [
       '/academic-staff/',
       '/events/',
@@ -94,4 +94,34 @@ test('article lookup accepts original percent escapes, Unicode and equivalent co
   }
   expect(findNewsArticle('not-an-article')).toBeNull();
   expect(findNewsArticle('%')).toBeNull();
+});
+
+test('news recency follows publication dates across homepage and archive', async () => {
+  const { recentNews } = await import('../src/content/news.ts');
+  expect(recentNews).toHaveLength(3);
+  expect(recentNews[0].date).toBe('2026-10-19');
+  for (let i = 1; i < newsStories.length; i++)
+    expect(newsStories[i - 1].date >= newsStories[i].date).toBe(true);
+  expect(new Set(newsStories.map((s) => s.id)).size).toBe(newsStories.length);
+  for (const s of recentNews)
+    expect(
+      findNewsArticle(new URL(s.href).pathname.slice(1, -1))?.story.id,
+    ).toBe(s.id);
+});
+
+test('programme search metadata is unique and uses canonical course paths', async () => {
+  const { programmeSeo } = await import('../src/lib/programme-seo.ts');
+  const metas = programmes.map((p) => programmeSeo(p.id));
+  expect(new Set(metas.map((m) => m.title.absolute)).size).toBe(10);
+  expect(new Set(metas.map((m) => m.description)).size).toBe(10);
+  for (let i = 0; i < programmes.length; i++) {
+    expect(metas[i].alternates.canonical).toBe(
+      `https://sitc.lk${programmePath(programmes[i].id)}`,
+    );
+    expect(metas[i].title.absolute).toContain('Sri Lanka');
+    expect(metas[i].robots.index).toBe(true);
+    expect(metas[i].description).not.toMatch(
+      /ranked|number one|guaranteed|#1/i,
+    );
+  }
 });

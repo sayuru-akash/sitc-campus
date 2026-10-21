@@ -1,13 +1,13 @@
 {
   "passed": true,
-  "indexablePages": 27,
-  "htmlPagesChecked": 29,
+  "indexablePages": 28,
+  "htmlPagesChecked": 30,
   "legacyHtmlDecisionsChecked": 27,
   "retiredRoutes": 3,
   "legacyAssetsChecked": 66,
   "currentGuidesChecked": 6,
-  "redirectsChecked": 38,
-  "rssItems": 6,
+  "redirectsChecked": 39,
+  "rssItems": 7,
   "internalLinksAndFragments": "passed",
   "metadataAndStructuredData": "passed",
   "unknownRoutes": "404",
@@ -137,6 +137,12 @@
       "status": 200,
       "h1": 1,
       "canonical": "https://sitc.lk/program-level/undergraduate/"
+    },
+    {
+      "path": "/tamil-diploma-november-2026-intake/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/tamil-diploma-november-2026-intake/"
     },
     {
       "path": "/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/",

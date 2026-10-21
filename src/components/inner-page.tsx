@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { mainPageMetadata, type MainPageKey } from '@/content/page-metadata';
 import { homepageSeo } from '@/content/seo';
+import { siteEntities } from '@/lib/site-schema';
 
 export function PageIntro({
   title,
@@ -41,6 +42,7 @@ export function PageStructuredData({
   const data = {
     '@context': 'https://schema.org',
     '@graph': [
+      ...siteEntities(),
       {
         '@type': type,
         '@id': `${url}#webpage`,

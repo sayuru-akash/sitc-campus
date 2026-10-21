@@ -24,13 +24,20 @@ export default function ProgrammesPage() {
             itemListElement: programmes.map((programme, index) => ({
               '@type': 'ListItem',
               position: index + 1,
+              url: new URL(programmePath(programme.id), homepageSeo.url).href,
               item: {
                 '@type': 'Course',
                 name: programme.title,
                 description: programme.description,
                 educationalLevel: programme.level,
                 url: new URL(programmePath(programme.id), homepageSeo.url).href,
-                provider: { '@id': `${homepageSeo.url}#organization` },
+                provider: {
+                  '@id': `${homepageSeo.url}#organization`,
+                  '@type': 'EducationalOrganization',
+                  name: 'SITC Campus',
+                  url: homepageSeo.url,
+                  sameAs: homepageSeo.url,
+                },
               },
             })),
           },

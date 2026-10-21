@@ -45,9 +45,10 @@ export const metadata: Metadata = {
     template: `%s - ${homepageSeo.siteName}`,
   },
   icons: { apple: homepageSeo.appleIcon },
+  alternates: { types: { 'application/rss+xml': 'https://sitc.lk/feed/' } },
 };
 export const viewport: Viewport = {
-  themeColor: '#072C49',
+  themeColor: '#641c2e',
 };
 export default function RootLayout({
   children,

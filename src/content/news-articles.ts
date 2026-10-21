@@ -1,6 +1,21 @@
 // Original public SITC articles, preserved as text instead of executing legacy HTML.
 export const newsArticles = [
   {
+    id: 20261019,
+    slug: 'tamil-diploma-november-2026-intake',
+    published: '2026-10-19',
+    modified: '2026-10-19',
+    sourceUrl: 'https://www.facebook.com/sitc.campus/posts/1121031450462286/',
+    programmeId: 'tamil-diploma',
+    paragraphs: [
+      'SITC Campus has announced the November 2026 intake for its Diploma in Tamil. The programme is designed for Sinhala-speaking learners with little or no prior knowledge of Tamil, including school leavers, university students, teachers, employees and business owners.',
+      'The published announcement describes six months of learning through Zoom, with explanations in Sinhala and recordings for missed lessons. Study areas include Tamil letters and pronunciation, basic grammar, listening, speaking, reading and writing, everyday conversations, workplace communication and simple translation.',
+      'The announced start is 26 November 2026 at 8.00 p.m. The published class schedule is Wednesday and Sunday, 8.00 p.m. to 10.00 p.m. Confirm the opening session and regular timetable with admissions.',
+      'The published standard course fee is LKR 48,000. The announcement offers a 50% scholarship, reducing the listed total to LKR 24,000, payable in four instalments of LKR 6,000. A one-time payment option of LKR 19,000 is also listed. These figures relate to the advertised intake; confirm eligibility, availability, payment deadlines and any additional charges before paying.',
+      'Read the programme page and the published November 2026 guide for the study areas and fee source. Contact SITC admissions to check your eligibility, the current awarding arrangements and the final registration requirements.',
+    ],
+  },
+  {
     id: 769,
     slug: '%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94',
     published: '2023-11-02T08:50:24Z',

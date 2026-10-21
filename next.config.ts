@@ -3,9 +3,15 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   devIndicators: false,
   trailingSlash: true,
-  images: { qualities: [75, 90] },
+  images: { formats: ['image/avif', 'image/webp'], qualities: [75, 90] },
   async redirects() {
     return [
+      { source: '/favicon.ico', destination: '/icon.png', permanent: true },
+      {
+        source: '/wp-content/uploads/2023/10/sitc-fav-300x300.png',
+        destination: '/icon.png',
+        permanent: true,
+      },
       ...[
         'sitemap_index.xml',
         'page-sitemap.xml',

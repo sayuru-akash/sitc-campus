@@ -1,4 +1,5 @@
 import { homepageSeo } from '@/content/seo';
+import { siteEntities } from '@/lib/site-schema';
 export function ContentStructuredData({
   path,
   title,
@@ -18,12 +19,15 @@ export function ContentStructuredData({
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
+      ...siteEntities(),
       {
         '@type': type,
         '@id': `${url}#webpage`,
         url,
         name: title,
         description,
+        inLanguage: 'en',
+        about: { '@id': `${homepageSeo.url}#organization` },
         isPartOf: { '@id': `${homepageSeo.url}#website` },
         breadcrumb: { '@id': `${url}#breadcrumb` },
       },

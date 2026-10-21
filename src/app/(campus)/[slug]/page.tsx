@@ -6,6 +6,7 @@ import { newsArticles } from '@/content/news-articles';
 import { ContentStructuredData } from '@/components/content-structured-data';
 import { contentPageSeo } from '@/lib/content-seo';
 import { homepageSeo } from '@/content/seo';
+import { programmePath, type ProgrammeId } from '@/content/programme-routes';
 import { findNewsArticle } from '@/lib/news';
 
 export function generateStaticParams() {
@@ -68,7 +69,7 @@ export default async function NewsArticlePage({
           <p>{story.summary}</p>
         </header>
         <figure
-          className={`article-photo${story.id === 769 || story.id === 763 || story.id === 772 ? ' contain-photo' : ''}`}
+          className={`article-photo${story.id === 769 || story.id === 763 || story.id === 772 || story.id === 20261019 ? ' contain-photo' : ''}`}
         >
           <Image
             src={story.image}
@@ -80,15 +81,37 @@ export default async function NewsArticlePage({
         </figure>
         <article className="article-reading">
           <p className="article-archive-note">
-            From the SITC archive. This article preserves the original
-            publication and may describe past offers, roles or events. Contact
-            admissions for current information.
+            {'sourceUrl' in article
+              ? 'Campus announcement, based on SITC’s published intake information. Confirm availability and final arrangements with admissions.'
+              : 'From the SITC archive. This article preserves the original publication and may describe past offers, roles or events. Contact admissions for current information.'}
           </p>
           <div className="article-original" lang={story.lang}>
             {article.paragraphs.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
+          {'sourceUrl' in article && (
+            <p>
+              <a
+                className="text-link"
+                href={article.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source: SITC’s official announcement ↗
+              </a>
+            </p>
+          )}
+          {'programmeId' in article && (
+            <p>
+              <Link
+                className="text-link"
+                href={programmePath(article.programmeId as ProgrammeId)}
+              >
+                Explore the programme and published guide ↗
+              </Link>
+            </p>
+          )}
           {'videoUrl' in article && (
             <a
               className="button article-video-link"
@@ -160,11 +183,13 @@ export default async function NewsArticlePage({
             inLanguage: story.lang,
             image: new URL(story.image, homepageSeo.url).href,
             author: {
+              '@id': `${homepageSeo.url}#organization`,
               '@type': 'Organization',
               name: 'SITC Campus',
               url: homepageSeo.url,
             },
             publisher: {
+              '@id': `${homepageSeo.url}#organization`,
               '@type': 'Organization',
               name: 'SITC Campus',
               url: homepageSeo.url,

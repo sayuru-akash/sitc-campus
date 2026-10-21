@@ -10,6 +10,7 @@ import { Leadership } from '@/components/sections/leadership';
 import { Experience } from '@/components/sections/experience';
 import { Pathway } from '@/components/sections/pathway';
 import { StudentResources } from '@/components/sections/student-resources';
+import { RecentNews } from '@/components/sections/recent-news';
 import { FAQ } from '@/components/sections/faq';
 import { Enquiry } from '@/components/sections/enquiry';
 
@@ -63,6 +64,7 @@ export default function Home() {
         <Highlights />
         <ProgrammeExplorer />
         <Experience />
+        <RecentNews />
         <Leadership />
         <Pathway />
         <StudentResources />
