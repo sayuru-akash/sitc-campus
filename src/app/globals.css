@@ -177,6 +177,7 @@
     padding-bottom: 4px;
   }
   .sinhala {
+    font-family: var(--font-sinhala-intro), var(--font-sinhala), sans-serif;
     margin: 34px 0px 0px;
     color: var(--muted);
     font-size: 14px;
@@ -1850,5 +1851,27 @@
   }
   .footer-credit > a:hover {
     text-decoration: underline;
+  }
+}
+
+@layer components {
+  /* Keep long, off-screen translated sections from competing with the hero.
+     Automatic containment is released by the browser when a section is viewed
+     or targeted by navigation. Content remains in the server-rendered HTML. */
+  .home-news {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 850px;
+  }
+  .leadership {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1600px;
+  }
+  @media (max-width: 760px) {
+    .home-news {
+      contain-intrinsic-size: auto 1400px;
+    }
+    .leadership {
+      contain-intrinsic-size: auto 2600px;
+    }
   }
 }

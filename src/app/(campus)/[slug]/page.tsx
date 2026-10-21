@@ -166,6 +166,7 @@ export default async function NewsArticlePage({
       </div>
       <ContentStructuredData
         path={path}
+        lang={story.lang}
         title={story.title}
         description={story.summary}
         breadcrumbs={[

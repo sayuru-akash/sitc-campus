@@ -5,6 +5,7 @@ export function ContentStructuredData({
   title,
   description,
   type = 'WebPage',
+  lang = 'en',
   breadcrumbs,
   additional = [],
 }: {
@@ -12,6 +13,7 @@ export function ContentStructuredData({
   title: string;
   description: string;
   type?: string;
+  lang?: string;
   breadcrumbs: readonly { name: string; path: string }[];
   additional?: readonly Record<string, unknown>[];
 }) {
@@ -26,7 +28,7 @@ export function ContentStructuredData({
         url,
         name: title,
         description,
-        inLanguage: 'en',
+        inLanguage: lang,
         about: { '@id': `${homepageSeo.url}#organization` },
         isPartOf: { '@id': `${homepageSeo.url}#website` },
         breadcrumb: { '@id': `${url}#breadcrumb` },
