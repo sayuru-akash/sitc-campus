@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { newsStories } from '@/content/news';
 
 const years = [...new Set(newsStories.map((story) => story.date.slice(0, 4)))];
@@ -37,25 +38,23 @@ export function NewsArchive() {
             }
             key={story.id}
           >
-            <a
+            <Link
               className={`news-photo${story.id === 769 || story.id === 763 ? ' poster-photo' : ''}`}
-              href={story.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={new URL(story.href).pathname}
               aria-label={`Read story: ${story.title}`}
             >
               <Image
                 src={story.image}
                 alt=""
                 fill
-                preload={year === 'all' && index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 sizes={
                   year === 'all' && index === 0
                     ? '(max-width: 760px) 88vw, 52vw'
                     : '(max-width: 640px) 88vw, (max-width: 1000px) 43vw, 28vw'
                 }
               />
-            </a>
+            </Link>
             <div className="news-story-copy">
               <time dateTime={story.date}>
                 {new Intl.DateTimeFormat('en-GB', {
@@ -66,23 +65,12 @@ export function NewsArchive() {
                 }).format(new Date(story.date))}
               </time>
               <h2 lang={story.lang}>
-                <a href={story.href} target="_blank" rel="noopener noreferrer">
-                  {story.title}
-                </a>
+                <Link href={new URL(story.href).pathname}>{story.title}</Link>
               </h2>
               <p>{story.summary}</p>
-              <a
-                className="text-link"
-                href={story.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="text-link" href={new URL(story.href).pathname}>
                 Read story <span aria-hidden="true">↗</span>
-                <span className="sr-only">
-                  {' '}
-                  (opens the original SITC article in a new tab)
-                </span>
-              </a>
+              </Link>
             </div>
           </article>
         ))}

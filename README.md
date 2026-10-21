@@ -23,6 +23,8 @@ bun run build
 bun run start
 ```
 
+With the built site running on port 3100, run `python3 scripts/verify-public-migration.py` to check page statuses, metadata, sitemap/feed, legacy media, redirects and internal links.
+
 ## Editing the site
 
 - `src/app/page.tsx`: section order and page assembly.
@@ -47,6 +49,22 @@ The visual reference was inspected in Edge, including desktop, tablet, mobile na
 
 Official contact details and three official locations were refreshed from https://sitc.lk/ and its contact page. The footer includes Colombo, Gampola, the UAE office in Sharjah, the user-supplied Kuala Lumpur address in Malaysia, all published support numbers, social channels, maps, appointments, and legal links. The header uses the supplied trilingual wordmark. The footer renders that exact image in white using a CSS filter, preserving every glyph. The certificate-verification link uses the official verification service. Font files come from the reference's DM Sans and Playfair Display Google Fonts stylesheet, with licenses in `public/fonts/`.
 
+## Main pages
+
+Eight main pages are implemented under `src/app/(campus)/`: About, Contact, Programmes, Partners, News, Privacy, Refund and Terms. Shared inner-page styles live in `inner-pages.css`; page copy and metadata live in `src/content/{about,partners,news,policies,page-metadata}.ts`. Keep the ten approved programme records as the single source for both homepage and catalogue.
+
+Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. All 66 discovered legacy media/PDF URLs are preserved under `public/wp-content/`.
+
+- `src/content/programme-routes.ts`: stable programme slugs and reusable level definitions.
+- `src/content/programme-details.ts`: study guides, source-labelled diploma fees, learning themes and progression.
+- `public/guides/`: six newer published SITC diploma guides, discovered through its Facebook posts.
+- `src/content/news-articles.ts`: original article text, slugs and publication metadata.
+- `src/app/sitemap.ts` and `src/app/robots.ts`: canonical indexable routes and crawler guidance.
+
+To add an offering, add the approved record to `programmes.ts`, its stable slug to `programme-routes.ts` and its detail in `programme-details.ts`. Catalogue, enquiry options and sitemap follow those records. Update the approved catalogue-count expectations in the migration checks when changing the list. Extend the qualification type and level classification if introducing a new level. Empty future levels should become indexable only when approved offerings are present.
+
+The four degree pages contain useful original subject guidance, with exploratory themes explicitly distinguished from an official module specification. Exact awarding, entry, duration and fees still need authoritative SITC specifications. Legal pages are plain-language adaptations and need owner review before public publication. No payment backend, invented registration success or automatic external message is implemented. See [detail-page sources, migration map and QA](docs/research/DETAIL-PAGES-MIGRATION.md).
+
 ## Campus video
 
 The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. A failed player keeps the original poster and an external watch link.
@@ -57,7 +75,7 @@ Video metadata uses the verified public upload date and duration. Google may con
 
 Homepage metadata preserves the live site's title, description, Open Graph identity, Twitter card, and sharing image as captured on 21 October 2026. The homepage has an explicit self-referencing canonical and indexable robots metadata. Homepage-specific fields live in `src/app/page.tsx`, so future pages and 404s do not inherit the homepage canonical. Structured data combines the existing education/contact/video information with linked WebSite, WebPage, and breadcrumb entities using stable public IDs.
 
-The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. The existing sitewide robots.txt, sitemap, other pages, feeds, tracking, WordPress forms, and media routes have not been migrated. This project is not yet a replacement for the whole live site. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
+The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. Public content routes, sitemap, robots, RSS and the discovered legacy media paths are implemented locally. Tracking and WordPress backend features have not been migrated. A production cutover still needs hosting, public-origin and external-service verification. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
 
 The original clone measurement JSON and `scripts/verify-layout.mjs` are archived baseline evidence. They do not assert that the intentionally redesigned header and footer still match the original.
 

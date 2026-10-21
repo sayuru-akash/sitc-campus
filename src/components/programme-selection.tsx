@@ -7,10 +7,12 @@ const ProgrammeSelection = createContext<{
 } | null>(null);
 export function ProgrammeSelectionProvider({
   children,
+  initialId = '',
 }: {
   children: ReactNode;
+  initialId?: string;
 }) {
-  const [selectedId, selectProgramme] = useState('');
+  const [selectedId, selectProgramme] = useState(initialId);
   return (
     <ProgrammeSelection value={{ selectedId, selectProgramme }}>
       {children}

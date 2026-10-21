@@ -1,0 +1,190 @@
+{
+  "passed": true,
+  "indexablePages": 27,
+  "htmlPagesChecked": 29,
+  "legacyHtmlDecisionsChecked": 27,
+  "retiredRoutes": 3,
+  "legacyAssetsChecked": 66,
+  "currentGuidesChecked": 6,
+  "redirectsChecked": 38,
+  "rssItems": 6,
+  "internalLinksAndFragments": "passed",
+  "metadataAndStructuredData": "passed",
+  "unknownRoutes": "404",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/"
+    },
+    {
+      "path": "/about-us/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/about-us/"
+    },
+    {
+      "path": "/academic-direction-partner-institutes/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/academic-direction-partner-institutes/"
+    },
+    {
+      "path": "/privacy-policy/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/privacy-policy/"
+    },
+    {
+      "path": "/refund-policy/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/refund-policy/"
+    },
+    {
+      "path": "/terms-and-conditions/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/terms-and-conditions/"
+    },
+    {
+      "path": "/news/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/news/"
+    },
+    {
+      "path": "/academic-programmes/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/academic-programmes/"
+    },
+    {
+      "path": "/contact-us/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/contact-us/"
+    },
+    {
+      "path": "/program/diploma-in-psychology-and-counseling/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-psychology-and-counseling/"
+    },
+    {
+      "path": "/program/diploma-in-information-technology/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-information-technology/"
+    },
+    {
+      "path": "/program/diploma-in-business-management/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-business-management/"
+    },
+    {
+      "path": "/program/diploma-in-human-resource-management/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-human-resource-management/"
+    },
+    {
+      "path": "/program/diploma-in-english-2026-ugc-recognized-university-diploma/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-english-2026-ugc-recognized-university-diploma/"
+    },
+    {
+      "path": "/program/diploma-in-tamil-as-a-second-language/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/diploma-in-tamil-as-a-second-language/"
+    },
+    {
+      "path": "/program/bsc-in-psychology-and-counselling/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/bsc-in-psychology-and-counselling/"
+    },
+    {
+      "path": "/program/bsc-in-hrm-and-business-strategy/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/bsc-in-hrm-and-business-strategy/"
+    },
+    {
+      "path": "/program/bsc-in-business-management/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/bsc-in-business-management/"
+    },
+    {
+      "path": "/program/ba-in-english/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program/ba-in-english/"
+    },
+    {
+      "path": "/program-level/diploma/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program-level/diploma/"
+    },
+    {
+      "path": "/program-level/undergraduate/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program-level/undergraduate/"
+    },
+    {
+      "path": "/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/%e0%b6%bb%e0%b6%a7-%e0%b6%ba%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%89%e0%b6%b1%e0%b7%8a%e0%b6%b1-%e0%b6%85%e0%b6%ba%e0%b6%a7-%e0%b6%89%e0%b7%84%e0%b7%85%e0%b6%b8-%e0%b7%83%e0%b7%94%e0%b6%af%e0%b7%94/"
+    },
+    {
+      "path": "/%e0%b6%b8%e0%b6%b1%e0%b7%9d%e0%b7%80%e0%b7%92%e0%b6%af%e0%b7%8a%e0%b6%ba%e0%b7%8f-%e0%b6%85%e0%b6%b0%e0%b7%8a%e0%b6%ba%e0%b6%b1-%e0%b6%85%e0%b6%82%e0%b7%81%e0%b6%ba%e0%b7%9a/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/%e0%b6%b8%e0%b6%b1%e0%b7%9d%e0%b7%80%e0%b7%92%e0%b6%af%e0%b7%8a%e0%b6%ba%e0%b7%8f-%e0%b6%85%e0%b6%b0%e0%b7%8a%e0%b6%ba%e0%b6%b1-%e0%b6%85%e0%b6%82%e0%b7%81%e0%b6%ba%e0%b7%9a/"
+    },
+    {
+      "path": "/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b7%83%e0%b7%92%e0%b7%80%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b7%83%e0%b7%92%e0%b7%80%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/"
+    },
+    {
+      "path": "/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/"
+    },
+    {
+      "path": "/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b6%ad%e0%b7%94%e0%b6%b1%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/%e0%b7%80%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b7%82%e0%b7%92%e0%b6%9a-%e0%b6%ad%e0%b7%94%e0%b6%b1%e0%b7%8a%e0%b7%80%e0%b6%b1-%e0%b6%a9%e0%b7%92%e0%b6%b4%e0%b7%8a%e0%b6%bd%e0%b7%9d%e0%b6%b8%e0%b7%8f/"
+    },
+    {
+      "path": "/%e0%b6%9a%e0%b6%ad%e0%b7%92%e0%b6%9a%e0%b7%8f%e0%b6%a0%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b6%ba-%e0%b6%89%e0%b7%83%e0%b7%94%e0%b6%bb%e0%b7%94-%e0%b6%b4%e0%b7%99%e0%b6%bb%e0%b7%9a%e0%b6%bb%e0%b7%8f/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/%e0%b6%9a%e0%b6%ad%e0%b7%92%e0%b6%9a%e0%b7%8f%e0%b6%a0%e0%b7%8f%e0%b6%bb%e0%b7%8a%e0%b6%ba-%e0%b6%89%e0%b7%83%e0%b7%94%e0%b6%bb%e0%b7%94-%e0%b6%b4%e0%b7%99%e0%b6%bb%e0%b7%9a%e0%b6%bb%e0%b7%8f/"
+    },
+    {
+      "path": "/program-level/specialized-masters/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program-level/specialized-masters/"
+    },
+    {
+      "path": "/program-level/ph-d/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://sitc.lk/program-level/ph-d/"
+    }
+  ]
+}

@@ -752,7 +752,7 @@
     z-index: 10;
     gap: 28px;
   }
-  .site-header nav a[aria-current='page'] {
+  .site-header nav a[aria-current] {
     color: var(--wine);
     text-decoration: underline;
     text-underline-offset: 8px;

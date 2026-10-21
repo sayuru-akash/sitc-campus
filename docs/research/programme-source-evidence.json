@@ -1,0 +1,74 @@
+[
+  {
+    "programme": "psychology",
+    "source": "https://drive.google.com/file/d/1v8Y6dCEV84PNl0a0dM97UjWcLIt2xh5w/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "September 2026",
+    "localGuide": "/guides/psychology-2026.pdf",
+    "publishedTotalLKR": 24000,
+    "publishedOneTimeLKR": 19000,
+    "installments": 4,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "it",
+    "source": "https://drive.google.com/file/d/1shDoi1v58m0RUV7rBOCX7JjnWU8TjH4d/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "September 2026",
+    "localGuide": "/guides/it-2026.pdf",
+    "publishedTotalLKR": 24000,
+    "publishedOneTimeLKR": 19000,
+    "installments": 4,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "business",
+    "source": "https://drive.google.com/file/d/1XjeqdaNWy8szJVUxwZPKZi2zsB5bnWTC/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "September 2026",
+    "localGuide": "/guides/business-2026.pdf",
+    "publishedTotalLKR": 24000,
+    "publishedOneTimeLKR": 19000,
+    "installments": 4,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "hrm",
+    "source": "https://drive.google.com/file/d/1YvuP4qsr5TwPloctpjEPpUnJmDHCaO66/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "August 2026",
+    "localGuide": "/guides/hrm-2026.pdf",
+    "publishedTotalLKR": 24000,
+    "publishedOneTimeLKR": 19000,
+    "installments": 4,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "english",
+    "source": "https://drive.google.com/file/d/12PT2UaiJHVnmi1SVRWFI-jkA20JOsjuG/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "June 2026",
+    "localGuide": "/guides/english-2026.pdf",
+    "publishedTotalLKR": 18000,
+    "publishedOneTimeLKR": 13000,
+    "installments": 3,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "tamil",
+    "source": "https://drive.google.com/file/d/1xD6etCu73eBPoJbc4Zv4RuS8ximHmksz/view",
+    "discovery": "Published SITC Campus Facebook post",
+    "intakeLabel": "November 2026",
+    "localGuide": "/guides/tamil-2026.pdf",
+    "publishedTotalLKR": 24000,
+    "publishedOneTimeLKR": 19000,
+    "installments": 4,
+    "installmentLKR": 6000,
+    "feePageVisuallyVerified": true
+  }
+]

@@ -1,6 +1,8 @@
 'use client';
 
 import { Fragment, useState } from 'react';
+import Link from 'next/link';
+import { programmePath } from '@/content/programme-routes';
 import { useProgrammeSelection } from '@/components/programme-selection';
 import { Eyebrow } from '@/components/ui/eyebrow';
 import { programmes } from '@/content/programmes';
@@ -104,9 +106,23 @@ export function ProgrammeExplorer({
                 <span>{programme.level.toUpperCase()}</span>
                 <span aria-hidden="true">↗</span>
               </div>
-              <h3>{programme.title}</h3>
+              <h3>
+                <Link href={programmePath(programme.id)}>
+                  {programme.title}
+                </Link>
+              </h3>
               <p>{programme.description}</p>
-              <a href="#enquire" onClick={() => selectProgramme(programme.id)}>
+              <Link
+                href={programmePath(programme.id)}
+                className="programme-details-link"
+              >
+                View programme <span aria-hidden="true">↗</span>
+              </Link>
+              <a
+                className="programme-quick-enquiry"
+                href="#enquire"
+                onClick={() => selectProgramme(programme.id)}
+              >
                 {catalogue
                   ? 'Enquire about this programme'
                   : 'Explore this pathway'}{' '}

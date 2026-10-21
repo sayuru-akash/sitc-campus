@@ -4,5 +4,39 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
   images: { qualities: [75, 90] },
+  async redirects() {
+    return [
+      ...[
+        'sitemap_index.xml',
+        'page-sitemap.xml',
+        'post-sitemap.xml',
+        'program-sitemap.xml',
+        'program_level-sitemap.xml',
+        'category-sitemap.xml',
+        'sitemap.rss',
+      ].map((source) => ({
+        source: `/${source}`,
+        destination: '/sitemap.xml',
+        permanent: true,
+      })),
+      { source: '/news/feed/', destination: '/feed/', permanent: true },
+      {
+        source: '/program/',
+        destination: '/academic-programmes/',
+        permanent: true,
+      },
+      {
+        source: '/program-level/',
+        destination: '/academic-programmes/',
+        permanent: true,
+      },
+      {
+        source: '/program/diploma-in-english/',
+        destination:
+          '/program/diploma-in-english-2026-ugc-recognized-university-diploma/',
+        permanent: true,
+      },
+    ];
+  },
 };
 export default nextConfig;

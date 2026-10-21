@@ -1013,3 +1013,641 @@
     }
   }
 }
+
+@layer components {
+  .inner-pages .programme-detail > .breadcrumbs,
+  .news-detail > .page-container > .breadcrumbs {
+    padding-top: 34px;
+  }
+  .course-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 70px;
+    align-items: start;
+    padding-bottom: 45px;
+  }
+  .course-hero h1 {
+    font-size: clamp(42px, 4.5vw, 66px);
+    line-height: 1.15;
+    margin: 10px 0 25px;
+    max-width: 860px;
+  }
+  .course-lead {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 700px;
+  }
+  .course-intake {
+    font-size: 13px;
+    border-top: 1px solid #cbb89d;
+    padding-top: 20px;
+    margin-top: 30px;
+  }
+  .course-summary {
+    background: var(--wine);
+    color: var(--cream);
+    padding: 25px;
+  }
+  .course-summary dl {
+    margin: 0;
+  }
+  .course-summary dl > div {
+    padding: 12px 0;
+    border-bottom: 1px solid #a47a72;
+  }
+  .course-summary dt {
+    font-size: 12px;
+    color: #e3c8b0;
+  }
+  .course-summary dd {
+    margin: 5px 0 0;
+    font-size: 16px;
+  }
+  .course-summary .course-enquire {
+    background: #b99661;
+    border-color: #b99661;
+    color: #23141a;
+    gap: 12px;
+    font-size: 11px;
+    margin-top: 24px;
+    width: 100%;
+    padding: 15px;
+  }
+  .course-guide-link {
+    display: block;
+    margin-top: 18px;
+    font-size: 12px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .course-section-nav,
+  .level-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 35px;
+    border-bottom: 1px solid #bfa583;
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+  }
+  .course-section-nav a,
+  .level-navigation a {
+    font-size: 13px;
+    color: var(--wine);
+  }
+  .level-navigation a[aria-current] {
+    border-bottom: 2px solid var(--wine);
+  }
+  .course-reading-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 75px;
+    align-items: start;
+  }
+  .course-section {
+    margin-bottom: 45px;
+    scroll-margin-top: 28px;
+  }
+  .course-section h2,
+  .course-related h2,
+  .article-related h2 {
+    font-size: 36px;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+    margin-bottom: 20px;
+  }
+  .course-section p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 15px;
+  }
+  .course-section h3 {
+    font:
+      500 23px/1.4 var(--font-playfair),
+      Georgia,
+      serif;
+    color: var(--wine);
+    margin: 25px 0 10px;
+  }
+  .course-section .course-source-note {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .curriculum-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+  }
+  .curriculum-list li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-top: 1px solid #cbb89d;
+  }
+  .curriculum-list li > span {
+    color: #926b34;
+    font:
+      500 23px/1.5 var(--font-playfair),
+      Georgia,
+      serif;
+  }
+  .curriculum-list h3 {
+    font-size: 22px;
+    margin: 0 0 6px;
+  }
+  .curriculum-list p {
+    font-size: 13px;
+    margin: 0;
+  }
+  .course-admissions {
+    position: sticky;
+    top: 30px;
+    border: 1px solid #cbb89d;
+    padding: 25px;
+  }
+  .course-admissions h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .course-admissions p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .course-admissions a {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #cbb89d;
+    padding: 15px 0;
+    font-size: 12px;
+    color: var(--wine);
+  }
+  .course-outcomes {
+    margin: 0;
+    padding-left: 22px;
+    color: var(--muted);
+  }
+  .course-outcomes li {
+    padding: 8px 0;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .entry-section {
+    border-top: 1px solid #bfa583;
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+  .course-fees {
+    border-left: 1px solid #cbb89d;
+    padding-left: 45px;
+  }
+  .course-fees dl {
+    margin: 24px 0;
+  }
+  .course-fees dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid #cbb89d;
+    padding: 17px 0;
+  }
+  .course-fees dt {
+    font-size: 12px;
+    max-width: 200px;
+    color: var(--muted);
+  }
+  .course-fees dd {
+    margin: 0;
+    color: var(--wine);
+    font:
+      500 21px/1.4 var(--font-playfair),
+      Georgia,
+      serif;
+    white-space: nowrap;
+  }
+  .course-fees .fee-source,
+  .course-fees .fee-clarification {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .fee-clarification {
+    border-left: 3px solid #b99661;
+    padding-left: 15px;
+  }
+  .application-steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 25px 0;
+  }
+  .application-steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    column-gap: 12px;
+    margin: 20px 0;
+  }
+  .application-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    color: #926b34;
+    grid-row: span 2;
+    font-size: 12px;
+  }
+  .application-steps strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--wine);
+  }
+  .application-steps span {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 6px;
+  }
+  .progression-section {
+    max-width: 900px;
+  }
+  .course-questions details {
+    border-top: 1px solid #cbb89d;
+    padding: 20px 0;
+  }
+  .course-questions details:last-child {
+    border-bottom: 1px solid #cbb89d;
+  }
+  .course-questions summary {
+    cursor: pointer;
+    color: var(--wine);
+    font-size: 15px;
+  }
+  .course-questions details p {
+    max-width: 900px;
+    margin: 18px 0 0;
+    font-size: 14px;
+  }
+  .detail-section-heading {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  .detail-section-heading h2 {
+    margin: 0;
+  }
+  .detail-section-heading .text-link {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .course-related {
+    padding: 15px 0 60px;
+  }
+  .programme-link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .programme-link-grid article {
+    border-top: 1px solid #bfa583;
+    background: #eee9e1;
+    padding: 28px;
+  }
+  .programme-link-grid article > span {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--wine);
+  }
+  .programme-link-grid h3 {
+    font:
+      500 29px/1.3 var(--font-playfair),
+      Georgia,
+      serif;
+    color: var(--wine);
+    margin: 15px 0;
+  }
+  .programme-link-grid p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .programme-link-grid .text-link {
+    font-size: 12px;
+  }
+  .level-count {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+  .level-page {
+    padding-bottom: 55px;
+  }
+  .level-guidance {
+    border-top: 1px solid #bfa583;
+    margin-top: 45px;
+    padding-top: 35px;
+  }
+  .level-guidance h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .level-guidance p,
+  .level-empty p {
+    color: var(--muted);
+    max-width: 800px;
+    line-height: 1.9;
+  }
+  .level-empty {
+    padding: 30px 0 40px;
+  }
+  .level-empty h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .level-empty .button {
+    margin: 15px 25px 15px 0;
+  }
+  .news-detail .article-heading {
+    display: block;
+    height: auto;
+    padding: 10px 0 35px;
+    border: 0;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .article-heading time,
+  .article-related time {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .news-detail .article-heading h1 {
+    font-size: clamp(35px, 3.8vw, 57px);
+    line-height: 1.3;
+    margin: 18px 0;
+  }
+  .news-detail .article-heading h1[lang='si'] {
+    font-size: clamp(28px, 3vw, 43px);
+    line-height: 1.65;
+  }
+  .article-heading p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 0;
+  }
+  .article-photo {
+    position: relative;
+    aspect-ratio: 2;
+    margin: 0;
+    background: #e9e3dc;
+  }
+  .article-photo img {
+    object-fit: cover;
+  }
+  .article-photo.contain-photo {
+    aspect-ratio: 1.8;
+  }
+  .article-photo.contain-photo img {
+    object-fit: contain;
+  }
+  .article-reading {
+    max-width: 780px;
+    margin: 40px auto 55px;
+  }
+  .article-archive-note {
+    font-size: 12px;
+    color: var(--muted);
+    border-bottom: 1px solid #cbb89d;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+  .article-original p {
+    font-size: 16px;
+    line-height: 1.95;
+    color: #51494b;
+  }
+  .article-original[lang='si'] p {
+    font-family: var(--font-sinhala), sans-serif;
+    font-size: 17px;
+    line-height: 2.1;
+  }
+  .article-return {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    border-top: 1px solid #cbb89d;
+    padding-top: 25px;
+    margin-top: 35px;
+    font-size: 13px;
+  }
+  .article-related {
+    padding-bottom: 60px;
+  }
+  .article-related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  .article-related-grid article {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    border-top: 1px solid #bfa583;
+    padding-top: 25px;
+  }
+  .related-news-photo {
+    position: relative;
+    height: 160px;
+    background: #e9e3dc;
+  }
+  .related-news-photo img {
+    object-fit: cover;
+  }
+  .article-related h3 {
+    color: var(--wine);
+    font:
+      500 23px/1.4 var(--font-playfair),
+      Georgia,
+      serif;
+    margin: 12px 0;
+  }
+  .article-related h3[lang='si'] {
+    font:
+      500 17px/1.8 var(--font-sinhala),
+      sans-serif;
+  }
+  .article-related p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .card h3 a {
+    border: 0;
+    font: inherit;
+    margin: 0;
+  }
+  .card .programme-details-link {
+    margin-right: 25px;
+  }
+  .card .programme-quick-enquiry {
+    font-size: 11px;
+    color: var(--muted);
+    border-bottom: 0;
+  }
+  .missing-page {
+    padding-block: 90px 110px;
+  }
+  .missing-page > p {
+    color: var(--muted);
+    max-width: 600px;
+  }
+  .missing-page > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    margin-top: 30px;
+  }
+  @media (max-width: 1000px) {
+    .course-hero {
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 35px;
+    }
+    .course-reading-layout {
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 35px;
+    }
+    .entry-section {
+      gap: 35px;
+    }
+    .course-fees {
+      padding-left: 25px;
+    }
+    .article-related-grid article {
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+    }
+  }
+  @media (max-width: 760px) {
+    .course-hero {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .course-hero h1 {
+      font-size: 44px;
+    }
+    .course-lead {
+      font-size: 18px;
+    }
+    .course-summary dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 20px;
+    }
+    .course-reading-layout {
+      display: block;
+    }
+    .course-admissions {
+      position: static;
+      margin-bottom: 35px;
+    }
+    .entry-section {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .course-fees {
+      border: 0;
+      padding: 25px 0 0;
+      border-top: 1px solid #cbb89d;
+    }
+    .article-related-grid {
+      gap: 25px;
+    }
+    .article-related-grid article {
+      display: block;
+    }
+    .related-news-photo {
+      display: block;
+      height: 180px;
+      margin-bottom: 18px;
+    }
+  }
+  @media (max-width: 640px) {
+    .course-hero h1 {
+      font-size: 39px;
+      letter-spacing: -1px;
+    }
+    .course-section-nav {
+      gap: 16px 22px;
+    }
+    .course-section-nav a {
+      font-size: 12px;
+    }
+    .course-summary {
+      padding: 22px;
+    }
+    .course-section h2,
+    .course-related h2,
+    .article-related h2 {
+      font-size: 31px;
+    }
+    .course-section h3 {
+      font-size: 22px;
+    }
+    .curriculum-list {
+      margin-top: 20px;
+    }
+    .curriculum-list li {
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+    }
+    .curriculum-list h3 {
+      font-size: 21px;
+    }
+    .programme-link-grid,
+    .article-related-grid {
+      grid-template-columns: 1fr;
+    }
+    .programme-link-grid article {
+      padding: 24px;
+    }
+    .programme-link-grid h3 {
+      font-size: 28px;
+    }
+    .detail-section-heading {
+      align-items: start;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .news-detail .article-heading h1[lang='si'] {
+      font-size: 27px;
+    }
+    .article-heading p {
+      font-size: 15px;
+    }
+    .article-photo {
+      aspect-ratio: 1.4;
+    }
+    .article-photo.contain-photo {
+      aspect-ratio: 1;
+    }
+    .article-reading {
+      margin-top: 25px;
+    }
+    .article-original[lang='si'] p {
+      font-size: 16px;
+    }
+    .course-fees dd {
+      font-size: 20px;
+    }
+    .level-guidance h2,
+    .level-empty h2 {
+      font-size: 32px;
+    }
+  }
+}

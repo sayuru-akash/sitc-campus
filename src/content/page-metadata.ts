@@ -1,3 +1,4 @@
+import { programmes } from './programmes';
 // Public page identity captured from sitc.lk on 21 October 2026.
 export const mainPageMetadata = {
   about: {
@@ -10,7 +11,7 @@ export const mainPageMetadata = {
     path: '/academic-direction-partner-institutes/',
     title: 'Academic Direction Partner Institutes - SITC Campus Sri Lanka',
     description:
-      'Discover SITC Campus academic direction and partner institutes supporting recognised diploma, degree, master’s programmes in Sri Lanka.',
+      'Meet the academic direction and digital learning partners working with SITC Campus to support students in Sri Lanka.',
   },
   privacy: {
     path: '/privacy-policy/',
@@ -22,7 +23,7 @@ export const mainPageMetadata = {
     path: '/refund-policy/',
     title: 'Refund Policy - SITC Campus Sri Lanka',
     description:
-      'Refund Policy Thank you for choosing SITC Campus for your academic journey. We are committed to delivering a high quality learning experience and maintaining transparent policies for all students. Eligibility for Refunds All programme fees, registration fees and administrative charges are generally non refundable once a student has enrolled. However, refunds may be considered under',
+      'Read SITC Campus refund eligibility, non-refundable fees, withdrawal requirements and the process for requesting an approved refund.',
   },
   terms: {
     path: '/terms-and-conditions/',
@@ -39,8 +40,7 @@ export const mainPageMetadata = {
   programmes: {
     path: '/academic-programmes/',
     title: 'Academic Programmes - SITC Campus Sri Lanka',
-    description:
-      'Explore our wide range of academic programmes at SITC Campus, designed to empower students with the knowledge and skills for success. From undergraduate to postgraduate studies, find the perfect course for your future.',
+    description: `Explore ${programmes.length} diploma and degree programmes at SITC Campus. Search your interests and contact admissions about entry requirements and your next step.`,
   },
   contact: {
     path: '/contact-us/',

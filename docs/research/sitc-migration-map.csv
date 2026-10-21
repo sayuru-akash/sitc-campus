@@ -1,0 +1,28 @@
+Legacy URL,Local path,Expected status,Indexable,Decision
+https://sitc.lk/,/,200,Yes,Rebuilt on the original route
+https://sitc.lk/about-us/,/about-us/,200,Yes,Rebuilt on the original route
+https://sitc.lk/academic-direction-partner-institutes/,/academic-direction-partner-institutes/,200,Yes,Rebuilt on the original route
+https://sitc.lk/academic-programmes/,/academic-programmes/,200,Yes,Rebuilt on the original route
+https://sitc.lk/academic-staff/,/academic-staff/,410,No,Retired without replacement
+https://sitc.lk/category/uncategorized/,/category/uncategorized/,410,No,Retired without replacement
+https://sitc.lk/contact-us/,/contact-us/,200,Yes,Rebuilt on the original route
+https://sitc.lk/events/,/events/,410,No,Retired without replacement
+https://sitc.lk/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/,/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/,200,Yes,Rebuilt on the original route
+https://sitc.lk/news/,/news/,200,Yes,Rebuilt on the original route
+https://sitc.lk/privacy-policy/,/privacy-policy/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program-level/diploma/,/program-level/diploma/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program/diploma-in-business-management/,/program/diploma-in-business-management/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program/diploma-in-english-2026-ugc-recognized-university-diploma/,/program/diploma-in-english-2026-ugc-recognized-university-diploma/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program/diploma-in-human-resource-management/,/program/diploma-in-human-resource-management/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program/diploma-in-information-technology/,/program/diploma-in-information-technology/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program/diploma-in-psychology-and-counseling/,/program/diploma-in-psychology-and-counseling/,200,Yes,Rebuilt on the original route
+https://sitc.lk/refund-policy/,/refund-policy/,200,Yes,Rebuilt on the original route
+https://sitc.lk/terms-and-conditions/,/terms-and-conditions/,200,Yes,Rebuilt on the original route
+https://sitc.lk/කතිකාචාර්ය-ඉසුරු-පෙරේරා/,/කතිකාචාර්ය-ඉසුරු-පෙරේරා/,200,Yes,Rebuilt on the original route
+https://sitc.lk/මනෝවිද්යා-අධ්යන-අංශයේ/,/මනෝවිද්යා-අධ්යන-අංශයේ/,200,Yes,Rebuilt on the original route
+https://sitc.lk/රට-යන්න-ඉන්න-අයට-ඉහළම-සුදු/,/රට-යන්න-ඉන්න-අයට-ඉහළම-සුදු/,200,Yes,Rebuilt on the original route
+https://sitc.lk/වාර්ෂික-තුන්වන-ඩිප්ලෝමා/,/වාර්ෂික-තුන්වන-ඩිප්ලෝමා/,200,Yes,Rebuilt on the original route
+https://sitc.lk/වාර්ෂික-සිව්වන-ඩිප්ලෝමා/,/වාර්ෂික-සිව්වන-ඩිප්ලෝමා/,200,Yes,Rebuilt on the original route
+https://sitc.lk/program-level/ph-d/,/program-level/ph-d/,200,No,"Retained for future offerings, noindex until populated"
+https://sitc.lk/program-level/specialized-masters/,/program-level/specialized-masters/,200,No,"Retained for future offerings, noindex until populated"
+https://sitc.lk/program-level/undergraduate/,/program-level/undergraduate/,200,Yes,Rebuilt on the original route

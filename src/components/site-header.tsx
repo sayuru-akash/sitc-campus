@@ -59,7 +59,11 @@ export function SiteHeader() {
               aria-current={
                 pathname.replace(/\/$/, '') === item.href.replace(/\/$/, '')
                   ? 'page'
-                  : undefined
+                  : item.href === '/academic-programmes/' &&
+                      (pathname.startsWith('/program/') ||
+                        pathname.startsWith('/program-level/'))
+                    ? 'location'
+                    : undefined
               }
               onClick={() => setOpen(false)}
             >

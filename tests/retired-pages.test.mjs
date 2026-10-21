@@ -1,11 +1,13 @@
 import { describe, expect, test } from 'bun:test';
 import { GET as staffResponse } from '../src/app/academic-staff/route.ts';
 import { GET as eventsResponse } from '../src/app/events/route.ts';
+import { GET as uncategorizedResponse } from '../src/app/category/uncategorized/route.ts';
 
 describe('Permanently retired pages', () => {
   for (const [label, handler] of [
     ['Staff', staffResponse],
     ['Events', eventsResponse],
+    ['Uncategorized', uncategorizedResponse],
   ]) {
     test(`${label} returns Gone, stays crawlable, and offers useful destinations`, async () => {
       const response = handler();
