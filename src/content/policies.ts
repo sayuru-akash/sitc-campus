@@ -43,6 +43,7 @@ export const policies = {
         title: 'Technical information',
         paragraphs: [
           'Hosting services may process IP addresses, browser details, timestamps and referring pages to operate and protect the website.',
+          'Google Analytics measures website visits, page navigation and interactions such as programme selections and admissions contact clicks. Custom enquiry events include the selected programme and contact method, without the name or message entered in the form.',
         ],
       },
       {

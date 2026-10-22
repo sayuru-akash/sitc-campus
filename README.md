@@ -80,7 +80,7 @@ Video metadata uses the verified public upload date and duration. Google may con
 
 Homepage metadata preserves the live site's title, description, Open Graph identity, Twitter card, and sharing image as captured on 21 October 2026. The homepage has an explicit self-referencing canonical and indexable robots metadata. Homepage-specific fields live in `src/app/page.tsx`, so future pages and 404s do not inherit the homepage canonical. Structured data combines the existing education/contact/video information with linked WebSite, WebPage, and breadcrumb entities using stable public IDs.
 
-The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. Public content routes, sitemap, robots, RSS and the discovered legacy media paths are implemented locally. Tracking and WordPress backend features have not been migrated. A production cutover still needs hosting, public-origin and external-service verification. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
+The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. Public content routes, sitemap, robots, RSS and the discovered legacy media paths are implemented locally. GA4 is configured as described below. WordPress backend features have not been migrated. A production cutover still needs hosting, public-origin and external-service verification. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
 
 The original clone measurement JSON and `scripts/verify-layout.mjs` are archived baseline evidence. They do not assert that the intentionally redesigned header and footer still match the original.
 
@@ -103,3 +103,11 @@ pyftsubset public/fonts/noto-sans-sinhala.woff2 --text='ඔබේ අනාග�
 FontTools is only needed when regenerating this checked-in asset, not to build or run the site. Existing font licenses are retained. The original Playfair and DM Sans assets are unchanged. No experimental Next.js CSS flags are enabled.
 
 See `docs/research/SEO-PERFORMANCE-2026-10-22.md` for local Lighthouse results, source evidence and the remaining public-launch checks. A localhost audit cannot verify public search rankings or real-user Core Web Vitals.
+
+## Google Analytics 4
+
+The shared root layout installs measurement ID `G-P3FB2R96T9` for the `sitc.lk` web stream (stream ID `6667835243`). No environment variable or extra package is required. `src/components/google-analytics.tsx` uses `next/script` after hydration; the external Google tag loads asynchronously only on `sitc.lk` and `www.sitc.lk`. Development, Vercel previews, `PREVENT_INDEXING=true` builds, localhost and other staging hosts do not report visits.
+
+GA4 Enhanced Measurement owns pageviews and client-side history changes. Its published configuration was checked on 23 October 2026 with both enabled. Keep those settings enabled and do not add a second manual pageview hook or another copy of this tag. The same stream currently enables automatic scroll, outbound-click, file-download, video and form-interaction measurement.
+
+Custom events cover programme selection, guide clicks, phone/email/WhatsApp contact, student resources, map links, appointment links and valid WhatsApp enquiry handoffs. `enquiry_handoff` records the handoff, without claiming delivery or enrolment. Custom payloads use controlled programme IDs, placement and contact categories; they exclude form text and full link URLs. Add new approved programme slugs in the existing programme source to keep selection reporting aligned. See `docs/research/ANALYTICS-2026-10-23.md` for the event table and verification limits.

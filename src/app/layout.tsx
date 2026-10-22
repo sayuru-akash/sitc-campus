@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { homepageSeo } from '@/content/seo';
+import { GoogleAnalytics } from '@/components/google-analytics';
 import './globals.css';
 const sans = localFont({
   src: '../../public/fonts/dm-sans.woff2',
@@ -68,7 +69,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${sans.variable} ${serif.variable} ${sinhala.variable} ${tamil.variable} ${sinhalaIntro.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

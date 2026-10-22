@@ -9,6 +9,7 @@ import { Eyebrow } from '@/components/ui/eyebrow';
 import { programmes } from '@/content/programmes';
 import { site } from '@/content/site';
 import { buildWhatsAppEnquiryUrl } from '@/lib/enquiry';
+import { enquiryAnalyticsEvent, sendAnalyticsEvent } from '@/lib/analytics';
 
 export function Enquiry() {
   const { selectedId, selectProgramme } = useProgrammeSelection();
@@ -35,6 +36,7 @@ export function Enquiry() {
       message: String(data.get('message') ?? ''),
     });
 
+    sendAnalyticsEvent(enquiryAnalyticsEvent(programme?.id ?? ''));
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 
