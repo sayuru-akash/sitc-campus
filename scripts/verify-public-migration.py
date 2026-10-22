@@ -26,6 +26,7 @@ class Page(HTMLParser):
         self.links = []
         self.meta = {}
         self.canonical = None
+        self.icons = []
         self.schemas = []
         self.script = None
 
@@ -37,6 +38,7 @@ class Page(HTMLParser):
         if tag == 'a' and attrs.get('href'): self.links.append(attrs['href'])
         if tag == 'meta': self.meta[attrs.get('name', attrs.get('property'))] = attrs.get('content', '')
         if tag == 'link' and attrs.get('rel') == 'canonical': self.canonical = attrs.get('href')
+        if tag == 'link' and attrs.get('rel') == 'icon': self.icons.append(attrs.get('href', ''))
         if tag == 'script' and attrs.get('type') == 'application/ld+json': self.script = ''
 
     def handle_data(self, data):
@@ -87,6 +89,7 @@ def main():
         assert page.meta.get('og:url') == url, (path, 'Open Graph URL')
         assert page.meta.get('twitter:title'), (path, 'Twitter title')
         assert page.schemas, (path, 'missing JSON-LD')
+        assert any(urlsplit(icon).path == '/favicon.ico' for icon in page.icons), (path, 'missing native Next.js favicon metadata')
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [schema])]
         assert any(node.get('@id') == 'https://sitc.lk/#organization' and node.get('name') for node in nodes), (path, 'missing organization identity')
         for breadcrumb in [node for node in nodes if node.get('@type') == 'BreadcrumbList']:
@@ -145,10 +148,14 @@ def main():
         status, headers, _ = fetch('/' + path)
         assert status == 308 and headers.get('Location') == '/sitemap.xml', (path, status, headers)
         redirect_checks += 1
-    for path, destination in [('/favicon.ico', '/icon.png'), ('/wp-content/uploads/2023/10/sitc-fav-300x300.png', '/icon.png'), ('/news/feed/', '/feed/'), ('/program/', '/academic-programmes/'), ('/program-level/', '/academic-programmes/')]:
+    for path, destination in [('/wp-content/uploads/2023/10/sitc-fav-300x300.png', '/icon.png'), ('/news/feed/', '/feed/'), ('/program/', '/academic-programmes/'), ('/program-level/', '/academic-programmes/')]:
         status, headers, _ = fetch(path)
         assert status == 308 and headers.get('Location') == destination, (path, status)
         redirect_checks += 1
+
+    status, headers, icon = fetch('/favicon.ico')
+    assert status == 200 and 'icon' in headers.get('Content-Type', ''), ('favicon', status)
+    assert icon[:4] == b'\x00\x00\x01\x00', 'favicon must be a real ICO file'
 
     asset_rows = json.loads((ROOT / 'docs/research/legacy-asset-manifest.json').read_text())
     for asset in asset_rows:

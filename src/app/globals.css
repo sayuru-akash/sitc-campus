@@ -1,14 +1,31 @@
 @layer theme, base, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Keep Sinhala shaping intact, including nested headings, links and controls.
+   Language inheritance also covers si-LK and stops at explicit language changes. */
+@layer utilities {
+  :lang(si) {
+    font-family: var(--font-sinhala), var(--font-dm-sans), sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-kerning: normal;
+    letter-spacing: normal;
+    word-break: normal;
+  }
+  .leadership-panel:lang(si) :is(.vc-summary p, .vc-biography p, .vc-letter p) {
+    font-size: 15px;
+    line-height: 2;
+  }
+}
 @theme inline {
   --color-wine: #641c2e;
   --color-ink: #2c1820;
   --color-cream: #f6f3ec;
   --color-gold: #b99661;
   --color-muted: #73696a;
-  --font-sans: var(--font-dm-sans), Arial, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-dm-sans), var(--font-sinhala), Arial, sans-serif;
+  --font-serif: var(--font-playfair), var(--font-sinhala), Georgia, serif;
 }
 @layer base {
   :root {
@@ -31,6 +48,7 @@
     color: var(--dark);
     font:
       15px/1.65 var(--font-dm-sans),
+      var(--font-sinhala),
       Arial,
       sans-serif;
   }
@@ -62,7 +80,7 @@
   }
   h1,
   h2 {
-    font-family: var(--font-playfair), Georgia, serif;
+    font-family: var(--font-playfair), var(--font-sinhala), Georgia, serif;
     font-weight: 500;
     letter-spacing: -1.8px;
     line-height: 1.12;
@@ -177,10 +195,12 @@
     padding-bottom: 4px;
   }
   .sinhala {
-    font-family: var(--font-sinhala-intro), var(--font-sinhala), sans-serif;
+    font-family: var(--font-sinhala), sans-serif;
     margin: 34px 0px 0px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
   }
   .hero-image {
     position: relative;

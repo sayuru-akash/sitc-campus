@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: '/favicon.ico', destination: '/icon.png', permanent: true },
       {
         source: '/wp-content/uploads/2023/10/sitc-fav-300x300.png',
         destination: '/icon.png',

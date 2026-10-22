@@ -86,7 +86,7 @@ The original clone measurement JSON and `scripts/verify-layout.mjs` are archived
 
 ## Vice Chancellor
 
-The leadership feature includes a portrait, a short introduction, an expandable full biography, dated research figures, and the complete welcome message. English, Sinhala, and Tamil content renders on the server. The shared language tabs support arrow keys, Home, and End. Sinhala and Tamil use locally hosted Noto Sans fonts with their licenses included.
+The leadership feature includes a portrait, a short introduction, an expandable full biography, dated research figures, and the complete welcome message. English, Sinhala, and Tamil content renders on the server. The shared language tabs support arrow keys, Home, and End. Sinhala uses the complete locally hosted Yaldevi variable font (weights 200-700); Tamil uses Noto Sans Tamil. Both licenses are included.
 
 The portrait is an exact visual crop of the user-supplied poster, using its original photograph without changing facial features or academic attire. The source and crop coordinates are documented in the component. The English welcome message is preserved as supplied, with Sinhala and Tamil translations. The biography and research figures were supplied by the user; the figures are explicitly dated 15 October 2026 and have not been independently verified. See `docs/research/LEADERSHIP-UPDATE.md` for source and implementation notes.
 
@@ -94,13 +94,9 @@ The portrait is an exact visual crop of the user-supplied poster, using its orig
 
 All 28 indexable pages have production-domain canonical URLs, unique titles and descriptions, sharing metadata and JSON-LD. The original homepage search identity is preserved. Course pages link the current catalogue to their source guides, admissions contacts, refund terms and related pathways. New article dates are source dates, not build dates. No unverified reviews, ratings, accreditation, rankings or expert-review claims are added.
 
-The homepage uses AVIF/WebP image negotiation, deferred video loading once at least half the video is visible, server-rendered recent news and native lazy images. Long off-screen news and translated leadership sections use CSS automatic content visibility, retaining their complete HTML and accessible navigation. The introductory Sinhala line uses a 15 KB glyph subset of the licensed local font; the full font remains available for all other content and fallback glyphs. Regenerate the intro subset after changing that line:
+The homepage uses AVIF/WebP image negotiation, deferred video loading once at least half the video is visible, server-rendered recent news and native lazy images. Long off-screen news and translated leadership sections use CSS automatic content visibility, retaining their complete HTML and accessible navigation. Sinhala uses the complete licensed Yaldevi font, with its original OpenType shaping tables, through `next/font/local`. It is the shared fallback for mixed-script text and is explicitly applied with `:lang(si)` to headings, links, paragraphs, tabs and controls. Letter spacing and synthetic italics are removed for Sinhala, and VC body text is 15px. Do not reintroduce per-line glyph subsets: the former introductory subset changed a pre-base vowel's advance to zero and caused overlapping letters. The full face is loaded only when needed, without an external font request.
 
-```sh
-pyftsubset public/fonts/noto-sans-sinhala.woff2 --text='ඔබේ අනාගතයට නව ඇරඹුමක්.' --layout-features='*' --flavor=woff2 --output-file=public/fonts/noto-sans-sinhala-intro.woff2
-```
-
-FontTools is only needed when regenerating this checked-in asset, not to build or run the site. Existing font licenses are retained. The original Playfair and DM Sans assets are unchanged. No experimental Next.js CSS flags are enabled.
+The source is [Yaldevi from Google Fonts](https://github.com/google/fonts/tree/main/ofl/yaldevi), designed by Mooniak, with its OFL license in `public/fonts/Yaldevi-LICENSE.txt`. The complete upstream variable TTF was converted to WOFF2 without glyph subsetting. Existing font licenses are retained. The original Playfair and DM Sans assets are unchanged. No experimental Next.js CSS flags are enabled.
 
 See `docs/research/SEO-PERFORMANCE-2026-10-22.md` for local Lighthouse results, source evidence and the remaining public-launch checks. A localhost audit cannot verify public search rankings or real-user Core Web Vitals.
 
@@ -111,3 +107,7 @@ The shared root layout installs measurement ID `G-P3FB2R96T9` for the `sitc.lk` 
 GA4 Enhanced Measurement owns pageviews and client-side history changes. Its published configuration was checked on 23 October 2026 with both enabled. Keep those settings enabled and do not add a second manual pageview hook or another copy of this tag. The same stream currently enables automatic scroll, outbound-click, file-download, video and form-interaction measurement.
 
 Custom events cover programme selection, guide clicks, phone/email/WhatsApp contact, student resources, map links, appointment links and valid WhatsApp enquiry handoffs. `enquiry_handoff` records the handoff, without claiming delivery or enrolment. Custom payloads use controlled programme IDs, placement and contact categories; they exclude form text and full link URLs. Add new approved programme slugs in the existing programme source to keep selection reporting aligned. See `docs/research/ANALYTICS-2026-10-23.md` for the event table and verification limits.
+
+## Favicon
+
+`src/app/favicon.ico` is a real multi-resolution ICO using the same SITC crest as `src/app/icon.png`, with 16, 32, 48, 64, 96 and 128px frames. Next.js automatically emits its icon metadata on every route. `/favicon.ico` returns the file directly, replacing the previous redirect; the existing PNG and legacy Apple icon compatibility remain available.
