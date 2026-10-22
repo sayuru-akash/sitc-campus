@@ -100,10 +100,12 @@ export function linkAnalyticsEvent(
     return { name: 'appointment_click', params: { placement } };
   if (url.hostname === 'www.google.com' && url.pathname.startsWith('/maps'))
     return { name: 'location_map_click', params: { placement } };
-  const resource = {
-    'portal.sitc.lk': 'student_portal',
-    'verify.sitc.lk': 'certificate_verification',
-  }[url.hostname];
+  const resource =
+    url.hostname === 'portal.sitc.lk'
+      ? 'student_portal'
+      : url.hostname === 'verify.sitc.lk'
+        ? 'certificate_verification'
+        : null;
   if (resource)
     return {
       name: 'student_resource_click',
