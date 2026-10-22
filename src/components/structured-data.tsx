@@ -18,19 +18,6 @@ export function StructuredData() {
         datePublished: homepageSeo.datePublished,
         isPartOf: { '@id': `${origin}/#website` },
         about: { '@id': `${origin}/#organization` },
-        breadcrumb: { '@id': `${origin}/#breadcrumblist` },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${origin}/#breadcrumblist`,
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: homepageSeo.url,
-          },
-        ],
       },
       {
         '@type': 'VideoObject',

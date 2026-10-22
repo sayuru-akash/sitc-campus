@@ -89,6 +89,11 @@ def main():
         assert page.schemas, (path, 'missing JSON-LD')
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [schema])]
         assert any(node.get('@id') == 'https://sitc.lk/#organization' and node.get('name') for node in nodes), (path, 'missing organization identity')
+        for breadcrumb in [node for node in nodes if node.get('@type') == 'BreadcrumbList']:
+            items = breadcrumb['itemListElement']
+            assert len(items) >= 2, (path, 'breadcrumb requires two or more items')
+            assert [item['position'] for item in items] == list(range(1, len(items) + 1)), (path, 'breadcrumb positions')
+            assert all(item.get('name') and item.get('item', '').startswith('https://sitc.lk/') for item in items), (path, 'breadcrumb names and public URLs')
         if path.startswith('/program/'):
             course = next(node for node in nodes if node.get('@type') == 'Course')
             assert course['url'] == url and course['provider']['name'] == 'SITC Campus', (path, 'course identity')

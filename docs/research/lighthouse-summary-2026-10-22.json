@@ -1,0 +1,678 @@
+{
+  "generatedAt": "2026-10-23T03:01:55.003948+05:30",
+  "origin": "http://localhost:3100",
+  "buildId": "o9SMrpCowHfa7Pno_1zAs",
+  "tool": "Lighthouse 13.5.0 using isolated headless Microsoft Edge profiles",
+  "method": "Default mobile simulation; desktop preset for three representative pages. Sequential production-server runs. Full mobile pass followed by focused retests after image sizing and homepage-only contrast adjustments. Latest result retained for each path/preset.",
+  "limitations": [
+    "Local lab results, not deployed PageSpeed or field Core Web Vitals.",
+    "Desktop autoplay YouTube-nocookie iframe emitted a Chrome Cookie issue on the final homepage run, giving best practices 96; its earlier run was 100. No iframe was blocked to improve the score.",
+    "A11y automation is not a complete manual accessibility certification."
+  ],
+  "mobileSummary": {
+    "pages": 28,
+    "performanceRange": [
+      89,
+      97
+    ],
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  "desktopPages": 3,
+  "results": [
+    {
+      "path": "/",
+      "preset": "mobile",
+      "phase": "Homepage retest after desktop caption contrast fix",
+      "fetchTime": "2026-10-22T21:30:45.984Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3464.3595,
+        "first-contentful-paint": 1214.3595,
+        "total-blocking-time": 15.500000000000455,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/about-us/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:05:15.279Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2706.82775,
+        "first-contentful-paint": 905.2185,
+        "total-blocking-time": 12,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/academic-direction-partner-institutes/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:05:33.695Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2788.4016,
+        "first-contentful-paint": 906.5152,
+        "total-blocking-time": 13.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/privacy-policy/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:05:50.902Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2639.9226,
+        "first-contentful-paint": 906.4612999999999,
+        "total-blocking-time": 13.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/refund-policy/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:06:08.093Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2637.5582750000003,
+        "first-contentful-paint": 906.0333,
+        "total-blocking-time": 13.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/terms-and-conditions/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:06:25.269Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2637.6194,
+        "first-contentful-paint": 906.3097,
+        "total-blocking-time": 12.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/news/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:26:36.366Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3769.3809000000006,
+        "first-contentful-paint": 1519.3809,
+        "total-blocking-time": 36.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/academic-programmes/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:26:54.452Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2724.756675,
+        "first-contentful-paint": 910.7181,
+        "total-blocking-time": 15.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/contact-us/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:07:17.979Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2711.795725,
+        "first-contentful-paint": 904.4547,
+        "total-blocking-time": 14.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-psychology-and-counseling/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:07:35.504Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2866.33555,
+        "first-contentful-paint": 1055.3346,
+        "total-blocking-time": 16,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-information-technology/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:07:53.128Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2870.4317249999995,
+        "first-contentful-paint": 1058.2467,
+        "total-blocking-time": 15.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-business-management/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:08:10.432Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2634.5602499999995,
+        "first-contentful-paint": 906.3734999999999,
+        "total-blocking-time": 5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-human-resource-management/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:08:27.722Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2713.173675,
+        "first-contentful-paint": 905.2420999999999,
+        "total-blocking-time": 14.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-english-2026-ugc-recognized-university-diploma/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:08:45.086Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2712.3828000000003,
+        "first-contentful-paint": 905.3616,
+        "total-blocking-time": 14,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-tamil-as-a-second-language/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:09:02.461Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2869.9378,
+        "first-contentful-paint": 1056.8216,
+        "total-blocking-time": 16.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/bsc-in-psychology-and-counselling/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:09:20.194Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2718.0303000000004,
+        "first-contentful-paint": 905.7316000000001,
+        "total-blocking-time": 16.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/bsc-in-hrm-and-business-strategy/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:09:37.397Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2784.7765999999992,
+        "first-contentful-paint": 903.8883000000001,
+        "total-blocking-time": 13.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/bsc-in-business-management/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:09:55.570Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2720.0581250000005,
+        "first-contentful-paint": 905.7475,
+        "total-blocking-time": 17.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/ba-in-english/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:10:12.790Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2787.9538,
+        "first-contentful-paint": 904.9769000000001,
+        "total-blocking-time": 14,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program-level/diploma/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:10:30.440Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2637.2983499999996,
+        "first-contentful-paint": 906.4562000000001,
+        "total-blocking-time": 13,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program-level/undergraduate/",
+      "preset": "mobile",
+      "phase": "Site-wide mobile pass before final image sizing",
+      "fetchTime": "2026-10-21T22:10:47.565Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2639.7038000000002,
+        "first-contentful-paint": 904.9736,
+        "total-blocking-time": 15.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/tamil-diploma-november-2026-intake/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:27:12.344Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 2808.363325,
+        "first-contentful-paint": 910.3837000000001,
+        "total-blocking-time": 17.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/රට-යන්න-ඉන්න-අයට-ඉහළම-සුදු/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:27:30.444Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3613.19265,
+        "first-contentful-paint": 1513.19265,
+        "total-blocking-time": 17.5,
+        "cumulative-layout-shift": 0.02655959674420457
+      },
+      "failures": []
+    },
+    {
+      "path": "/මනෝවිද්යා-අධ්යන-අංශයේ/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:27:47.990Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3685.7834999999995,
+        "first-contentful-paint": 1510.7835,
+        "total-blocking-time": 9.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/වාර්ෂික-සිව්වන-ඩිප්ලෝමා/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:28:05.613Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3773.2767,
+        "first-contentful-paint": 1523.2767,
+        "total-blocking-time": 17.499999999999545,
+        "cumulative-layout-shift": 0.02655959674420457
+      },
+      "failures": []
+    },
+    {
+      "path": "/malinda-alahakoon-recommends-sitc-campus-it-diploma-program/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:28:23.087Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3762.4838999999993,
+        "first-contentful-paint": 1512.4839,
+        "total-blocking-time": 17.5,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/වාර්ෂික-තුන්වන-ඩිප්ලෝමා/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:28:40.578Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3761.2543499999997,
+        "first-contentful-paint": 1511.25435,
+        "total-blocking-time": 19.5,
+        "cumulative-layout-shift": 0.02655959674420457
+      },
+      "failures": []
+    },
+    {
+      "path": "/කතිකාචාර්ය-ඉසුරු-පෙරේරා/",
+      "preset": "mobile",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:28:58.326Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 3687.3961499999996,
+        "first-contentful-paint": 1512.39615,
+        "total-blocking-time": 18.5,
+        "cumulative-layout-shift": 0.02401665663039775
+      },
+      "failures": []
+    },
+    {
+      "path": "/",
+      "preset": "desktop",
+      "phase": "Homepage retest after desktop caption contrast fix",
+      "fetchTime": "2026-10-22T21:31:03.605Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 667.651425,
+        "first-contentful-paint": 288.27265,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "failures": [
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "display": null,
+          "details": {
+            "type": "table",
+            "headings": [
+              {
+                "key": "issueType",
+                "valueType": "text",
+                "subItemsHeading": {
+                  "key": "url",
+                  "valueType": "url"
+                },
+                "label": "Issue type"
+              }
+            ],
+            "items": [
+              {
+                "issueType": "Cookie",
+                "subItems": {
+                  "type": "subitems",
+                  "items": [
+                    {
+                      "url": "https://www.youtube-nocookie.com/embed/Db7ALM2wM6g?autoplay=1&mute=1&controls=0&playsinline=1&rel=0&loop=1&playlist=Db7ALM2wM6g&start=77&end=268&origin=http%3A%2F%2Flocalhost%3A3100&enablejsapi=1&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3100%2F&aoriginsup=1&vf=3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "/news/",
+      "preset": "desktop",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:29:34.196Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 682.0963000000002,
+        "first-contentful-paint": 252.06420000000003,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    },
+    {
+      "path": "/program/diploma-in-psychology-and-counseling/",
+      "preset": "desktop",
+      "phase": "News and catalogue image-sizing retest, plus desktop sample",
+      "fetchTime": "2026-10-22T21:29:51.757Z",
+      "lighthouseVersion": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 632.138575,
+        "first-contentful-paint": 286.3649,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0
+      },
+      "failures": []
+    }
+  ]
+}

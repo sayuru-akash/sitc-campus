@@ -268,7 +268,7 @@
   }
   .ribbon span {
     font-size: 11px;
-    color: var(--muted);
+    color: #65595b;
     margin-top: 4px;
   }
   .section {
