@@ -24,13 +24,6 @@ export const academicPartners = [
       'An academic partner connecting career preparation, practical assignments, project experience and ongoing learner development.',
   },
   {
-    name: 'Ideacade Campus',
-    role: 'Technology education',
-    image: '/images/inner/ideacade.png',
-    description:
-      'An academic partner supporting practical technology education, enrolment guidance and learning in Sinhala and English.',
-  },
-  {
     name: 'Ignite Ed',
     role: 'Digital learning',
     image: '/images/inner/ignite-ed.webp',

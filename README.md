@@ -53,7 +53,7 @@ Official contact details and three official locations were refreshed from https:
 
 Eight main pages are implemented under `src/app/(campus)/`: About, Contact, Programmes, Partners, News, Privacy, Refund and Terms. Shared inner-page styles live in `inner-pages.css`; page copy and metadata live in `src/content/{about,partners,news,policies,page-metadata}.ts`. Keep the ten approved programme records as the single source for both homepage and catalogue.
 
-Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. A verified October 2026 Tamil intake announcement is also included. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. All 66 discovered legacy media/PDF URLs are preserved under `public/wp-content/`.
+Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. A verified October 2026 Tamil intake announcement is also included. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. The 65 retained legacy media/PDF URLs are preserved under `public/wp-content/`.
 
 - `src/content/programme-routes.ts`: stable programme slugs and reusable level definitions.
 - `src/content/programme-details.ts`: study guides, source-labelled diploma fees, learning themes and progression.
