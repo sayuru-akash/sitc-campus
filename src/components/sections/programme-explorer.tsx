@@ -84,7 +84,7 @@ export function ProgrammeExplorer({
         <input
           id="search"
           aria-label="Search programmes"
-          placeholder="Search your interest ↗"
+          placeholder="Search your interest"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
@@ -104,7 +104,6 @@ export function ProgrammeExplorer({
             <article id={`programme-${programme.id}`} className="card">
               <div className="card-top">
                 <span>{programme.level.toUpperCase()}</span>
-                <span aria-hidden="true">↗</span>
               </div>
               <h3>
                 <Link href={programmePath(programme.id)}>
@@ -116,7 +115,7 @@ export function ProgrammeExplorer({
                 href={programmePath(programme.id)}
                 className="programme-details-link"
               >
-                View programme <span aria-hidden="true">↗</span>
+                View programme
               </Link>
               <a
                 className="programme-quick-enquiry"
@@ -125,8 +124,7 @@ export function ProgrammeExplorer({
               >
                 {catalogue
                   ? 'Enquire about this programme'
-                  : 'Explore this pathway'}{' '}
-                <span aria-hidden="true">→</span>
+                  : 'Explore this pathway'}
               </a>
             </article>
           </Fragment>
@@ -137,11 +135,6 @@ export function ProgrammeExplorer({
           No programmes match your search. Try another subject.
         </p>
       )}
-      <p className="programme-note">
-        Programme availability and progression depend on entry qualifications
-        and awarding-university requirements. Ask admissions for the current
-        programme specification.
-      </p>
     </section>
   );
 }

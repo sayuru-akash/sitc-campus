@@ -72,7 +72,7 @@ The four degree pages contain useful original subject guidance, with exploratory
 
 ## Campus video
 
-The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. A failed player keeps the original poster and an external watch link.
+The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. The poster remains visible during startup, pauses, buffering and playback completion. Playing video fades in after three seconds of settled playback; it hides immediately when playback stops so the cropped background frame does not expose partial player titles. A failed player keeps the original poster and an external watch link.
 
 Video metadata uses the verified public upload date and duration. Google may consider a decorative homepage video ineligible for video-rich results; adding schema does not guarantee video indexing.
 

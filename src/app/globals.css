@@ -240,26 +240,20 @@
     display: block;
     margin-top: 15px;
   }
-  .seal {
+  .hero-crest {
     position: absolute;
     right: 25px;
     top: 25px;
-    border: 1px solid rgb(234, 215, 172);
-    border-radius: 50%;
-    height: 90px;
-    width: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: rgba(100, 28, 46, 0.88);
-    color: rgb(241, 221, 185);
-    font-family: Georgia;
-    font-size: 25px;
+    z-index: 2;
+    width: 112px;
+    pointer-events: none;
   }
-  .seal small {
-    font: 8px Arial;
-    letter-spacing: 2px;
+  .hero-crest img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 1px 1px rgb(255 255 255 / 85%))
+      drop-shadow(0 3px 8px rgb(0 0 0 / 25%));
   }
   .ribbon {
     background: rgb(238, 233, 223);
@@ -658,10 +652,10 @@
     .photo-note strong {
       font-size: 30px;
     }
-    .seal {
-      height: 70px;
-      width: 70px;
-      font-size: 20px;
+    .hero-crest {
+      top: 20px;
+      right: 20px;
+      width: 88px;
     }
     .ribbon {
       padding: 22px 7%;
@@ -794,10 +788,12 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 800ms ease;
+    /* Hide paused/loading player chrome immediately, before its title appears. */
+    transition: none;
   }
   .hero-video.is-ready {
     opacity: 1;
+    transition: opacity 800ms ease;
   }
   .hero-video iframe {
     position: absolute;

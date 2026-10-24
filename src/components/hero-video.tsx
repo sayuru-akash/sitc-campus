@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import campus from '../../public/images/campus.jpg';
+import crest from '../../public/images/sitc-crest-transparent.png';
 import { campusVideo } from '@/content/campus-video';
 import { loadYouTubeApi, type YouTubePlayer } from '@/lib/youtube';
 
@@ -10,12 +11,14 @@ export function HeroVideo() {
   const container = useRef<HTMLDivElement>(null);
   const mount = useRef<HTMLDivElement>(null);
   const player = useRef<YouTubePlayer | null>(null);
+  const revealTimer = useRef<number | undefined>(undefined);
   const userPaused = useRef(false);
   const visible = useRef(true);
   const [enabled, setEnabled] = useState(false);
   const [inView, setInView] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [videoVisible, setVideoVisible] = useState(false);
   const [muted, setMuted] = useState(true);
   const [failed, setFailed] = useState(false);
 
@@ -45,6 +48,8 @@ export function HeroVideo() {
     const onMotion = () => {
       if (motion.matches) {
         userPaused.current = true;
+        window.clearTimeout(revealTimer.current);
+        setVideoVisible(false);
         player.current?.pauseVideo();
       }
     };
@@ -56,8 +61,11 @@ export function HeroVideo() {
     const element = container.current;
     if (!element) return;
     const syncPlayback = () => {
-      if (!visible.current || document.hidden) player.current?.pauseVideo();
-      else if (!userPaused.current) player.current?.playVideo();
+      if (!visible.current || document.hidden) {
+        window.clearTimeout(revealTimer.current);
+        setVideoVisible(false);
+        player.current?.pauseVideo();
+      } else if (!userPaused.current) player.current?.playVideo();
     };
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -89,6 +97,8 @@ export function HeroVideo() {
         readyTimeout = window.setTimeout(() => {
           if (!cancelled) {
             setFailed(true);
+            window.clearTimeout(revealTimer.current);
+            setVideoVisible(false);
             setPlaying(false);
             player.current = null;
             createdPlayer?.destroy();
@@ -127,8 +137,17 @@ export function HeroVideo() {
             },
             onStateChange: (event) => {
               if (cancelled) return;
+              window.clearTimeout(revealTimer.current);
               setPlaying(event.data === 1);
-              if (event.data === 1) setHasPlayed(true);
+              if (event.data === 1) {
+                setHasPlayed(true);
+                // Keep startup/resume titles behind the poster until the player
+                // has settled. Paused, buffering and ended states stay hidden.
+                revealTimer.current = window.setTimeout(() => {
+                  if (!cancelled && visible.current && !document.hidden)
+                    setVideoVisible(true);
+                }, 3000);
+              } else setVideoVisible(false);
               if (
                 event.data === 0 &&
                 visible.current &&
@@ -141,8 +160,10 @@ export function HeroVideo() {
             },
             onError: () => {
               window.clearTimeout(readyTimeout);
+              window.clearTimeout(revealTimer.current);
               if (!cancelled) {
                 setFailed(true);
+                setVideoVisible(false);
                 setPlaying(false);
               }
             },
@@ -155,6 +176,7 @@ export function HeroVideo() {
     return () => {
       cancelled = true;
       window.clearTimeout(readyTimeout);
+      window.clearTimeout(revealTimer.current);
       player.current = null;
       createdPlayer?.destroy();
     };
@@ -168,8 +190,11 @@ export function HeroVideo() {
     }
     if (!player.current) return;
     userPaused.current = playing;
-    if (playing) player.current.pauseVideo();
-    else player.current.playVideo();
+    if (playing) {
+      window.clearTimeout(revealTimer.current);
+      setVideoVisible(false);
+      player.current.pauseVideo();
+    } else player.current.playVideo();
   }
   function toggleMute() {
     if (!player.current) return;
@@ -189,7 +214,7 @@ export function HeroVideo() {
         loading="eager"
       />
       <div
-        className={`hero-video${hasPlayed && !failed ? ' is-ready' : ''}`}
+        className={`hero-video${videoVisible && playing && !failed ? ' is-ready' : ''}`}
         ref={mount}
         aria-hidden="true"
       />
@@ -201,10 +226,14 @@ export function HeroVideo() {
           starts here.
         </strong>
       </div>
-      <div className="seal" aria-label="SITC, established 2005">
-        SITC
-        <br />
-        <small>EST. 2005</small>
+      <div className="hero-crest">
+        <Image
+          src={crest}
+          alt="SITC Campus crest"
+          sizes="(max-width: 640px) 88px, 112px"
+          quality={90}
+          loading="eager"
+        />
       </div>
       <div className="hero-video-controls">
         {!failed && (

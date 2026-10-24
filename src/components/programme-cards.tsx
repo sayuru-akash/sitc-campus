@@ -22,7 +22,7 @@ export function ProgrammeCards({
             </Heading>
             <p>{programme.description}</p>
             <Link className="text-link" href={programmePath(id)}>
-              View programme <span aria-hidden="true">↗</span>
+              View programme
             </Link>
           </article>
         );

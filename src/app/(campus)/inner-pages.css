@@ -1,6 +1,8 @@
 @layer components {
   .inner-pages {
     padding-bottom: 0;
+    /* Content containers own their gutters; full-width bands meet the footer. */
+    padding-inline: 0;
   }
   .page-container {
     width: 88%;
@@ -177,6 +179,11 @@
   }
   .page-cta .cta-light:hover {
     background: #e7ddcf;
+  }
+  @media (min-width: 1700px) {
+    .page-cta {
+      padding-inline: max(6%, calc((100vw - 1440px) / 2));
+    }
   }
   .cta-contact {
     font-size: 12px;

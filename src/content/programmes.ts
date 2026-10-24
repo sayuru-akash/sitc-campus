@@ -37,7 +37,7 @@ export const programmes = [
   },
   {
     id: 'tamil-diploma',
-    title: 'Tamil as a Second Language',
+    title: 'Tamil',
     level: 'Diploma',
     description:
       'Connect with more people through language and cultural understanding.',
