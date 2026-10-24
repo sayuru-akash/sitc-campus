@@ -198,10 +198,16 @@ export default async function ProgrammePage({
                   <h3>Qualification profile</h3>
                   {detail.qualification && <p>{detail.qualification}</p>}
                   <p>
-                    SITC’s published guide identifies PSB University as the
-                    awarding body. Ask admissions for the exact award title,
-                    current awarding arrangements and recognition documents
-                    relevant to your intended use of the qualification.
+                    {detail.awardingBody ? (
+                      'The programme guide identifies PSB University (PSBU) as the awarding body. See the downloadable guide for its awarding and recognition information.'
+                    ) : (
+                      <>
+                        SITC’s published guide identifies PSB University as the
+                        awarding body. Ask admissions for the exact award title,
+                        current awarding arrangements and recognition documents
+                        relevant to your intended use of the qualification.
+                      </>
+                    )}
                   </p>
                 </>
               )}

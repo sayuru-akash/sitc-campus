@@ -70,5 +70,36 @@
     "installments": 4,
     "installmentLKR": 6000,
     "feePageVisuallyVerified": true
+  },
+  {
+    "programme": "psychology-degree",
+    "source": "User-supplied Bachelor of Science in Psychology and Counselling.pdf",
+    "discovery": "Supplied directly by the user on 2026-10-24",
+    "localGuide": "/guides/psychology-degree-2026.pdf",
+    "sha256": "ad74796c18da6acb9779e9d721bd757d65164cdd0f28ccfac730ddd31c473083",
+    "pages": 28,
+    "verifiedSourcePages": {
+      "awardingBody": 3,
+      "deliveryAndMedium": 9,
+      "modulesAndCredits": 10,
+      "diplomaEntryAndExemption": 13,
+      "fees": 15,
+      "scheduleAndIntake": 17,
+      "programmeSupport": 27
+    },
+    "intakeLabel": "6 December 2026, 8:00 PM first lecture",
+    "fullDegreeYears": 3,
+    "eligibleDiplomaEntryStudyYears": 2,
+    "credits": 90,
+    "publishedStandardLKR": 398500,
+    "publishedDiscountLKR": 50500,
+    "publishedTotalLKR": 348000,
+    "publishedRegistrationLKR": 20700,
+    "installments": 24,
+    "installmentLKR": 14500,
+    "examFeePerSubjectLKR": 800,
+    "examFeePerSemesterLKR": 2400,
+    "feePageVisuallyVerified": true,
+    "recognitionClaims": "Awarding identity and qualification profile are attributed to the guide. Its ranking, accreditation and blanket recognition claims are not presented as independently verified facts."
   }
 ]
