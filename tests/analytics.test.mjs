@@ -120,6 +120,13 @@ describe('Production GA4 integration', () => {
       )?.params.programme_id,
     ).toBe('english-diploma');
     expect(
+      linkAnalyticsEvent(
+        '/guides/psychology-degree-2026.pdf',
+        'https://sitc.lk',
+        'content',
+      )?.params.programme_id,
+    ).toBe('psychology-degree');
+    expect(
       linkAnalyticsEvent('https://portal.sitc.lk/', 'https://sitc.lk', 'header')
         ?.params.resource,
     ).toBe('student_portal');

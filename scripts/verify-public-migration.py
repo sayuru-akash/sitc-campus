@@ -161,7 +161,8 @@ def main():
     for asset in asset_rows:
         path = urlsplit(asset['source']).path
         assert fetch(path, 'HEAD')[0] == 200, ('legacy asset', path)
-    for name in ['it', 'psychology', 'business', 'hrm', 'english', 'tamil']:
+    guide_names = ['it', 'psychology', 'business', 'hrm', 'english', 'tamil', 'psychology-degree']
+    for name in guide_names:
         status, headers, _ = fetch('/guides/' + name + '-2026.pdf', 'HEAD')
         assert status == 200 and 'application/pdf' in headers.get('Content-Type', ''), (name, 'guide')
 
@@ -174,7 +175,7 @@ def main():
     for unknown in ['/not-a-real-page/', '/program/not-a-programme/', '/program-level/not-a-level/', '/%25/']:
         assert fetch(unknown)[0] == 404, (unknown, 'must return 404')
 
-    report = {'passed': True, 'indexablePages': len(urls), 'htmlPagesChecked': len(pages), 'legacyHtmlDecisionsChecked': len(legacy), 'retiredRoutes': len(retired), 'legacyAssetsChecked': len(asset_rows), 'currentGuidesChecked': 6, 'redirectsChecked': redirect_checks, 'rssItems': 7, 'internalLinksAndFragments': 'passed', 'metadataAndStructuredData': 'passed', 'unknownRoutes': '404', 'pages': results}
+    report = {'passed': True, 'indexablePages': len(urls), 'htmlPagesChecked': len(pages), 'legacyHtmlDecisionsChecked': len(legacy), 'retiredRoutes': len(retired), 'legacyAssetsChecked': len(asset_rows), 'currentGuidesChecked': len(guide_names), 'redirectsChecked': redirect_checks, 'rssItems': 7, 'internalLinksAndFragments': 'passed', 'metadataAndStructuredData': 'passed', 'unknownRoutes': '404', 'pages': results}
     if args.report: args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({key:value for key,value in report.items() if key != 'pages'}, indent=2))
 

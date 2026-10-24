@@ -44,6 +44,31 @@ describe('Public migration contracts', () => {
     expect(programmeDetails['english-diploma'].fees.total).toBe(18000);
     expect(programmeDetails['tamil-diploma'].fees.total).toBe(24000);
   });
+  test('psychology degree guide keeps its own duration, credit profile and fee plan', async () => {
+    const detail = programmeDetails['psychology-degree'];
+    const { programmeSeo } = await import('../src/lib/programme-seo.ts');
+    expect(detail.durationIso).toBe('P3Y');
+    expect(detail.duration).toContain('2 years');
+    expect(detail.curriculum).toHaveLength(3);
+    const modules = detail.curriculum.flatMap((year) => year.modules);
+    expect(new Set(modules.map((module) => module.code)).size).toBe(24);
+    expect(modules.reduce((total, module) => total + module.credits, 0)).toBe(
+      90,
+    );
+    expect(detail.fees.standard - detail.fees.discount).toBe(detail.fees.total);
+    expect(detail.fees.total).toBe(348000);
+    expect(
+      detail.fees.installments.reduce((total, fee) => total + fee, 0),
+    ).toBe(348000);
+    expect(detail.fees.registration).toBe(20700);
+    expect(detail.fees.examination.perSubject * 3).toBe(
+      detail.fees.examination.perSemester,
+    );
+    expect(detail.fees.oneTime).toBeUndefined();
+    expect(programmeSeo('psychology-degree').description).not.toContain(
+      'six-month',
+    );
+  });
   test('sitemap contains live canonical content and excludes retired or empty categories', () => {
     const urls = sitemap().map((p) => p.url);
     expect(urls).toHaveLength(28);

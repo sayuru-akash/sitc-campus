@@ -213,9 +213,11 @@ export default async function ProgrammePage({
                   : 'Explore the subject'}
               </h2>
               <p className="course-source-note">
-                {detail.verifiedCurriculum
-                  ? 'A concise overview of the study areas in SITC’s published programme guide. Read the guide for the full academic profile.'
-                  : 'These are subject themes to help you explore this pathway, not a confirmed SITC module list. Ask admissions for the current approved syllabus, module credits and assessment plan.'}
+                {detail.curriculum
+                  ? 'Modules, subject codes and credits from the programme guide. Year 1 is included for context; the published diploma-entry route describes a one-year exemption for eligible entrants.'
+                  : detail.verifiedCurriculum
+                    ? 'A concise overview of the study areas in SITC’s published programme guide. Read the guide for the full academic profile.'
+                    : 'These are subject themes to help you explore this pathway, not a confirmed SITC module list. Ask admissions for the current approved syllabus, module credits and assessment plan.'}
               </p>
               {detail.curriculum ? (
                 detail.curriculum.map((year) => (
