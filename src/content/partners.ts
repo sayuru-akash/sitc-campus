@@ -27,6 +27,7 @@ export const academicPartners = [
     name: 'Ignite Ed',
     role: 'Digital learning',
     image: '/images/inner/ignite-ed.webp',
+    logoClassName: 'ignite-logo',
     description:
       'A digital learning partner helping students access learning resources, academic updates and programme coordination through a mobile platform.',
   },
@@ -41,6 +42,7 @@ export const academicPartners = [
     name: 'Smart IT Academy',
     role: 'Digital education',
     image: '/images/inner/smart-it.png',
+    logoClassName: 'smart-it-logo',
     description:
       'A digital academic partner supporting flexible online learning, practical training, academic guidance and student development.',
   },

@@ -27,13 +27,17 @@ export default function PartnersPage() {
           {academicPartners.map((partner) => (
             <article className="partner-row" key={partner.name}>
               <div
-                className={`partner-logo${'wideLogo' in partner ? ' wide-logo' : ''}`}
+                className={`partner-logo${'wideLogo' in partner ? ' wide-logo' : ''}${'logoClassName' in partner ? ` ${partner.logoClassName}` : ''}`}
               >
                 <Image
                   src={partner.image}
                   alt={`${partner.name} logo`}
                   fill
-                  sizes="(max-width: 640px) 110px, 180px"
+                  sizes={
+                    'logoClassName' in partner
+                      ? '(max-width: 760px) 121px, (max-width: 1000px) 140px, 180px'
+                      : '(max-width: 640px) 110px, 180px'
+                  }
                 />
               </div>
               <div className="partner-name">

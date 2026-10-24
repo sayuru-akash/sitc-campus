@@ -217,6 +217,22 @@
     object-fit: cover;
     padding: 0;
   }
+  /* These source files include generous empty canvas around their artwork. */
+  .partner-logo.ignite-logo,
+  .partner-logo.smart-it-logo {
+    overflow: hidden;
+  }
+  .partner-logo.ignite-logo img,
+  .partner-logo.smart-it-logo img {
+    object-fit: cover;
+    padding: 0;
+  }
+  .partner-logo.ignite-logo img {
+    transform: scale(0.9);
+  }
+  .partner-logo.smart-it-logo img {
+    transform: scale(1);
+  }
   .partner-name h2 {
     font-size: 29px;
     letter-spacing: -0.8px;
@@ -817,6 +833,9 @@
     .partner-logo {
       width: 110px;
       height: 100px;
+    }
+    .partner-logo.ignite-logo img {
+      transform: scale(1.1);
     }
     .partner-description {
       grid-column: 2;
