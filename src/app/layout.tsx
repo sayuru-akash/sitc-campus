@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   alternates: { types: { 'application/rss+xml': 'https://sitc.lk/feed/' } },
 };
 export const viewport: Viewport = {
-  themeColor: '#641c2e',
+  themeColor: '#0b3554',
 };
 export default function RootLayout({
   children,
