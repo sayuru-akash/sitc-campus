@@ -122,13 +122,17 @@ export function linkAnalyticsEvent(
       };
   }
   const guide =
-    /^\/guides\/(it|psychology|business|hrm|english|tamil)-2026\.pdf$/.exec(
+    /^\/guides\/(it|psychology|psychology-degree|business|hrm|english|tamil)-2026\.pdf$/.exec(
       url.pathname,
     );
   if (guide)
     return {
       name: 'programme_guide_click',
-      params: { programme_id: `${guide[1]}-diploma`, placement },
+      params: {
+        programme_id:
+          guide[1] === 'psychology-degree' ? guide[1] : `${guide[1]}-diploma`,
+        placement,
+      },
     };
   return null;
 }

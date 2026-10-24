@@ -16,7 +16,9 @@ export function programmeSeo(id: ProgrammeId) {
       ? `Diploma in ${programme.title}`
       : programme.title);
   const description = detail.verifiedCurriculum
-    ? `${title} at SITC Campus, Sri Lanka. Explore the six-month online course, study areas, published fees, programme guide and admissions.`
+    ? programme.level === 'Degree'
+      ? `${title} at SITC Campus, Sri Lanka. Explore the diploma-entry route, modules, weekend classes, published fees and programme guide.`
+      : `${title} at SITC Campus, Sri Lanka. Explore the six-month online course, study areas, published fees, programme guide and admissions.`
     : `${title} at SITC Campus, Sri Lanka. Explore subject guidance, progression and admissions. Confirm the current course specification with SITC.`;
   const searchTitle = `${title} in Sri Lanka | SITC`;
   const metadata = contentPageSeo({

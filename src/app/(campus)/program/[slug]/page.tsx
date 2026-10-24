@@ -67,14 +67,20 @@ export default async function ProgrammePage({
             '@type': 'Course',
             '@id': `${homepageSeo.url.slice(0, -1)}${path}#course`,
             name: title,
-            description: p.description,
+            description: detail.curriculum ? detail.overview : p.description,
             url: new URL(path, homepageSeo.url).href,
             educationalLevel: p.level,
             mainEntityOfPage: {
               '@id': `${new URL(path, homepageSeo.url).href}#webpage`,
             },
             ...(detail.verifiedCurriculum
-              ? { teaches: detail.areas.map((area) => area.title) }
+              ? {
+                  teaches: detail.curriculum
+                    ? detail.curriculum.flatMap((year) =>
+                        year.modules.map((module) => module.title),
+                      )
+                    : detail.areas.map((area) => area.title),
+                }
               : {}),
             provider: {
               '@id': `${homepageSeo.url}#organization`,
@@ -83,7 +89,21 @@ export default async function ProgrammePage({
               url: homepageSeo.url,
               sameAs: homepageSeo.url,
             },
-            ...(detail.duration ? { timeRequired: 'P6M' } : {}),
+            ...(detail.durationIso ? { timeRequired: detail.durationIso } : {}),
+            ...(detail.entry ? { coursePrerequisites: detail.entry } : {}),
+            ...(detail.curriculum
+              ? {
+                  numberOfCredits: detail.curriculum.reduce(
+                    (total, year) =>
+                      total +
+                      year.modules.reduce(
+                        (credits, module) => credits + module.credits,
+                        0,
+                      ),
+                    0,
+                  ),
+                }
+              : {}),
           },
         ]}
       />
@@ -113,6 +133,12 @@ export default async function ProgrammePage({
                 <dt>Qualification level</dt>
                 <dd>{p.level}</dd>
               </div>
+              {detail.awardingBody && (
+                <div>
+                  <dt>Awarding body</dt>
+                  <dd>{detail.awardingBody}</dd>
+                </div>
+              )}
               {detail.duration && (
                 <div>
                   <dt>Duration</dt>
@@ -170,6 +196,7 @@ export default async function ProgrammePage({
               {detail.verifiedCurriculum && (
                 <>
                   <h3>Qualification profile</h3>
+                  {detail.qualification && <p>{detail.qualification}</p>}
                   <p>
                     SITC’s published guide identifies PSB University as the
                     awarding body. Ask admissions for the exact award title,
@@ -190,19 +217,43 @@ export default async function ProgrammePage({
                   ? 'A concise overview of the study areas in SITC’s published programme guide. Read the guide for the full academic profile.'
                   : 'These are subject themes to help you explore this pathway, not a confirmed SITC module list. Ask admissions for the current approved syllabus, module credits and assessment plan.'}
               </p>
-              <ol className="curriculum-list">
-                {detail.areas.map((area, i) => (
-                  <li key={area.title}>
-                    <span aria-hidden="true">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <div>
-                      <h3>{area.title}</h3>
-                      <p>{area.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              {detail.curriculum ? (
+                detail.curriculum.map((year) => (
+                  <div key={year.title}>
+                    <h3>{year.title}</h3>
+                    {year.note && <p>{year.note}</p>}
+                    <ol className="curriculum-list">
+                      {year.modules.map((module, index) => (
+                        <li key={module.code}>
+                          <span aria-hidden="true">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
+                          <div>
+                            <h3>{module.title}</h3>
+                            <p>
+                              {module.code} · {module.credits} credits
+                            </p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ))
+              ) : (
+                <ol className="curriculum-list">
+                  {detail.areas.map((area, i) => (
+                    <li key={area.title}>
+                      <span aria-hidden="true">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <div>
+                        <h3>{area.title}</h3>
+                        <p>{area.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              )}
             </section>
             <section className="course-section">
               <h2>Develop your understanding</h2>
@@ -226,6 +277,15 @@ export default async function ProgrammePage({
               Ask a programme question <span aria-hidden="true">↗</span>
             </a>
             <a href={site.telephoneHref}>{site.telephone}</a>
+            {detail.programmeContact && (
+              <a
+                href={detail.programmeContact.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {detail.programmeContact.label}
+              </a>
+            )}
             {detail.guide && (
               <a href={detail.guide} target="_blank" rel="noopener noreferrer">
                 {detail.guideLabel} ↗
@@ -237,9 +297,10 @@ export default async function ProgrammePage({
           <div>
             <h2>Entry & application</h2>
             <p>
-              {p.level === 'Diploma'
-                ? 'Share your qualifications and relevant work experience with admissions. Eligibility is reviewed against the programme requirements; the listed audience does not guarantee admission.'
-                : 'Entry may depend on school qualifications, relevant prior study, language ability and the route you choose. Obtain the current entry criteria and an individual assessment from SITC before applying.'}
+              {detail.entry ??
+                (p.level === 'Diploma'
+                  ? 'Share your qualifications and relevant work experience with admissions. Eligibility is reviewed against the programme requirements; the listed audience does not guarantee admission.'
+                  : 'Entry may depend on school qualifications, relevant prior study, language ability and the route you choose. Obtain the current entry criteria and an individual assessment from SITC before applying.')}
             </p>
             <ol className="application-steps">
               <li>
@@ -284,15 +345,32 @@ export default async function ProgrammePage({
                     </dd>
                   </div>
                   <div>
-                    <dt>After the published 50% scholarship</dt>
+                    <dt>
+                      {detail.fees.discountLabel ??
+                        'After the published 50% scholarship'}
+                    </dt>
                     <dd className="fee-scholarship">
                       {money(detail.fees.total)}
                     </dd>
                   </div>
-                  <div>
-                    <dt>One-time payment option</dt>
-                    <dd>{money(detail.fees.oneTime)}</dd>
-                  </div>
+                  {detail.fees.discount !== undefined && (
+                    <div>
+                      <dt>Published discount</dt>
+                      <dd>{money(detail.fees.discount)}</dd>
+                    </div>
+                  )}
+                  {detail.fees.registration !== undefined && (
+                    <div>
+                      <dt>Registration fee (separate)</dt>
+                      <dd>{money(detail.fees.registration)}</dd>
+                    </div>
+                  )}
+                  {detail.fees.oneTime !== undefined && (
+                    <div>
+                      <dt>One-time payment option</dt>
+                      <dd>{money(detail.fees.oneTime)}</dd>
+                    </div>
+                  )}
                   {detail.fees.installments && (
                     <div>
                       <dt>Instalment plan</dt>
@@ -301,6 +379,18 @@ export default async function ProgrammePage({
                         {money(detail.fees.installments[0])}
                       </dd>
                     </div>
+                  )}
+                  {detail.fees.examination && (
+                    <>
+                      <div>
+                        <dt>Examination fee per subject</dt>
+                        <dd>{money(detail.fees.examination.perSubject)}</dd>
+                      </div>
+                      <div>
+                        <dt>Examination fees per semester</dt>
+                        <dd>{money(detail.fees.examination.perSemester)}</dd>
+                      </div>
+                    </>
                   )}
                 </dl>
                 {detail.fees.note && (
@@ -397,11 +487,22 @@ export default async function ProgrammePage({
             <details>
               <summary>What are the published course fees?</summary>
               <p>
-                The {detail.guideLabel} lists a standard fee of{' '}
-                {money(detail.fees.standard)}, with a published 50% scholarship
-                total of {money(detail.fees.total)}. A one-time payment option
-                of {money(detail.fees.oneTime)} is also listed. Confirm the
-                offer and any additional charges for your intake before paying.
+                The {detail.guideLabel} lists a standard course fee of{' '}
+                {money(detail.fees.standard)} and{' '}
+                {detail.fees.discount !== undefined
+                  ? `a discount of ${money(detail.fees.discount)}, bringing the course fee to`
+                  : 'a published 50% scholarship total of'}{' '}
+                {money(detail.fees.total)}.
+                {detail.fees.oneTime !== undefined &&
+                  ` A one-time payment option of ${money(detail.fees.oneTime)} is also listed.`}
+                {detail.fees.registration !== undefined &&
+                  ` Registration of ${money(detail.fees.registration)} is separate.`}
+                {detail.fees.installments &&
+                  ` The instalment plan is ${detail.fees.installments.length} payments of ${money(detail.fees.installments[0])}.`}
+                {detail.fees.examination &&
+                  ` Examination fees are ${money(detail.fees.examination.perSubject)} per subject, totalling ${money(detail.fees.examination.perSemester)} for three examinations per semester.`}{' '}
+                Confirm the offer and any additional charges for your intake
+                before paying.
               </p>
             </details>
           )}

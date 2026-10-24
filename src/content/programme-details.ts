@@ -16,10 +16,24 @@ export type ProgrammeDetail = {
   intake?: string;
   guide?: string;
   guideLabel?: string;
+  durationIso?: string;
+  entry?: string;
+  qualification?: string;
+  awardingBody?: string;
+  curriculum?: readonly {
+    title: string;
+    note?: string;
+    modules: readonly { code: string; title: string; credits: number }[];
+  }[];
+  programmeContact?: { label: string; href: string };
   fees?: {
     standard: number;
     total: number;
-    oneTime: number;
+    oneTime?: number;
+    discountLabel?: string;
+    discount?: number;
+    registration?: number;
+    examination?: { perSubject: number; perSemester: number };
     installments?: readonly number[];
     note?: string;
   };
@@ -34,6 +48,7 @@ const standardFees = {
 const diploma = {
   verifiedCurriculum: true,
   duration: '6 months',
+  durationIso: 'P6M',
   delivery: 'Online via Zoom',
   medium: 'Sinhala',
 } as const;
@@ -363,51 +378,125 @@ export const programmeDetails: Record<ProgrammeId, ProgrammeDetail> = {
     related: ['english-diploma', 'english-degree'],
   },
   'psychology-degree': {
-    verifiedCurriculum: false,
+    verifiedCurriculum: true,
+    guide: guide('psychology-degree'),
+    guideLabel: 'October 2026 degree programme guide',
+    duration: '3 academic years; 2 years with the published diploma exemption',
+    durationIso: 'P3Y',
+    delivery:
+      'Online via Zoom, with monthly practical sessions after the first 6 months',
+    medium: 'Sinhala and English mixed medium',
+    intake: '6 December 2026, 8:00 PM (first lecture)',
+    schedule:
+      'Saturdays and Sundays, 7:00 PM to 10:00 PM (Sri Lanka time). The first lecture is at 8:00 PM on 6 December 2026. One weekend day per month is required for practical sessions after the first 6 months. The guide schedules completion for 24 December 2028, excludes Poya days and public holidays, and provides Zoom recordings when a class is missed.',
+    entry:
+      'The published diploma-entry route is for holders of a SITC Campus Diploma in Psychology and Counselling, a relevant SLQF Level 3 diploma, or a relevant one-year diploma with 30 credits. The guide describes a one-year exemption from the three-year degree, leaving two academic years of study. Submit your diploma and transcript for SITC to confirm eligibility and the exemption.',
+    qualification:
+      'Bachelor of Science in Psychology and Counselling (B.Sc. Psychol. & Couns.). The guide describes a 90-credit degree at SLQF Level 5, with 30 credits represented by the eligible diploma-entry stage.',
+    awardingBody: 'PSB University (PSBU), as identified in the programme guide',
+    programmeContact: {
+      label: 'Programme WhatsApp: +94 77 245 2461',
+      href: 'https://wa.me/94772452461',
+    },
+    fees: {
+      standard: 398500,
+      discount: 50500,
+      total: 348000,
+      discountLabel: 'Course fee after the published discount',
+      registration: 20700,
+      installments: Array.from({ length: 24 }, () => 14500),
+      examination: { perSubject: 800, perSemester: 2400 },
+      note: 'The Skill Development Scholarship plan lists registration separately from the discounted course fee. Examination fees are LKR 800 per subject, with three examinations per semester totalling LKR 2,400. Confirm payment dates and any other applicable charges for your intake before paying.',
+    },
     overview:
-      'Take a deeper academic interest in how people think, learn, develop and relate to one another. Psychology and counselling bring together evidence, reflection and ethical responsibility. Degree-level study can help you examine competing explanations of behaviour, evaluate research and consider how psychological knowledge is used in educational, organisational and community settings.',
+      'Study human behaviour, psychological development and the principles of ethical counselling through the Bachelor of Science in Psychology and Counselling at SITC Campus. The published programme combines counselling theory and skills with health, educational, social, cognitive and organisational psychology. Psychological research methods and a final research dissertation support an evidence-based approach to the subject. The guide presents a three-year degree with a two-year study route for eligible diploma holders.',
     audience:
-      'Prospective undergraduates and learners with relevant prior study in psychology or counselling. Admissions must confirm the available entry route, awarding university, duration, study mode and any recognition of previous learning for your application.',
+      'Diploma holders in psychology and counselling who want to progress to degree-level study, including working learners seeking weekend evening classes. The programme is relevant to interests in community support, student welfare, employee wellbeing and further psychological research.',
     areas: [
       {
-        title: 'Behaviour and Development',
+        title: 'Year 1: Counselling foundations',
         description:
-          'Explore cognitive, biological, social and developmental perspectives on human behaviour.',
+          'General, child and abnormal psychology alongside counselling theory, ethics, law and techniques. This is the stage represented by the published diploma exemption for eligible entrants.',
       },
       {
-        title: 'Counselling Theory and Ethics',
+        title: 'Year 2: Psychological perspectives',
         description:
-          'Consider counselling relationships, ethical responsibilities, supervision and the limits of a professional role.',
+          'Health, positive, educational, social, counselling, cognitive and abnormal psychology.',
       },
       {
-        title: 'Research and Evidence',
+        title: 'Year 3: Application and research',
         description:
-          'Understand research questions, methods, data interpretation and the evaluation of psychological claims.',
+          'Sexual, developmental, organisational, behavioural and cross-cultural psychology, psychological therapies, research methods and a final dissertation.',
+      },
+    ],
+    curriculum: [
+      {
+        title: 'Year 1, Semesters I & II',
+        note: '30 credits. The guide describes a one-year exemption for eligible diploma holders.',
+        modules: [
+          { code: 'PC1301', title: 'Basic of Counselling', credits: 3 },
+          { code: 'PC1502', title: 'General Psychology', credits: 5 },
+          {
+            code: 'PC1303',
+            title: 'Child and Developmental Psychology - I',
+            credits: 3,
+          },
+          { code: 'PC1404', title: 'Abnormal Psychology - I', credits: 4 },
+          { code: 'PC1405', title: 'Theories of Counselling', credits: 4 },
+          { code: 'PC1306', title: 'Counselling Ethics & Skills', credits: 3 },
+          { code: 'PC1307', title: 'Counselling Law', credits: 3 },
+          { code: 'PC1508', title: 'Techniques of Counselling', credits: 5 },
+        ],
       },
       {
-        title: 'Wellbeing and Individual Differences',
-        description:
-          'Explore the relationship between personal circumstances, mental health, learning and wellbeing.',
+        title: 'Year 2, Semesters I & II',
+        note: '30 credits.',
+        modules: [
+          { code: 'PC2301', title: 'Introduction to Psychology', credits: 3 },
+          { code: 'PC2302', title: 'Health Psychology', credits: 3 },
+          { code: 'PC2303', title: 'Positive Psychology', credits: 3 },
+          { code: 'PC2504', title: 'Educational Psychology', credits: 5 },
+          { code: 'PC2305', title: 'Social Psychology', credits: 3 },
+          { code: 'PC2306', title: 'Counselling Psychology', credits: 3 },
+          { code: 'PC2507', title: 'Cognitive Psychology', credits: 5 },
+          { code: 'PC2508', title: 'Abnormal Psychology - II', credits: 5 },
+        ],
       },
       {
-        title: 'Applied Psychology',
-        description:
-          'Consider psychological ideas in education, organisations, families and communities.',
-      },
-      {
-        title: 'Academic Inquiry',
-        description:
-          'Develop critical reading, argument, reflective writing and independent investigation.',
+        title: 'Year 3, Semesters I & II',
+        note: '30 credits, including the 6-credit final research dissertation.',
+        modules: [
+          { code: 'PC3301', title: 'Sexual Psychology', credits: 3 },
+          {
+            code: 'PC3302',
+            title: 'Child and Developmental Psychology - II',
+            credits: 3,
+          },
+          {
+            code: 'PC3403',
+            title: 'Psychological Research Methods',
+            credits: 4,
+          },
+          { code: 'PC3504', title: 'Organizational Psychology', credits: 5 },
+          { code: 'PC3305', title: 'Behavioral Psychology', credits: 3 },
+          { code: 'PC3306', title: 'Cross-Cultural Psychology', credits: 3 },
+          {
+            code: 'PC3307',
+            title: 'Disorders and Psychological Therapies',
+            credits: 3,
+          },
+          { code: 'PC3608', title: 'Final Research Dissertation', credits: 6 },
+        ],
       },
     ],
     outcomes: [
-      'Develop a more critical understanding of psychological evidence.',
-      'Connect theory with ethical questions in applied settings.',
-      'Plan further study with a clear understanding of professional training requirements.',
+      'Understand psychological perspectives on development, learning, wellbeing and behaviour.',
+      'Develop listening, communication and counselling skills with attention to ethics, privacy and professional boundaries.',
+      'Evaluate psychological evidence and develop research skills through research methods and a final dissertation.',
+      'Connect academic learning with practical sessions and prepare for further study or relevant support roles.',
     ],
     progression:
-      degreeProgression +
-      ' A degree alone does not establish eligibility to practise as a clinical psychologist or an independently registered counsellor.',
+      'Explore community and NGO support, student welfare, HR and employee wellbeing, research assistance and supervised counselling-support roles. The guide also outlines internships, placements, specialist development and postgraduate study in Psychology, Counselling, Social Work and related subjects. Further academic and professional routes depend on their entry requirements, relevant experience and supervised training. A degree alone does not establish eligibility to practise as a clinical psychologist or an independently registered counsellor.',
     related: ['psychology-diploma', 'hrm-degree'],
   },
   'hrm-degree': {
