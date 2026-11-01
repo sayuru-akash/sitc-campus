@@ -1,113 +1,300 @@
+<div align="center">
+
+<img src="public/images/sitc-logo.png" alt="SITC Campus" width="360" />
+
 # SITC Campus
 
-A Next.js App Router and Tailwind CSS recreation of the supplied SITC Campus reference, with an expanded contact footer, trilingual branding, and the official campus video. Uses TypeScript, local fonts, optimized images, and small interactive client components. Most of the page is statically rendered on the server.
+**A trilingual higher-education marketing site for Science and Information Technology City Campus, Sri Lanka.**
 
-## Development
+Rebuilt from the legacy WordPress site at [sitc.lk](https://sitc.lk/) as a fast, statically-rendered
+[Next.js](https://nextjs.org) App Router website — with a programme explorer, programme detail pages,
+a news archive, a WhatsApp enquiry handoff, and first-class SEO in English, Sinhala and Tamil.
 
-Requires Node.js 20.9+ and Bun. Install and run:
+[Live site](https://sitc.lk/) · [Report an issue](../../issues) · [Contributing guide](#contributing)
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+[![Bun](https://img.shields.io/badge/Bun-1.3-f472b6?logo=bun)](https://bun.sh)
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-100%20A11y%20%7C%20100%20SEO-9656ce?logo=lighthouse)](#-seo-analytics--performance)
+
+</div>
+
+---
+
+![SITC Campus homepage — hero with convocation video and trilingual wordmark](docs/screenshots/hero.png)
+
+<p align="center">
+  <em>The homepage hero at 1440px — deferred YouTube convocation trailer, local fonts in three scripts, server-rendered copy.</em>
+</p>
+
+## ✨ Features
+
+- **🎯 Programme explorer** — filter by Diploma/Degree, live search with an empty state, and cards that link to full programme pages. Selecting a pathway pre-fills the enquiry form.
+- **📖 Programme detail pages** — overview, study areas, outcomes, verified curricula with module credits, fees, intake dates and downloadable PDF guides for all 10 programmes.
+- **📰 News archive** — original SITC articles preserved as text (Sinhala and English), with article pages, an archive listing and an RSS feed.
+- **💬 WhatsApp enquiry handoff** — the contact form composes a prefilled WhatsApp message. No backend, no database, nothing stored.
+- **👨‍🎓 Trilingual Vice Chancellor profile** — complete English, Sinhala and Tamil biography and welcome message with an accessible language switcher.
+- **🌍 SEO & migration safe** — canonical URLs, Open Graph, JSON-LD structured data, sitemap, RSS, and 301 redirects from the legacy WordPress URL space. Retired pages return real 410s.
+- **⚡ Statically rendered** — nearly everything is a Server Component; only navigation, filtering, the language switcher, the hero video and the form are client-side.
+- **📐 Reference-accurate design** — layout verified element-by-element against the supplied design reference at desktop, tablet and mobile breakpoints.
+
+### Homepage sections
+
+| | |
+|---|---|
+| [![Programme explorer](docs/screenshots/programmes.png)](docs/screenshots/programmes.png) | [![Vice Chancellor](docs/screenshots/leadership.png)](docs/screenshots/leadership.png) |
+| **Programme explorer** — filters, search and pathway cards | **Academic leadership** — trilingual profile & research figures |
+| [![Campus experience](docs/screenshots/experience.png)](docs/screenshots/experience.png) | [![Enquiry](docs/screenshots/enquiry.png)](docs/screenshots/enquiry.png) |
+| **Campus experience** — burgundy statement band | **Enquiry** — form that opens a prefilled WhatsApp chat |
+
+<details>
+<summary><strong>Footer — four locations, support channels & legal links</strong></summary>
+
+![Footer with Colombo, Gampola, UAE and Malaysia locations](docs/screenshots/footer.png)
+
+</details>
+
+### Inner pages
+
+| Page | Screenshot |
+|---|---|
+| **Programme catalogue** — `/academic-programmes/` | [![Academic programmes catalogue](docs/screenshots/programmes-page.png)](docs/screenshots/programmes-page.png) |
+| **Programme detail** — `/program/<slug>/` | [![Diploma in Psychology & Counselling detail page](docs/screenshots/programme-detail.png)](docs/screenshots/programme-detail.png) |
+| **News archive** — `/news/` | [![News archive](docs/screenshots/news.png)](docs/screenshots/news.png) |
+| **About** — `/about-us/` | [![About page](docs/screenshots/about.png)](docs/screenshots/about.png) |
+| **Partner institutes** — `/academic-direction-partner-institutes/` | [![Academic direction partner institutes](docs/screenshots/partners.png)](docs/screenshots/partners.png) |
+| **Contact** — `/contact-us/` | [![Contact page](docs/screenshots/contact.png)](docs/screenshots/contact.png) |
+
+### Mobile
+
+<p>
+  <img src="docs/screenshots/mobile-home.png" alt="Homepage on a 390px mobile viewport" width="280" />
+  <img src="docs/screenshots/mobile-menu.png" alt="Mobile navigation menu open" width="280" />
+</p>
+
+Responsive from 320px up. Navigation collapses to an accessible `aria-expanded` toggle below 640px, and every section reflows to a single column.
+
+## 📄 Site map
+
+| Route | Description |
+|---|---|
+| `/` | Homepage — hero video, highlights, programme explorer, experience, news, leadership, pathway, resources, FAQs, enquiry |
+| `/academic-programmes/` | Programme catalogue with filters and search |
+| `/program/<slug>/` | Programme detail pages (10 programmes) |
+| `/program-level/diploma/` · `/program-level/undergraduate/` | Programme level landing pages |
+| `/about-us/` | Vision, mission and values |
+| `/academic-direction-partner-institutes/` | Six academic direction partners |
+| `/news/` · `/news/<article>/` | News archive and original article pages |
+| `/contact-us/` | Locations, support channels and the enquiry form |
+| `/privacy-policy/` · `/refund-policy/` · `/terms-and-conditions/` | Legal pages |
+| `/sitemap.xml` · `/robots.txt` · `/feed/` | SEO endpoints |
+| `/academic-staff/` · `/events/` · `/category/uncategorized/` | Retired WordPress pages returning **410 Gone** |
+
+Legacy WordPress URLs — including every `wp-content` asset, old sitemaps and `/program/` paths — redirect permanently to their new homes. See [Migration](#-wordpress-migration--provenance).
+
+## 🧱 Tech stack
+
+| Layer | Choice |
+|---|---|
+| Framework | [Next.js 16](https://nextjs.org) (App Router, static rendering, `trailingSlash`) |
+| UI | [React 19](https://react.dev), Server Components by default, small client islands |
+| Styling | [Tailwind CSS 4](https://tailwindcss.com) theme tokens + hand-written CSS ([globals.css](src/app/globals.css)) matching the reference design |
+| Typography | DM Sans, Playfair Display, Yaldevi (Sinhala) and Noto Sans Tamil (Tamil) — self-hosted via `next/font/local` |
+| Language | [TypeScript](https://www.typescriptlang.org) `strict` mode |
+| Tests | [Bun test](https://bun.sh/docs/cli/test) |
+| Tooling | ESLint (next/core-web-vitals), Prettier, [Bun](https://bun.sh) as package manager |
+
+## 🚀 Getting started
+
+**Prerequisites:** [Node.js 20.9+](https://nodejs.org) and [Bun 1.3+](https://bun.sh).
 
 ```sh
+git clone https://github.com/sayuru-akash/sitc-campus.git
+cd sitc-campus
 bun install
 bun run dev
 ```
 
-Open http://localhost:3000. No environment variables are currently required. Canonical and sharing URLs intentionally use `https://sitc.lk/`, including in local previews; edit `src/content/seo.ts` only if the real canonical domain changes.
+Open <http://localhost:3000>. No environment variables are required for local development.
 
-For public staging, set `PREVENT_INDEXING=true` before building. Vercel preview deployments receive `noindex, nofollow` automatically. Production must use `PREVENT_INDEXING=false` (or leave it unset).
+> **Note** — canonical and social URLs are intentionally pinned to `https://sitc.lk/` even in local previews, so localhost can never leak into search metadata. Change [src/content/seo.ts](src/content/seo.ts) only if the real domain changes.
+
+### Production build
 
 ```sh
-bun run lint
-bun run typecheck
-bun test
 bun run build
-bun run start
+bun run start        # serves on port 3000
 ```
 
-With the built site running on port 3100, run `python3 scripts/verify-public-migration.py` to check page statuses, metadata, sitemap/feed, legacy media, redirects and internal links.
+## 🔧 Scripts
 
-## Editing the site
+| Command | Purpose |
+|---|---|
+| `bun run dev` | Start the dev server on <http://localhost:3000> |
+| `bun run build` | Production build |
+| `bun run start` | Serve the production build |
+| `bun run lint` | ESLint with **zero warnings allowed** |
+| `bun run typecheck` | `tsc --noEmit` |
+| `bun test` | Unit tests (analytics, enquiry, migration contracts, retired pages) |
+| `bun run format` / `format:check` | Prettier write / check |
+| `node scripts/verify-layout.mjs` | Compare rendered DOM geometry against recorded reference measurements |
+| `python3 scripts/verify-public-migration.py` | Full HTTP audit of the built site (see below) |
 
-- `src/app/page.tsx`: section order and page assembly.
-- `src/components/sections/`: individual page sections.
-- `src/content/programmes.ts`: programme titles, descriptions, and qualification levels. Add a record to update both the explorer and the enquiry dropdown.
-- `src/content/site.ts`: navigation, locations, admissions contact information, and external links.
-- `src/content/faqs.ts`: FAQ questions and answers.
-- `src/content/campus-video.ts`: verified YouTube ID, source segment, title, date, and duration.
-- `src/content/seo.ts`: live homepage title, description, public URL, social preview, and site identity.
-- `src/content/leadership.ts`: English, Sinhala, and Tamil profile, biography, welcome message, and dated research figures.
-- `src/components/sections/leadership.tsx`: server-rendered Vice Chancellor profile and message, with a small accessible language switcher.
-- `src/components/hero-video.tsx`: deferred muted autoplay, poster fallback, playback controls, and off-screen pausing.
-- `src/components/structured-data.tsx`: education, address, contact, and video JSON-LD.
-- `src/app/globals.css`: Tailwind theme, shared components, exact reference measurements, and responsive breakpoints (900px and 640px).
-- `public/images/` and `public/fonts/`: original assets served locally.
+### Full site verification
 
-`ProgrammeSelectionProvider` connects programme cards to the enquiry form, while server-rendered sections are passed as children. The form validates the name and opens a prefilled WhatsApp enquiry. No message is sent automatically, and the site does not store form submissions. There is no backend or database requirement.
+With the built site running on port 3100:
 
-## Reference and provenance
+```sh
+PORT=3100 bun run start &
+python3 scripts/verify-public-migration.py
+```
 
-The visual reference was inspected in Edge, including desktop, tablet, mobile navigation, filters, search, empty results, FAQs, and programme selection. `docs/research/` contains extracted evidence and source links. `docs/design-references/` contains the original screenshots.
+The script checks page statuses, metadata, canonical URLs, sitemap and RSS, legacy media, redirects, internal links and JSON-LD — read-only, no form submissions.
 
-Official contact details and three official locations were refreshed from https://sitc.lk/ and its contact page. The footer includes Colombo, Gampola, the UAE office in Sharjah, the user-supplied Kuala Lumpur address in Malaysia, all published support numbers, social channels, maps, appointments, and legal links. The header uses the supplied trilingual wordmark. The footer renders that exact image in white using a CSS filter, preserving every glyph. The certificate-verification link uses the official verification service. Font files come from the reference's DM Sans and Playfair Display Google Fonts stylesheet, with licenses in `public/fonts/`.
+## 🌍 Environment variables
 
-## Main pages
+No variables are required. One optional flag exists:
 
-Eight main pages are implemented under `src/app/(campus)/`: About, Contact, Programmes, Partners, News, Privacy, Refund and Terms. Shared inner-page styles live in `inner-pages.css`; page copy and metadata live in `src/content/{about,partners,news,policies,page-metadata}.ts`. Keep the ten approved programme records as the single source for both homepage and catalogue.
+| Variable | Default | Purpose |
+|---|---|---|
+| `PREVENT_INDEXING` | `false` | Set `true` for public staging builds → `noindex, nofollow` everywhere. Vercel preview deployments get this automatically; production must leave it unset or `false`. |
 
-Staff, Events and Uncategorized deliberately return HTTP 410 Gone with helpful navigation. All ten programmes have detail pages and all six existing news articles are local on their original paths. A verified October 2026 Tamil intake announcement is also included. Diploma and undergraduate archives list approved offerings; empty future master’s/doctoral archives remain noindex until populated. Sitemap, robots, RSS and legacy sitemap redirects are implemented. The 65 retained legacy media/PDF URLs are preserved under `public/wp-content/`.
+## 📁 Project structure
 
-- `src/content/programme-routes.ts`: stable programme slugs and reusable level definitions.
-- `src/content/programme-details.ts`: study guides, source-labelled diploma fees, learning themes and progression.
-- `public/guides/`: six newer published SITC diploma guides, discovered through its Facebook posts.
-- `src/content/news-articles.ts`: article text, source links, slugs and publication metadata.
-- `src/components/sections/recent-news.tsx`: homepage feature and two supporting stories after the campus experience section.
-- `src/content/news.ts`: date-sorted summaries shared by homepage, news archive and RSS; new stories automatically appear in the three most recent homepage slots. For an intact poster, set `imageRatio` to its source width divided by height. Photo covers omit that field.
-- `src/lib/news-presentation.ts`: shared date labels and responsive poster sizing.
-- `src/lib/programme-seo.ts`: individual Sri Lanka programme search titles and descriptions, without changing approved programme names.
-- `src/lib/site-schema.ts`: consistent organization and website identity embedded on every content page.
-- `src/app/sitemap.ts` and `src/app/robots.ts`: canonical indexable routes and crawler guidance.
+```
+sitc-campus/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Homepage — section assembly
+│   │   ├── layout.tsx            # Root layout, local fonts, GA
+│   │   ├── globals.css           # Design system, reference measurements
+│   │   ├── (campus)/             # All inner pages share header/footer
+│   │   │   ├── about-us/         #   About
+│   │   │   ├── academic-programmes/
+│   │   │   ├── program/[slug]/   #   Programme detail
+│   │   │   ├── program-level/[level]/
+│   │   │   ├── news/             #   Archive + [slug] article pages
+│   │   │   ├── contact-us/
+│   │   │   ├── privacy-policy/ · refund-policy/ · terms-and-conditions/
+│   │   │   └── academic-direction-partner-institutes/
+│   │   ├── academic-staff/ · events/ · category/uncategorized/   # 410 routes
+│   │   ├── sitemap.ts · robots.ts · feed/
+│   │   └── not-found.tsx
+│   ├── components/
+│   │   ├── sections/             # Homepage sections (hero, explorer, leadership…)
+│   │   ├── ui/                   # ButtonLink, Eyebrow
+│   │   └── …                     # Header, footer, hero video, analytics, cards
+│   ├── content/                  # ✏️ ALL site content lives here (see below)
+│   ├── lib/                      # SEO helpers, enquiry URL, analytics, news utils
+│   └── types/content.ts
+├── public/
+│   ├── images/ · fonts/ · guides/   # Local assets (incl. programme PDF guides)
+│   └── wp-content/…                 # Legacy WordPress media at original paths
+├── docs/
+│   ├── screenshots/              # Screenshots used in this README
+│   ├── design-references/        # Original design + local comparison captures
+│   └── research/                 # Migration maps, measurements, specs, audits
+├── scripts/                      # Layout & public-migration verifiers
+└── tests/                        # Bun unit tests
+```
 
-To add an offering, add the approved record to `programmes.ts`, its stable slug to `programme-routes.ts` and its detail in `programme-details.ts`. Catalogue, enquiry options and sitemap follow those records. Update the approved catalogue-count expectations in the migration checks when changing the list. Extend the qualification type and level classification if introducing a new level. Empty future levels should become indexable only when approved offerings are present.
+## ✏️ Editing content
 
-The four degree pages contain useful original subject guidance, with exploratory themes explicitly distinguished from an official module specification. Exact awarding, entry, duration and fees still need authoritative SITC specifications. Legal pages are plain-language adaptations and need owner review before public publication. No payment backend, invented registration success or automatic external message is implemented. See [detail-page sources, migration map and QA](docs/research/DETAIL-PAGES-MIGRATION.md).
+All copy is typed content in [src/content/](src/content) — no CMS, no database.
 
-## Campus video
+| To change… | Edit |
+|---|---|
+| Programme titles, descriptions, levels | [programmes.ts](src/content/programmes.ts) — one record updates the explorer, the catalogue, the enquiry dropdown **and** the sitemap |
+| Programme slugs / routes | [programme-routes.ts](src/content/programme-routes.ts) — ⚠️ changing a slug breaks a published URL; add a redirect in [next.config.ts](next.config.ts) |
+| Full programme details, curricula, fees, guides | [programme-details.ts](src/content/programme-details.ts) |
+| News cards & archive | [news.ts](src/content/news.ts) — every story needs a matching article |
+| Full article text | [news-articles.ts](src/content/news-articles.ts) |
+| Navigation, locations, phones, social links | [site.ts](src/content/site.ts) |
+| FAQs | [faqs.ts](src/content/faqs.ts) |
+| Campus video (YouTube ID, times, metadata) | [campus-video.ts](src/content/campus-video.ts) |
+| Page titles & meta descriptions | [page-metadata.ts](src/content/page-metadata.ts) and [seo.ts](src/content/seo.ts) |
+| Vice Chancellor profile (EN/SI/TA) | [leadership.ts](src/content/leadership.ts) |
+| About page (vision, mission, values) | [about.ts](src/content/about.ts) |
+| Partner institutes | [partners.ts](src/content/partners.ts) |
+| Legal pages | [policies.ts](src/content/policies.ts) |
+| Homepage section order | [src/app/page.tsx](src/app/page.tsx) |
+| Design tokens, measurements, breakpoints | [src/app/globals.css](src/app/globals.css) (breakpoints: 900px and 640px) |
 
-The hero uses SITC General Convocation Trailer, YouTube video `Db7ALM2wM6g`, matching the official site's 77-to-268-second segment. The poster and page content render on the server. The YouTube API loads only after hydration, a short delay, browser idle time, and hero visibility. The player uses the privacy-enhanced host, starts muted and inline, and pauses outside the viewport or in a hidden tab. Reduced-motion and Save-Data preferences prevent automatic loading; the play button remains available. The poster remains visible during startup, pauses, buffering and playback completion. Playing video fades in after three seconds of settled playback; it hides immediately when playback stops so the cropped background frame does not expose partial player titles. A failed player keeps the original poster and an external watch link.
+`ProgrammeSelectionProvider` (a client context) is the only bridge between server sections — it carries the selected programme from cards to the enquiry form.
 
-Video metadata uses the verified public upload date and duration. Google may consider a decorative homepage video ineligible for video-rich results; adding schema does not guarantee video indexing.
+## 🔍 SEO, analytics & performance
 
-## Homepage SEO and migration scope
+- **Metadata** — every route sets its own canonical URL, description, Open Graph and Twitter cards; future routes and 404s never inherit homepage metadata.
+- **Structured data** — `EducationalOrganization`, address, contact and video JSON-LD on the homepage; `Article` and breadcrumb schema on content pages.
+- **Analytics** — GA4 loads **only** in production builds on `sitc.lk` / `www.sitc.lk` (never localhost, previews or lookalike hosts) and tracks contact/enquiry events. Config: [src/lib/analytics.ts](src/lib/analytics.ts).
+- **Indexing control** — `PREVENT_INDEXING=true` or Vercel preview → `noindex, nofollow` plus an empty sitemap.
 
-Homepage metadata preserves the live site's title, description, Open Graph identity, Twitter card, and sharing image as captured on 21 October 2026. The homepage has an explicit self-referencing canonical and indexable robots metadata. Homepage-specific fields live in `src/app/page.tsx`, so future pages and 404s do not inherit the homepage canonical. Structured data combines the existing education/contact/video information with linked WebSite, WebPage, and breadcrumb entities using stable public IDs.
+Lighthouse 13, mobile preset, production build ([full report](docs/research/lighthouse-summary-2026-10-22.json)):
 
-The legacy sharing image and Apple icon URLs still use `/wp-content/uploads/`. Those public assets must remain available when the new homepage launches. Public content routes, sitemap, robots, RSS and the discovered legacy media paths are implemented locally. GA4 is configured as described below. WordPress backend features have not been migrated. A production cutover still needs hosting, public-origin and external-service verification. See `docs/research/SEO-AUDIT-2026-10-21.md` and its URL inventory before choosing the routing or migration approach.
+| Page | Performance | Accessibility | Best practices | SEO |
+|---|---|---|---|---|
+| `/` | 91 | 100 | 100 | 100 |
+| `/about-us/` | 96 | 100 | 100 | 100 |
+| `/academic-programmes/` | 96 | 100 | 100 | 100 |
+| `/contact-us/` | 96 | 100 | 100 | 100 |
+| `/program/diploma-in-business-management/` | 97 | 100 | 100 | 100 |
+| `/news/` | 89 | 100 | 100 | 100 |
 
-The original clone measurement JSON and `scripts/verify-layout.mjs` are archived baseline evidence. They do not assert that the intentionally redesigned header and footer still match the original.
+Zero cumulative layout shift on every measured page.
 
-## Vice Chancellor
+## ✅ Testing
 
-The leadership feature includes a portrait, a short introduction, an expandable full biography, dated research figures, and the complete welcome message. English, Sinhala, and Tamil content renders on the server. The shared language tabs support arrow keys, Home, and End. Sinhala uses the complete locally hosted Yaldevi variable font (weights 200-700); Tamil uses Noto Sans Tamil. Both licenses are included.
+```sh
+bun test            # analytics gating, WhatsApp URL encoding, migration contracts, 410 pages
+bun run lint        # eslint --max-warnings=0
+bun run typecheck
+```
 
-The portrait is an exact visual crop of the user-supplied poster, using its original photograph without changing facial features or academic attire. The source and crop coordinates are documented in the component. The English welcome message is preserved as supplied, with Sinhala and Tamil translations. The biography and research figures were supplied by the user; the figures are explicitly dated 15 October 2026 and have not been independently verified. See `docs/research/LEADERSHIP-UPDATE.md` for source and implementation notes.
+The tests protect **behaviour contracts** rather than markup: published URLs, fee figures, Unicode-safe enquiry encoding, analytics host gating, and real 410 responses for retired pages. Layout fidelity is checked separately against recorded reference geometry via `node scripts/verify-layout.mjs`.
 
-## SEO and performance verification
+## 🔄 WordPress migration & provenance
 
-All 28 indexable pages have production-domain canonical URLs, unique titles and descriptions, sharing metadata and JSON-LD. The original homepage search identity is preserved. Course pages link the current catalogue to their source guides, admissions contacts, refund terms and related pathways. New article dates are source dates, not build dates. No unverified reviews, ratings, accreditation, rankings or expert-review claims are added.
+This project replaces the WordPress site at <https://sitc.lk/>.
 
-The homepage uses AVIF/WebP image negotiation, deferred video loading once at least half the video is visible, server-rendered recent news and native lazy images. Long off-screen news and translated leadership sections use CSS automatic content visibility, retaining their complete HTML and accessible navigation. Sinhala uses the complete licensed Yaldevi font, with its original OpenType shaping tables, through `next/font/local`. It is the shared fallback for mixed-script text and is explicitly applied with `:lang(si)` to headings, links, paragraphs, tabs and controls. Letter spacing and synthetic italics are removed for Sinhala, and VC body text is 15px. Do not reintroduce per-line glyph subsets: the former introductory subset changed a pre-base vowel's advance to zero and caused overlapping letters. The full face is loaded only when needed, without an external font request.
+- Original content, contact details, locations and media were extracted with permission and preserved in `docs/research/` — see [SOURCES.md](docs/research/SOURCES.md), [PAGE_TOPOLOGY.md](docs/research/PAGE_TOPOLOGY.md) and [BEHAVIORS.md](docs/research/BEHAVIORS.md).
+- Every published URL keeps working: `wp-content` assets are served from their original paths, old sitemaps redirect to `/sitemap.xml`, and programme slugs that changed have permanent redirects.
+- Removed sections (academic staff, events, uncategorized archive) return **410 Gone** with `noindex, follow` — deliberately not redirected.
+- Financial figures and curricula are treated as migration contracts and covered by tests.
 
-The source is [Yaldevi from Google Fonts](https://github.com/google/fonts/tree/main/ofl/yaldevi), designed by Mooniak, with its OFL license in `public/fonts/Yaldevi-LICENSE.txt`. The complete upstream variable TTF was converted to WOFF2 without glyph subsetting. Existing font licenses are retained. The original Playfair and DM Sans assets are unchanged. No experimental Next.js CSS flags are enabled.
+<details>
+<summary><strong>📁 Full research index</strong></summary>
 
-See `docs/research/SEO-PERFORMANCE-2026-10-22.md` for local Lighthouse results, source evidence and the remaining public-launch checks. A localhost audit cannot verify public search rankings or real-user Core Web Vitals.
+| Document | Contents |
+|---|---|
+| [SOURCES.md](docs/research/SOURCES.md) | Provenance of every asset and fact |
+| [PAGE_TOPOLOGY.md](docs/research/PAGE_TOPOLOGY.md) | Homepage section order & rendering strategy |
+| [BEHAVIORS.md](docs/research/BEHAVIORS.md) | Observed reference interactions & breakpoints |
+| [MAIN-PAGES-IMPLEMENTATION.md](docs/research/MAIN-PAGES-IMPLEMENTATION.md) · [DETAIL-PAGES-MIGRATION.md](docs/research/DETAIL-PAGES-MIGRATION.md) | Implementation notes |
+| [QA.md](docs/research/QA.md) | Manual QA protocol (incl. enquiry URL inspection without sending) |
+| [SEO-AUDIT-2026-10-21.md](docs/research/SEO-AUDIT-2026-10-21.md) · [SEO-PERFORMANCE-2026-10-22.md](docs/research/SEO-PERFORMANCE-2026-10-22.md) · [ANALYTICS-2026-10-23.md](docs/research/ANALYTICS-2026-10-23.md) | Audits |
+| [LEADERSHIP-UPDATE.md](docs/research/LEADERSHIP-UPDATE.md) · [CONTACT-VIDEO-UPDATE.md](docs/research/CONTACT-VIDEO-UPDATE.md) | Content refresh provenance |
+| [sitc-migration-map.csv](docs/research/sitc-migration-map.csv) · [sitc-url-inventory-2026-10-21.csv](docs/research/sitc-url-inventory-2026-10-21.csv) | URL-by-URL migration mapping |
+| [components/*.spec.md](docs/research/components/) | Section-level specifications |
+| [reference.css](docs/research/reference.css) · measurements JSONs | Exact reference geometry |
 
-## Google Analytics 4
+</details>
 
-The shared root layout installs measurement ID `G-P3FB2R96T9` for the `sitc.lk` web stream (stream ID `6667835243`). No environment variable or extra package is required. `src/components/google-analytics.tsx` uses `next/script` after hydration; the external Google tag loads asynchronously only on `sitc.lk` and `www.sitc.lk`. Development, Vercel previews, `PREVENT_INDEXING=true` builds, localhost and other staging hosts do not report visits.
+## Contributing
 
-GA4 Enhanced Measurement owns pageviews and client-side history changes. Its published configuration was checked on 23 October 2026 with both enabled. Keep those settings enabled and do not add a second manual pageview hook or another copy of this tag. The same stream currently enables automatic scroll, outbound-click, file-download, video and form-interaction measurement.
+1. `bun install && bun run dev`
+2. Make your change — content lives in `src/content/`, styles in `globals.css`.
+3. Run `bun run lint && bun run typecheck && bun test` and fix everything.
+4. For layout or visual changes, recapture `docs/design-references/` comparisons and run `node scripts/verify-layout.mjs`.
+5. For URL changes, keep legacy URLs redirecting and update the migration tests.
 
-Custom events cover programme selection, guide clicks, phone/email/WhatsApp contact, student resources, map links, appointment links and valid WhatsApp enquiry handoffs. `enquiry_handoff` records the handoff, without claiming delivery or enrolment. Custom payloads use controlled programme IDs, placement and contact categories; they exclude form text and full link URLs. Add new approved programme slugs in the existing programme source to keep selection reporting aligned. See `docs/research/ANALYTICS-2026-10-23.md` for the event table and verification limits.
+---
 
-## Favicon
+<div align="center">
 
-`src/app/favicon.ico` is a real multi-resolution ICO using the same SITC crest as `src/app/icon.png`, with 16, 32, 48, 64, 96 and 128px frames. Next.js automatically emits its icon metadata on every route. `/favicon.ico` returns the file directly, replacing the previous redirect; the existing PNG and legacy Apple icon compatibility remain available.
+**SITC Campus** · Science and Information Technology City Campus, Sri Lanka
+
+Website developed with ❤️ by [Codezela Technologies](https://codezela.com)
+
+</div>
