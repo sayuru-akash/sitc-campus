@@ -26,8 +26,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const result = findNewsArticle(slug);
-  // Let the page's not-found boundary handle unknown slugs during rendering.
-  if (!result) return {};
+  if (!result) notFound();
   const { story, article } = result;
   return contentPageSeo({
     title: story.title,
